@@ -1,0 +1,5 @@
+ #!/bin/bash
+ for file in emotions/sadOren.jpg;
+ do
+ 	../../OpenFace-master-2/bin/FeatureExtraction -f "$file" -of results/"$file".csv
+done
