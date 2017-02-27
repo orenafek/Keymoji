@@ -40,5 +40,5 @@ captures/
 *.jks
 
 # ~~~~~~~~~~~~~~~~~~~~~ User Defined ~~~~~~~~~~~~~~~~~~~~~
-opencv_native_androidstudio/app/src/main/jniLibs
+KeyMoji/app/src/main/jniLibs
 
