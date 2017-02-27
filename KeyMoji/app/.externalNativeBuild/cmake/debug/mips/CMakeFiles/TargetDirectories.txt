@@ -1,0 +1,12 @@
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/CMakeFiles/rebuild_cache.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/CMakeFiles/edit_cache.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/CMakeFiles/native-lib.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/src/main/cpp/dlib/CMakeFiles/edit_cache.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/src/main/cpp/dlib/CMakeFiles/rebuild_cache.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/src/main/cpp/dlib/CMakeFiles/dlib.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/src/main/cpp/openface/LandmarkDetector/CMakeFiles/edit_cache.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/src/main/cpp/openface/LandmarkDetector/CMakeFiles/rebuild_cache.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/src/main/cpp/openface/LandmarkDetector/CMakeFiles/LandmarkDetector.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/src/main/cpp/openface/FaceAnalyser/CMakeFiles/edit_cache.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/src/main/cpp/openface/FaceAnalyser/CMakeFiles/rebuild_cache.dir
+/home/oren/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips/src/main/cpp/openface/FaceAnalyser/CMakeFiles/FaceAnalyser.dir
