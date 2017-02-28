@@ -43,4 +43,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.0.1'
     testCompile 'junit:junit:4.12'
     compile project(':openCVLibrary300')
+
+    compile 'io.github.rockerhieu:emojicon:1.4.2'
 }

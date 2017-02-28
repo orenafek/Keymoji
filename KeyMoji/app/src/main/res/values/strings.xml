@@ -3,4 +3,5 @@
     <string name="keymoji_ime">KeyMoji IME</string>
     <string name="method_subtype_en_us">English (US)</string>
     <string name="method_subtype_he_il">Hebrew (IL)</string>
+    <string name="querty_suggestion_mode">querty_suggestion_mode</string>
 </resources>
