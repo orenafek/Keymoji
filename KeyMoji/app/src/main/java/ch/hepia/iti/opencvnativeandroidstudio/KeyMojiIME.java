@@ -5,11 +5,13 @@ import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.media.AudioManager;
+import android.os.Parcel;
 import android.support.annotation.DrawableRes;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.InputConnection;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,11 +19,7 @@ import java.util.List;
 import AndroidAuxilary.Inflater;
 import io.github.rockerhieu.emojicon.emoji.Emojicon;
 
-import static io.github.rockerhieu.emojicon.emoji.Emojicon.TYPE_NATURE;
-import static io.github.rockerhieu.emojicon.emoji.Emojicon.TYPE_OBJECTS;
 import static io.github.rockerhieu.emojicon.emoji.Emojicon.TYPE_PEOPLE;
-import static io.github.rockerhieu.emojicon.emoji.Emojicon.TYPE_PLACES;
-import static io.github.rockerhieu.emojicon.emoji.Emojicon.TYPE_SYMBOLS;
 
 /**
  * @author Oren Afek
@@ -37,7 +35,7 @@ public class KeyMojiIME extends InputMethodService {
         allEmojis = new ArrayList<>();
         allEmojisStrings = new ArrayList<>();
         int[] emojiTypes = new int[]{
-                TYPE_PEOPLE, TYPE_NATURE, TYPE_OBJECTS, TYPE_PLACES, TYPE_SYMBOLS};
+                TYPE_PEOPLE/*, TYPE_NATURE, TYPE_OBJECTS, TYPE_PLACES, TYPE_SYMBOLS*/};
         for (int type : emojiTypes) {
             allEmojis.addAll(Arrays.asList(Emojicon.getEmojicons(type)));
         }
@@ -47,8 +45,9 @@ public class KeyMojiIME extends InputMethodService {
         }
     }
 
-    private static boolean isEmoji(int primaryCode) {
-        return allEmojisStrings.contains(String.valueOf((char)primaryCode));
+    private boolean isEmoji(int primaryCode) {
+        int emojiCode = getEmojiCode(primaryCode);
+        return emojiCode != -1 && allEmojis.contains(Emojicon.fromCodePoint(emojiCode));
     }
 
     private KeyboardView keyboardView;
@@ -91,9 +90,9 @@ public class KeyMojiIME extends InputMethodService {
                         ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                         break;
                     default: {
-
                         if (isEmoji(primaryCode)) {
-                            handleEmoji(Emojicon.fromChars(String.valueOf(primaryCode)));
+                            ic.commitText(Emojicon.fromCodePoint
+                                    (getEmojiCode(primaryCode)).getEmoji(), 1);
                         } else {
                             char c = (char) primaryCode;
                             ic.commitText(String.valueOf(Character.isLetter(c) && capsLock ?
@@ -132,10 +131,6 @@ public class KeyMojiIME extends InputMethodService {
         return keyboardView;
     }
 
-    private void handleEmoji(Emojicon emojicon) {
-
-    }
-
     private void playClick(int primaryCode) {
         AudioManager am = (AudioManager) getSystemService(AUDIO_SERVICE);
         switch (primaryCode) {
@@ -154,6 +149,20 @@ public class KeyMojiIME extends InputMethodService {
         }
     }
 
+    private int getEmojiCode(@DrawableRes int emojiRes) {
+        for (Field f : io.github.rockerhieu.emojicon.R.drawable.class.getFields()) {
+            try {
+                String name = f.getName();
+                if (name.contains("emoji") && f.getInt(null) == emojiRes) {
+                    name = name.replace("emoji_", "").replace("_", "");
+                    return Integer.parseInt(name, name.matches(".*[A-Za-z]+.*") ? 16 : 10);
+                }
+            } catch (IllegalAccessException | NumberFormatException ignore) {/**/}
+        }
+
+        return -1;
+    }
+
     private void registerEmoji(Keyboard keyboard, @DrawableRes int emojiRes) {
         List<Keyboard.Key> keys = keyboard.getKeys();
         Keyboard.Row row = new Keyboard.Row(keyboard);
@@ -161,11 +170,12 @@ public class KeyMojiIME extends InputMethodService {
         Drawable emoji = getResources().getDrawable(emojiRes);
 
         Emojicon emojicon = Emojicon.fromResource(emojiRes, 0);
-
+        Parcel p = Parcel.obtain();
+        emojicon.writeToParcel(p, 0);
         Keyboard.Key key = new Keyboard.Key(row);
         key.codes = new int[]{emojiRes};
         key.gap = 10;
-        key.height = emoji.getMinimumWidth();
+        key.height = emoji.getMinimumHeight();
         key.width = emoji.getMinimumWidth();
         key.icon = emoji;
         keys.add(key);
