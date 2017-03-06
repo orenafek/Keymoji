@@ -34,7 +34,7 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_Open_foo(JNIEnv *env, jobject instan
     String filename = "data/data/ch.hepia.iti.opencvnativeandroidstudio/trainingData/emotions.csv";
     Ptr<TrainData> data = TrainData::loadFromCSV(filename, 0);
     data->getLayout();
-//    dtree->train(data);
+    dtree->train(data);
 
     return env->NewStringUTF("success");
 

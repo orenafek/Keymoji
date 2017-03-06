@@ -8,6 +8,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,6 +19,27 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class Open extends AppCompatActivity {
+    private static final String TAG = "OCVSample::Activity";
+    private BaseLoaderCallback _baseLoaderCallback = new BaseLoaderCallback(this) {
+        @Override
+        public void onManagerConnected(int status) {
+            switch (status) {
+                case LoaderCallbackInterface.SUCCESS: {
+                    Log.i(TAG, "OpenCV loaded successfully");
+                }
+                break;
+                default: {
+                    super.onManagerConnected(status);
+                }
+            }
+        }
+    };
+
+
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +54,13 @@ public class Open extends AppCompatActivity {
         String toPath = "/data/data/" + getPackageName();  // Your application path
         copyAssetFolder(getAssets(),"",toPath);
 
-
+        if (!OpenCVLoader.initDebug()) {
+            Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
+            OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, this, _baseLoaderCallback);
+        } else {
+            Log.d(TAG, "OpenCV library found inside package. Using it!");
+            _baseLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+        }
         TextView text = (TextView)findViewById(R.id.text);
         text.setText(foo());
 
