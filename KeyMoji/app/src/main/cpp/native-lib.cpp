@@ -4,6 +4,7 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/features2d/features2d.hpp>
 #include "openface/LandmarkDetector/include/LandmarkCoreIncludes.h"
+#include "opencv2/ml/ml.hpp"
 #include <android/log.h>
 #include <iostream>
 #include <fstream>
@@ -12,6 +13,33 @@
 
 using namespace std;
 using namespace cv;
+using namespace cv::ml;
+
+extern "C"
+{
+JNIEXPORT jstring JNICALL
+Java_ch_hepia_iti_opencvnativeandroidstudio_Open_foo(JNIEnv *env, jobject instance) {
+
+    Ptr<DTrees> dtree = DTrees::create();
+    dtree->setMaxDepth(10);
+    dtree->setMinSampleCount(2);
+    dtree->setRegressionAccuracy(0);
+    dtree->setUseSurrogates(false);
+    dtree->setMaxCategories(16);
+    dtree->setCVFolds(0);
+    dtree->setUse1SERule(false);
+    dtree->setTruncatePrunedTree(false);
+    dtree->setPriors(Mat());
+
+    String filename = "data/data/ch.hepia.iti.opencvnativeandroidstudio/trainingData/emotions.csv";
+    Ptr<TrainData> data = TrainData::loadFromCSV(filename, 0);
+    data->getLayout();
+//    dtree->train(data);
+
+    return env->NewStringUTF("success");
+
+}
+}
 
 extern "C"
 {
