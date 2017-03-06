@@ -45,6 +45,20 @@ public class KeyMojiIME extends InputMethodService {
         }
     }
 
+    private int lastDisplayWidth;
+
+    @Override
+    public void onInitializeInterface() {
+        if (keyboard != null) {
+            // Configuration changes can happen after the keyboard gets recreated,
+            // so we need to be able to re-build the keyboards if the available
+            // space has changed.
+            int displayWidth = getMaxWidth();
+            if (displayWidth == lastDisplayWidth) return;
+            lastDisplayWidth = displayWidth;
+        }
+    }
+
     private boolean isEmoji(int primaryCode) {
         int emojiCode = getEmojiCode(primaryCode);
         return emojiCode != -1 && allEmojis.contains(Emojicon.fromCodePoint(emojiCode));
@@ -95,7 +109,7 @@ public class KeyMojiIME extends InputMethodService {
                                     (getEmojiCode(primaryCode)).getEmoji(), 1);
                         } else {
                             char c = (char) primaryCode;
-                            ic.commitText(String.valueOf(Character.isLetter(c) && capsLock ?
+                            ic.commitText(String.valueOf(Character.isLetter(c) && !capsLock ?
                                     c : Character.toUpperCase(c)), 1);
                         }
                     }
@@ -133,6 +147,7 @@ public class KeyMojiIME extends InputMethodService {
 
     private void playClick(int primaryCode) {
         AudioManager am = (AudioManager) getSystemService(AUDIO_SERVICE);
+        am.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
         switch (primaryCode) {
             case 32:
                 am.playSoundEffect(AudioManager.FX_KEYPRESS_SPACEBAR);
@@ -167,6 +182,7 @@ public class KeyMojiIME extends InputMethodService {
         List<Keyboard.Key> keys = keyboard.getKeys();
         Keyboard.Row row = new Keyboard.Row(keyboard);
 
+
         Drawable emoji = getResources().getDrawable(emojiRes);
 
         Emojicon emojicon = Emojicon.fromResource(emojiRes, 0);
@@ -175,8 +191,8 @@ public class KeyMojiIME extends InputMethodService {
         Keyboard.Key key = new Keyboard.Key(row);
         key.codes = new int[]{emojiRes};
         key.gap = 10;
-        key.height = emoji.getMinimumHeight();
-        key.width = emoji.getMinimumWidth();
+        key.height = row.defaultHeight = emoji.getMinimumHeight();
+        key.width = row.defaultWidth = emoji.getMinimumWidth();
         key.icon = emoji;
         keys.add(key);
     }

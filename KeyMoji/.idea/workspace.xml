@@ -9,12 +9,15 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bd5b423c-7480-4963-8449-529abf5adc09" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/Open.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_open.xml" />
+    <list default="true" id="bd5b423c-7480-4963-8449-529abf5adc09" name="Default" comment="Added Emoji basic Support. #3">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java" afterPath="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/preview.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/preview.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml" />
     </list>
     <ignored path="KeyMoji.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -47,42 +50,241 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KeyMojiIME.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java">
+      <file leaf-file-name="dimens.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1804">
-              <caret line="157" column="91" selection-start-line="157" selection-start-column="91" selection-end-line="157" selection-end-column="91" />
+            <state relative-caret-position="88">
+              <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="preview.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/preview.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="colors.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Keyboard.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/inputmethodservice/Keyboard.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2926">
+              <caret line="164" column="22" selection-start-line="164" selection-start-column="22" selection-end-line="164" selection-end-column="22" />
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
-                <element signature="method#onPress#0;class#2024:4019" expanded="false" />
-                <element signature="method#onRelease#0;class#2024:4019" expanded="false" />
-                <element signature="method#onText#0;class#2024:4019" expanded="false" />
-                <element signature="method#swipeLeft#0;class#2024:4019" expanded="false" />
-                <element signature="method#swipeRight#0;class#2024:4019" expanded="false" />
-                <element signature="method#swipeDown#0;class#2024:4019" expanded="false" />
-                <element signature="method#swipeUp#0;class#2024:4019" expanded="false" />
-                <element signature="method#playClick#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="e#0#35505#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#6146#6147#0" expanded="false" />
+                <element signature="e#6190#6191#0" expanded="false" />
+                <element signature="e#15982#15983#0" expanded="false" />
+                <element signature="e#16024#16025#0" expanded="false" />
+                <element signature="e#20612#20613#0" expanded="false" />
+                <element signature="e#20660#20661#0" expanded="false" />
+                <element signature="e#26322#26323#0" expanded="false" />
+                <element signature="e#26350#26351#0" expanded="false" />
+                <element signature="e#26396#26397#0" expanded="false" />
+                <element signature="e#26432#26433#0" expanded="false" />
+                <element signature="e#26476#26477#0" expanded="false" />
+                <element signature="e#26520#26521#0" expanded="false" />
+                <element signature="e#26572#26573#0" expanded="false" />
+                <element signature="e#26615#26616#0" expanded="false" />
+                <element signature="e#26653#26654#0" expanded="false" />
+                <element signature="e#26695#26696#0" expanded="false" />
+                <element signature="e#26741#26742#0" expanded="false" />
+                <element signature="e#26782#26783#0" expanded="false" />
+                <element signature="e#26818#26819#0" expanded="false" />
+                <element signature="e#26855#26856#0" expanded="false" />
+                <element signature="e#26902#26903#0" expanded="false" />
+                <element signature="e#26941#26942#0" expanded="false" />
+                <element signature="e#26976#26977#0" expanded="false" />
+                <element signature="e#27012#27013#0" expanded="false" />
+                <element signature="e#27061#27062#0" expanded="false" />
+                <element signature="e#27098#27099#0" expanded="false" />
+                <element signature="e#27240#27241#0" expanded="false" />
+                <element signature="e#27275#27276#0" expanded="false" />
+                <element signature="e#27311#27312#0" expanded="false" />
+                <element signature="e#27345#27346#0" expanded="false" />
+                <element signature="e#27712#27713#0" expanded="false" />
+                <element signature="e#27743#27744#0" expanded="false" />
+                <element signature="e#27813#27814#0" expanded="false" />
+                <element signature="e#27852#27853#0" expanded="false" />
+                <element signature="e#27889#27890#0" expanded="false" />
+                <element signature="e#27931#27932#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="emoji_1f618.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/io.github.rockerhieu/emojicon/1.4.2/res/drawable-nodpi-v4/emoji_1f618.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="KeyMojiIME.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1144">
+              <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
+              <folding>
+                <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#onPress#0;class#2510:4506" expanded="false" />
+                <element signature="method#onRelease#0;class#2510:4506" expanded="false" />
+                <element signature="method#onText#0;class#2510:4506" expanded="false" />
+                <element signature="method#swipeLeft#0;class#2510:4506" expanded="false" />
+                <element signature="method#swipeRight#0;class#2510:4506" expanded="false" />
+                <element signature="method#swipeDown#0;class#2510:4506" expanded="false" />
+                <element signature="method#swipeUp#0;class#2510:4506" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputMethodService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/inputmethodservice/InputMethodService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19734">
+              <caret line="985" column="15" selection-start-line="985" selection-start-column="15" selection-end-line="985" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#113393#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#28892#28893#0" expanded="false" />
+                <element signature="e#28977#28978#0" expanded="false" />
+                <element signature="e#39925#39926#0" expanded="false" />
+                <element signature="e#39969#39970#0" expanded="false" />
+                <element signature="e#40335#40336#0" expanded="false" />
+                <element signature="e#40367#40368#0" expanded="false" />
+                <element signature="e#40404#40405#0" expanded="false" />
+                <element signature="e#40434#40435#0" expanded="false" />
+                <element signature="e#40493#40494#0" expanded="false" />
+                <element signature="e#40539#40540#0" expanded="false" />
+                <element signature="e#40578#40579#0" expanded="false" />
+                <element signature="e#40617#40618#0" expanded="false" />
+                <element signature="e#41801#41802#0" expanded="false" />
+                <element signature="e#41837#41838#0" expanded="false" />
+                <element signature="e#42239#42240#0" expanded="false" />
+                <element signature="e#42275#42276#0" expanded="false" />
+                <element signature="e#42332#42333#0" expanded="false" />
+                <element signature="e#42371#42372#0" expanded="false" />
+                <element signature="e#46224#46225#0" expanded="false" />
+                <element signature="e#46260#46261#0" expanded="false" />
+                <element signature="e#48436#48437#0" expanded="false" />
+                <element signature="e#48495#48496#0" expanded="false" />
+                <element signature="e#52206#52207#0" expanded="false" />
+                <element signature="e#52248#52249#0" expanded="false" />
+                <element signature="e#52498#52499#0" expanded="false" />
+                <element signature="e#52556#52557#0" expanded="false" />
+                <element signature="e#55960#55961#0" expanded="false" />
+                <element signature="e#56007#56008#0" expanded="false" />
+                <element signature="e#59137#59138#0" expanded="false" />
+                <element signature="e#59164#59165#0" expanded="false" />
+                <element signature="e#59729#59730#0" expanded="false" />
+                <element signature="e#59756#59757#0" expanded="false" />
+                <element signature="e#80364#80365#0" expanded="false" />
+                <element signature="e#80428#80429#0" expanded="false" />
+                <element signature="e#80770#80771#0" expanded="false" />
+                <element signature="e#80834#80835#0" expanded="false" />
+                <element signature="e#83621#83622#0" expanded="false" />
+                <element signature="e#83649#83650#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AudioManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/media/AudioManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18458">
+              <caret line="891" column="24" selection-start-line="891" selection-start-column="24" selection-end-line="891" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#168267#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#29144#29145#0" expanded="false" />
+                <element signature="e#29182#29183#0" expanded="false" />
+                <element signature="e#60455#60456#0" expanded="false" />
+                <element signature="e#60509#60510#0" expanded="false" />
+                <element signature="e#66398#66399#0" expanded="false" />
+                <element signature="e#66423#66424#0" expanded="false" />
+                <element signature="e#66579#66580#0" expanded="false" />
+                <element signature="e#66645#66646#0" expanded="false" />
+                <element signature="e#69898#69899#0" expanded="false" />
+                <element signature="e#69942#69943#0" expanded="false" />
+                <element signature="e#70210#70211#0" expanded="false" />
+                <element signature="e#70266#70267#0" expanded="false" />
+                <element signature="e#70547#70548#0" expanded="false" />
+                <element signature="e#70601#70602#0" expanded="false" />
+                <element signature="e#84345#84346#0" expanded="false" />
+                <element signature="e#84384#84385#0" expanded="false" />
+                <element signature="e#137170#137171#0" expanded="false" />
+                <element signature="e#137233#137234#0" expanded="false" />
+                <element signature="e#157351#157352#0" expanded="false" />
+                <element signature="e#157397#157398#0" expanded="false" />
+                <element signature="e#165589#165590#0" expanded="false" />
+                <element signature="e#165644#165645#0" expanded="false" />
+                <element signature="e#166083#166084#0" expanded="false" />
+                <element signature="e#166138#166139#0" expanded="false" />
+                <element signature="e#168218#168219#0" expanded="false" />
+                <element signature="e#168257#168258#0" expanded="false" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Emojicon.java" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.rockerhieu/emojicon/1.4.2/e6cfdc29f94b735ea880989fb0452b7e6920dd4c/emojicon-1.4.2-sources.jar!/io/github/rockerhieu/emojicon/emoji/Emojicon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
+            <state relative-caret-position="2640">
               <caret line="152" column="22" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="22" />
               <folding>
-                <element signature="e#4176#4177#0" expanded="true" />
-                <element signature="e#4204#4205#0" expanded="true" />
+                <element signature="e#0#4426#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#2206#2207#0" expanded="false" />
+                <element signature="e#2253#2254#0" expanded="false" />
+                <element signature="e#2319#2320#0" expanded="false" />
+                <element signature="e#2368#2369#0" expanded="false" />
+                <element signature="e#2820#2821#0" expanded="false" />
+                <element signature="e#2854#2855#0" expanded="false" />
+                <element signature="e#3838#3839#0" expanded="false" />
+                <element signature="e#3862#3863#0" expanded="false" />
+                <element signature="e#4061#4062#0" expanded="false" />
+                <element signature="e#4089#4090#0" expanded="false" />
+                <element signature="e#4117#4118#0" expanded="false" />
+                <element signature="e#4144#4145#0" expanded="false" />
+                <element signature="e#4382#4383#0" expanded="false" />
+                <element signature="e#4421#4422#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="qwerty.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="321">
+              <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="native-lib.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -2689,20 +2891,23 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Inflater.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/preview.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/preview.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1985" />
-    <option name="y" value="24" />
-    <option name="width" value="1855" />
-    <option name="height" value="1056" />
+    <option name="x" value="65" />
+    <option name="y" value="52" />
+    <option name="width" value="928" />
+    <option name="height" value="1028" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -2778,6 +2983,10 @@
               <option name="myItemId" value="res" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="values" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -2787,6 +2996,88 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="drawable" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cpp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidJniFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cpp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidJniFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NativeAndroidLibraryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -2857,8 +3148,8 @@
       </pane>
       <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3188,37 +3479,44 @@
       <option name="project" value="LOCAL" />
       <updated>1488231078481</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added Emoji basic Support. #3">
+      <created>1488374233182</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1488374233184</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1985" y="24" width="1855" height="1056" extended-state="6" />
+    <frame x="65" y="52" width="928" height="1028" extended-state="4" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32939914" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32964602" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10171366" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3628118" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2553648" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39914164" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -3275,22 +3573,26 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="renamed the porject to KeyMoji" />
     <MESSAGE value="Working simple keyboard. #3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Working simple keyboard. #3" />
+    <MESSAGE value="Added Emoji basic Support. #3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Emoji basic Support. #3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java</url>
-          <line>92</line>
+          <line>106</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java</url>
-          <line>48</line>
+          <line>62</line>
           <properties />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
@@ -3300,53 +3602,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/preview.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
-            <element signature="method#onPress#0;class#2024:4019" expanded="false" />
-            <element signature="method#onRelease#0;class#2024:4019" expanded="false" />
-            <element signature="method#onText#0;class#2024:4019" expanded="false" />
-            <element signature="method#swipeLeft#0;class#2024:4019" expanded="false" />
-            <element signature="method#swipeRight#0;class#2024:4019" expanded="false" />
-            <element signature="method#swipeDown#0;class#2024:4019" expanded="false" />
-            <element signature="method#swipeUp#0;class#2024:4019" expanded="false" />
-            <element signature="method#playClick#0;class#KeyMojiIME#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1342">
@@ -3390,7 +3645,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="616">
           <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
-          <folding />
+          <folding>
+            <element signature="e#820#838#0" expanded="false" />
+            <element signature="e#1630#1651#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -3450,18 +3708,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="836">
-          <caret line="38" column="21" selection-start-line="38" selection-start-column="21" selection-end-line="38" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/ch/hepia/iti/opencvnativeandroidstudio/R.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5060">
           <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3469,13 +3719,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3124">
           <caret line="172" column="53" selection-start-line="172" selection-start-column="50" selection-end-line="172" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/inputmethodservice/InputMethodService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3476">
-          <caret line="234" column="42" selection-start-line="234" selection-start-column="42" selection-end-line="234" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -3494,29 +3737,19 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
           <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/preview.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -3542,7 +3775,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="470" column="16" selection-start-line="470" selection-start-column="16" selection-end-line="470" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3586,67 +3818,130 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13904">
           <caret line="662" column="38" selection-start-line="662" selection-start-column="38" selection-end-line="662" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/java/lang/ThreadGroup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="14432">
+          <caret line="692" column="0" selection-start-line="692" selection-start-column="0" selection-end-line="692" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/java/lang/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98164">
+          <caret line="4509" column="60" selection-start-line="4509" selection-start-column="60" selection-end-line="4509" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/Parcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="946" column="22" selection-start-line="946" selection-start-column="22" selection-end-line="946" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.rockerhieu/emojicon/1.4.2/e6cfdc29f94b735ea880989fb0452b7e6920dd4c/emojicon-1.4.2-sources.jar!/io/github/rockerhieu/emojicon/emoji/People.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_open.xml">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/Open.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/io/github/rockerhieu/emojicon/R.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11678">
+          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
           <folding>
-            <element signature="e#0#50315#0" expanded="false" />
-            <element signature="e#7445#7446#0" expanded="false" />
-            <element signature="e#7490#7491#0" expanded="false" />
-            <element signature="e#8690#8691#0" expanded="false" />
-            <element signature="e#8735#8736#0" expanded="false" />
-            <element signature="e#9830#9831#0" expanded="false" />
-            <element signature="e#9875#9876#0" expanded="false" />
-            <element signature="e#26630#26631#0" expanded="false" />
-            <element signature="e#26664#26665#0" expanded="false" />
-            <element signature="e#27497#27498#0" expanded="false" />
-            <element signature="e#27531#27532#0" expanded="false" />
-            <element signature="e#27656#27657#0" expanded="false" />
-            <element signature="e#27691#27692#0" expanded="false" />
-            <element signature="e#27811#27812#0" expanded="false" />
-            <element signature="e#27839#27840#0" expanded="false" />
-            <element signature="e#27961#27962#0" expanded="false" />
-            <element signature="e#27995#27996#0" expanded="false" />
-            <element signature="e#28120#28121#0" expanded="false" />
-            <element signature="e#28155#28156#0" expanded="false" />
-            <element signature="e#28283#28284#0" expanded="false" />
-            <element signature="e#28319#28320#0" expanded="false" />
-            <element signature="e#28780#28781#0" expanded="false" />
-            <element signature="e#28818#28819#0" expanded="false" />
-            <element signature="e#29091#29092#0" expanded="false" />
-            <element signature="e#29119#29120#0" expanded="false" />
-            <element signature="e#29411#29412#0" expanded="false" />
-            <element signature="e#29439#29440#0" expanded="false" />
-            <element signature="e#31306#31307#0" expanded="false" />
-            <element signature="e#31349#31350#0" expanded="false" />
-            <element signature="e#40366#40367#0" expanded="false" />
-            <element signature="e#40422#40423#0" expanded="false" />
-            <element signature="e#49335#49336#0" expanded="false" />
-            <element signature="e#49363#49364#0" expanded="false" />
-            <element signature="e#49730#49731#0" expanded="false" />
-            <element signature="e#49767#49768#0" expanded="false" />
-            <element signature="e#50134#50135#0" expanded="false" />
-            <element signature="e#50171#50172#0" expanded="false" />
+            <element signature="e#820#838#0" expanded="false" />
+            <element signature="e#1630#1651#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/io.github.rockerhieu/emojicon/1.4.2/res/drawable-nodpi-v4/emoji_1f618.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+          <folding>
+            <element signature="e#454#484#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/preview.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/inputmethodservice/Keyboard.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4378">
-          <caret line="232" column="37" selection-start-line="232" selection-start-column="30" selection-end-line="232" selection-end-column="37" />
+        <state relative-caret-position="2926">
+          <caret line="164" column="22" selection-start-line="164" selection-start-column="22" selection-end-line="164" selection-end-column="22" />
           <folding>
             <element signature="e#0#35505#0" expanded="false" />
             <element signature="imports" expanded="false" />
@@ -3690,235 +3985,152 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/java/lang/ThreadGroup.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="14432">
-          <caret line="692" column="0" selection-start-line="692" selection-start-column="0" selection-end-line="692" selection-end-column="0" />
+        <state relative-caret-position="1144">
+          <caret line="55" column="40" selection-start-line="55" selection-start-column="40" selection-end-line="55" selection-end-column="40" />
           <folding>
-            <element signature="e#0#39784#0" expanded="false" />
+            <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#onPress#0;class#2510:4506" expanded="false" />
+            <element signature="method#onRelease#0;class#2510:4506" expanded="false" />
+            <element signature="method#onText#0;class#2510:4506" expanded="false" />
+            <element signature="method#swipeLeft#0;class#2510:4506" expanded="false" />
+            <element signature="method#swipeRight#0;class#2510:4506" expanded="false" />
+            <element signature="method#swipeDown#0;class#2510:4506" expanded="false" />
+            <element signature="method#swipeUp#0;class#2510:4506" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/inputmethodservice/InputMethodService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19734">
+          <caret line="985" column="15" selection-start-line="985" selection-start-column="15" selection-end-line="985" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#113393#0" expanded="false" />
             <element signature="imports" expanded="false" />
-            <element signature="e#3979#3980#0" expanded="false" />
-            <element signature="e#4046#4047#0" expanded="false" />
-            <element signature="e#5775#5776#0" expanded="false" />
-            <element signature="e#5802#5803#0" expanded="false" />
-            <element signature="e#7040#7041#0" expanded="false" />
-            <element signature="e#7074#7075#0" expanded="false" />
-            <element signature="e#7480#7481#0" expanded="false" />
-            <element signature="e#7509#7510#0" expanded="false" />
-            <element signature="e#7707#7708#0" expanded="false" />
-            <element signature="e#7739#7740#0" expanded="false" />
-            <element signature="e#35733#35734#0" expanded="false" />
-            <element signature="e#35768#35769#0" expanded="false" />
+            <element signature="e#28892#28893#0" expanded="false" />
+            <element signature="e#28977#28978#0" expanded="false" />
+            <element signature="e#39925#39926#0" expanded="false" />
+            <element signature="e#39969#39970#0" expanded="false" />
+            <element signature="e#40335#40336#0" expanded="false" />
+            <element signature="e#40367#40368#0" expanded="false" />
+            <element signature="e#40404#40405#0" expanded="false" />
+            <element signature="e#40434#40435#0" expanded="false" />
+            <element signature="e#40493#40494#0" expanded="false" />
+            <element signature="e#40539#40540#0" expanded="false" />
+            <element signature="e#40578#40579#0" expanded="false" />
+            <element signature="e#40617#40618#0" expanded="false" />
+            <element signature="e#41801#41802#0" expanded="false" />
+            <element signature="e#41837#41838#0" expanded="false" />
+            <element signature="e#42239#42240#0" expanded="false" />
+            <element signature="e#42275#42276#0" expanded="false" />
+            <element signature="e#42332#42333#0" expanded="false" />
+            <element signature="e#42371#42372#0" expanded="false" />
+            <element signature="e#46224#46225#0" expanded="false" />
+            <element signature="e#46260#46261#0" expanded="false" />
+            <element signature="e#48436#48437#0" expanded="false" />
+            <element signature="e#48495#48496#0" expanded="false" />
+            <element signature="e#52206#52207#0" expanded="false" />
+            <element signature="e#52248#52249#0" expanded="false" />
+            <element signature="e#52498#52499#0" expanded="false" />
+            <element signature="e#52556#52557#0" expanded="false" />
+            <element signature="e#55960#55961#0" expanded="false" />
+            <element signature="e#56007#56008#0" expanded="false" />
+            <element signature="e#59137#59138#0" expanded="false" />
+            <element signature="e#59164#59165#0" expanded="false" />
+            <element signature="e#59729#59730#0" expanded="false" />
+            <element signature="e#59756#59757#0" expanded="false" />
+            <element signature="e#80364#80365#0" expanded="false" />
+            <element signature="e#80428#80429#0" expanded="false" />
+            <element signature="e#80770#80771#0" expanded="false" />
+            <element signature="e#80834#80835#0" expanded="false" />
+            <element signature="e#83621#83622#0" expanded="false" />
+            <element signature="e#83649#83650#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/java/lang/Character.java">
+    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/media/AudioManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98164">
-          <caret line="4509" column="60" selection-start-line="4509" selection-start-column="60" selection-end-line="4509" selection-end-column="60" />
+        <state relative-caret-position="18458">
+          <caret line="891" column="24" selection-start-line="891" selection-start-column="24" selection-end-line="891" selection-end-column="24" />
           <folding>
-            <element signature="e#0#266049#0" expanded="false" />
+            <element signature="e#0#168267#0" expanded="false" />
             <element signature="imports" expanded="false" />
-            <element signature="e#20792#20793#0" expanded="false" />
-            <element signature="e#20836#20837#0" expanded="false" />
-            <element signature="e#21175#21176#0" expanded="false" />
-            <element signature="e#21222#21223#0" expanded="false" />
-            <element signature="e#21332#21333#0" expanded="false" />
-            <element signature="e#21367#21368#0" expanded="false" />
-            <element signature="e#22128#22129#0" expanded="false" />
-            <element signature="e#22170#22171#0" expanded="false" />
-            <element signature="e#107626#107627#0" expanded="false" />
-            <element signature="e#107667#107668#0" expanded="false" />
-            <element signature="e#147716#147717#0" expanded="false" />
-            <element signature="e#147750#147751#0" expanded="false" />
-            <element signature="e#149149#149150#0" expanded="false" />
-            <element signature="e#149177#149178#0" expanded="false" />
-            <element signature="e#149404#149405#0" expanded="false" />
-            <element signature="e#149452#149453#0" expanded="false" />
-            <element signature="e#149781#149782#0" expanded="false" />
-            <element signature="e#149814#149815#0" expanded="false" />
-            <element signature="e#151230#151231#0" expanded="false" />
-            <element signature="e#151270#151271#0" expanded="false" />
-            <element signature="e#184007#184008#0" expanded="false" />
-            <element signature="e#184050#184051#0" expanded="false" />
-            <element signature="e#185545#185546#0" expanded="false" />
-            <element signature="e#185594#185595#0" expanded="false" />
-            <element signature="e#187294#187295#0" expanded="false" />
-            <element signature="e#187337#187338#0" expanded="false" />
-            <element signature="e#188801#188802#0" expanded="false" />
-            <element signature="e#188850#188851#0" expanded="false" />
-            <element signature="e#190641#190642#0" expanded="false" />
-            <element signature="e#190684#190685#0" expanded="false" />
-            <element signature="e#192236#192237#0" expanded="false" />
-            <element signature="e#192285#192286#0" expanded="false" />
-            <element signature="e#193821#193822#0" expanded="false" />
-            <element signature="e#193860#193861#0" expanded="false" />
-            <element signature="e#195144#195145#0" expanded="false" />
-            <element signature="e#195189#195190#0" expanded="false" />
-            <element signature="e#196297#196298#0" expanded="false" />
-            <element signature="e#196338#196339#0" expanded="false" />
-            <element signature="e#197193#197194#0" expanded="false" />
-            <element signature="e#197240#197241#0" expanded="false" />
-            <element signature="e#198752#198753#0" expanded="false" />
-            <element signature="e#198792#198793#0" expanded="false" />
-            <element signature="e#199993#199994#0" expanded="false" />
-            <element signature="e#200039#200040#0" expanded="false" />
-            <element signature="e#201169#201170#0" expanded="false" />
-            <element signature="e#201216#201217#0" expanded="false" />
-            <element signature="e#202003#202004#0" expanded="false" />
-            <element signature="e#202056#202057#0" expanded="false" />
-            <element signature="e#203302#203303#0" expanded="false" />
-            <element signature="e#203350#203351#0" expanded="false" />
-            <element signature="e#204732#204733#0" expanded="false" />
-            <element signature="e#204779#204780#0" expanded="false" />
-            <element signature="e#205727#205728#0" expanded="false" />
-            <element signature="e#205777#205778#0" expanded="false" />
-            <element signature="e#206325#206326#0" expanded="false" />
-            <element signature="e#206376#206377#0" expanded="false" />
-            <element signature="e#207739#207740#0" expanded="false" />
-            <element signature="e#207792#207793#0" expanded="false" />
-            <element signature="e#211160#211161#0" expanded="false" />
-            <element signature="e#211212#211213#0" expanded="false" />
-            <element signature="e#219890#219891#0" expanded="false" />
-            <element signature="e#219943#219944#0" expanded="false" />
-            <element signature="e#222559#222560#0" expanded="false" />
-            <element signature="e#222608#222609#0" expanded="false" />
-            <element signature="e#225511#225512#0" expanded="false" />
-            <element signature="e#225560#225561#0" expanded="false" />
-            <element signature="e#228369#228370#0" expanded="false" />
-            <element signature="e#228418#228419#0" expanded="false" />
-            <element signature="e#229485#229486#0" expanded="false" />
-            <element signature="e#229534#229535#0" expanded="false" />
-            <element signature="e#231991#231992#0" expanded="false" />
-            <element signature="e#232035#232036#0" expanded="false" />
-            <element signature="e#236730#236731#0" expanded="false" />
-            <element signature="e#236777#236778#0" expanded="false" />
-            <element signature="e#241563#241564#0" expanded="false" />
-            <element signature="e#241606#241607#0" expanded="false" />
-            <element signature="e#245017#245018#0" expanded="false" />
-            <element signature="e#245061#245062#0" expanded="false" />
-            <element signature="e#248614#248615#0" expanded="false" />
-            <element signature="e#248658#248659#0" expanded="false" />
-            <element signature="e#251426#251427#0" expanded="false" />
-            <element signature="e#251465#251466#0" expanded="false" />
-            <element signature="e#257173#257174#0" expanded="false" />
-            <element signature="e#257222#257223#0" expanded="false" />
-            <element signature="e#261064#261065#0" expanded="false" />
-            <element signature="e#261106#261107#0" expanded="false" />
-            <element signature="e#261921#261922#0" expanded="false" />
-            <element signature="e#261969#261970#0" expanded="false" />
-            <element signature="e#263462#263463#0" expanded="false" />
-            <element signature="e#263490#263491#0" expanded="false" />
-            <element signature="e#264223#264224#0" expanded="false" />
-            <element signature="e#264287#264288#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1298">
-          <caret line="59" column="79" selection-start-line="59" selection-start-column="79" selection-end-line="59" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/os/Parcel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="946" column="22" selection-start-line="946" selection-start-column="22" selection-end-line="946" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.rockerhieu/emojicon/1.4.2/e6cfdc29f94b735ea880989fb0452b7e6920dd4c/emojicon-1.4.2-sources.jar!/io/github/rockerhieu/emojicon/emoji/People.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="22" column="35" selection-start-line="22" selection-start-column="35" selection-end-line="22" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#9296#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_open.xml">
-      <provider selected="true" editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/Open.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/generated/source/r/debug/io/github/rockerhieu/emojicon/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-11678">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#209108#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="31" column="68" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
-          <folding>
-            <element signature="e#820#838#0" expanded="true" />
-            <element signature="e#1630#1651#0" expanded="true" />
+            <element signature="e#29144#29145#0" expanded="false" />
+            <element signature="e#29182#29183#0" expanded="false" />
+            <element signature="e#60455#60456#0" expanded="false" />
+            <element signature="e#60509#60510#0" expanded="false" />
+            <element signature="e#66398#66399#0" expanded="false" />
+            <element signature="e#66423#66424#0" expanded="false" />
+            <element signature="e#66579#66580#0" expanded="false" />
+            <element signature="e#66645#66646#0" expanded="false" />
+            <element signature="e#69898#69899#0" expanded="false" />
+            <element signature="e#69942#69943#0" expanded="false" />
+            <element signature="e#70210#70211#0" expanded="false" />
+            <element signature="e#70266#70267#0" expanded="false" />
+            <element signature="e#70547#70548#0" expanded="false" />
+            <element signature="e#70601#70602#0" expanded="false" />
+            <element signature="e#84345#84346#0" expanded="false" />
+            <element signature="e#84384#84385#0" expanded="false" />
+            <element signature="e#137170#137171#0" expanded="false" />
+            <element signature="e#137233#137234#0" expanded="false" />
+            <element signature="e#157351#157352#0" expanded="false" />
+            <element signature="e#157397#157398#0" expanded="false" />
+            <element signature="e#165589#165590#0" expanded="false" />
+            <element signature="e#165644#165645#0" expanded="false" />
+            <element signature="e#166083#166084#0" expanded="false" />
+            <element signature="e#166138#166139#0" expanded="false" />
+            <element signature="e#168218#168219#0" expanded="false" />
+            <element signature="e#168257#168258#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.github.rockerhieu/emojicon/1.4.2/e6cfdc29f94b735ea880989fb0452b7e6920dd4c/emojicon-1.4.2-sources.jar!/io/github/rockerhieu/emojicon/emoji/Emojicon.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
+        <state relative-caret-position="2640">
           <caret line="152" column="22" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="22" />
           <folding>
-            <element signature="e#4176#4177#0" expanded="true" />
-            <element signature="e#4204#4205#0" expanded="true" />
+            <element signature="e#0#4426#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#2206#2207#0" expanded="false" />
+            <element signature="e#2253#2254#0" expanded="false" />
+            <element signature="e#2319#2320#0" expanded="false" />
+            <element signature="e#2368#2369#0" expanded="false" />
+            <element signature="e#2820#2821#0" expanded="false" />
+            <element signature="e#2854#2855#0" expanded="false" />
+            <element signature="e#3838#3839#0" expanded="false" />
+            <element signature="e#3862#3863#0" expanded="false" />
+            <element signature="e#4061#4062#0" expanded="false" />
+            <element signature="e#4089#4090#0" expanded="false" />
+            <element signature="e#4117#4118#0" expanded="false" />
+            <element signature="e#4144#4145#0" expanded="false" />
+            <element signature="e#4382#4383#0" expanded="false" />
+            <element signature="e#4421#4422#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/io.github.rockerhieu/emojicon/1.4.2/res/drawable-nodpi-v4/emoji_1f618.png">
-      <provider selected="true" editor-type-id="images">
+    <entry file="file://$PROJECT_DIR$/../icon_en_gb.png" />
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer2">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1804">
-          <caret line="157" column="91" selection-start-line="157" selection-start-column="91" selection-end-line="157" selection-end-column="91" />
+        <state relative-caret-position="264">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
-            <element signature="method#onPress#0;class#2024:4019" expanded="false" />
-            <element signature="method#onRelease#0;class#2024:4019" expanded="false" />
-            <element signature="method#onText#0;class#2024:4019" expanded="false" />
-            <element signature="method#swipeLeft#0;class#2024:4019" expanded="false" />
-            <element signature="method#swipeRight#0;class#2024:4019" expanded="false" />
-            <element signature="method#swipeDown#0;class#2024:4019" expanded="false" />
-            <element signature="method#swipeUp#0;class#2024:4019" expanded="false" />
-            <element signature="method#playClick#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="e#0#16#0" expanded="true" />
           </folding>
         </state>
       </provider>
