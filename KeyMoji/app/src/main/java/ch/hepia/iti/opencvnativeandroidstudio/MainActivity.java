@@ -137,6 +137,8 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
     public native void salt(long matAddrGray, int nbrElem);
 
+    public native int getEmoji(long matAddrGray);
+
 
 
 

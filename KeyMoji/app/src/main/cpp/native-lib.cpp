@@ -6,14 +6,44 @@
 #include "openface/LandmarkDetector/include/LandmarkCoreIncludes.h"
 #include "opencv2/ml/ml.hpp"
 #include <android/log.h>
+#include <vector>
+#include <unordered_pair.h>
+
+
+#include "openface/FaceAnalyser/include/FaceAnalyser.h"
 #include <iostream>
 #include <fstream>
 #define  LOG_TAG    "ndk-tag"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
-
 using namespace std;
 using namespace cv;
 using namespace cv::ml;
+#define PACKAGE ch.hepia.iti.opencvnativeandroidstudio
+#define PATH "data/data/ch.hepia.itsi.opencvnativeandroidstudio"
+
+extern "C" {
+JNIEXPORT jint JNICALL
+Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, jobject instance,
+                                                                  jlong matAddrGray) {
+
+
+
+    string au_loc = "data/data/ch.hepia.iti.opencvnativeandroidstudio/AU_predictors/AU_all_best.txt";
+    auto v = vector<cv::Vec3d>();
+    FaceAnalysis::FaceAnalyser face_analyser(v, 0.7, 112, 112, au_loc, tri_loc);
+
+    bool dynamic = true;
+    vector<double> certainties;
+    vector<bool> successes;
+    vector<double> timestamps;
+    vector<std::pair<std::string, vector<double>>> predictions_reg;
+    vector<std::pair<std::string, vector<double>>> predictions_class;
+    face_analyser.ExtractAllPredictionsOfflineReg(predictions_reg, certainties, successes, timestamps, dynamic);
+    face_analyser.ExtractAllPredictionsOfflineClass(predictions_class, certainties, successes, timestamps, dynamic);
+
+}
+}
+
 
 extern "C"
 {
@@ -35,8 +65,19 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_Open_foo(JNIEnv *env, jobject instan
     Ptr<TrainData> data = TrainData::loadFromCSV(filename, 0);
     data->getLayout();
     dtree->train(data);
+    printf ("OpenCV version %s (%d.%d.%d)\n",
+            CV_VERSION,
+            CV_MAJOR_VERSION, CV_MINOR_VERSION, CV_SUBMINOR_VERSION);
 
-    return env->NewStringUTF("success");
+    String filenametest = "data/data/ch.hepia.iti.opencvnativeandroidstudio/trainingData/happy3.csv";
+    Ptr<TrainData> dataTest = TrainData::loadFromCSV(filenametest, 0);
+
+
+
+    float result = dtree->predict(dataTest->getSamples());
+    stringstream sstream;
+    sstream << "Success " << result;
+    return env->NewStringUTF(sstream.str().c_str());
 
 }
 }

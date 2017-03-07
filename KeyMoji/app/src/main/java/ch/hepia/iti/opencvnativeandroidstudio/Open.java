@@ -62,10 +62,16 @@ public class Open extends AppCompatActivity {
             _baseLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
         TextView text = (TextView)findViewById(R.id.text);
-        text.setText(foo());
+//        text.setText();
 
 
     }
+
+
+
+
+
+
     public native String foo();
 
 
