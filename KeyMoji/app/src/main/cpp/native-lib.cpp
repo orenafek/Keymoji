@@ -7,7 +7,7 @@
 #include "opencv2/ml/ml.hpp"
 #include <android/log.h>
 #include <vector>
-#include <unordered_pair.h>
+
 
 
 #include "openface/FaceAnalyser/include/FaceAnalyser.h"
@@ -21,8 +21,12 @@ using namespace cv::ml;
 #define PACKAGE ch.hepia.iti.opencvnativeandroidstudio
 #define PATH "data/data/ch.hepia.itsi.opencvnativeandroidstudio"
 
+string formatter(vector<std::pair<std::string, vector<double>>> predictions_reg,
+                 vector<std::pair<std::string, vector<double>>> predictions_class,
+                 FaceAnalysis::FaceAnalyser face_analyser);
+
 extern "C" {
-JNIEXPORT jint JNICALL
+JNIEXPORT jstring JNICALL
 Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, jobject instance,
                                                                   jlong matAddrGray) {
 
@@ -54,11 +58,100 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
     face_analyser.ExtractAllPredictionsOfflineReg(predictions_reg, certainties, successes, timestamps, dynamic);
     face_analyser.ExtractAllPredictionsOfflineClass(predictions_class, certainties, successes, timestamps, dynamic);
 
-    return 0;
+
+    string result = formatter(predictions_reg, predictions_class, face_analyser);
+    return env->NewStringUTF(result.c_str());
 
 }
 }
 
+string formatter(vector<std::pair<std::string, vector<double>>> predictions_reg,
+               vector<std::pair<std::string, vector<double>>> predictions_class,
+               FaceAnalysis::FaceAnalyser face_analyser){
+    stringstream ss;
+
+    int num_class = predictions_class.size();
+    int num_reg = predictions_reg.size();
+
+    // Extract the indices of writing out first
+    vector<string> au_reg_names = face_analyser.GetAURegNames();
+    sort(au_reg_names.begin(), au_reg_names.end());
+    vector<int> inds_reg;
+
+    // write out ar the correct index
+    for (string au_name : au_reg_names)
+    {
+        for (int i = 0; i < num_reg; ++i)
+        {
+            if (au_name.compare(predictions_reg[i].first) == 0)
+            {
+                inds_reg.push_back(i);
+                break;
+            }
+        }
+    }
+    cout << "2***********************************************************************************"<<endl;
+
+    vector<string> au_class_names = face_analyser.GetAUClassNames();
+    sort(au_class_names.begin(), au_class_names.end());
+    vector<int> inds_class;
+
+    // write out ar the correct index
+    for (string au_name : au_class_names)
+    {
+        for (int i = 0; i < num_class; ++i)
+        {
+            if (au_name.compare(predictions_class[i].first) == 0)
+            {
+                inds_class.push_back(i);
+                break;
+            }
+        }
+    }
+   
+    // Read the header and find all _r and _c parts in a file and use their indices
+    vector<string> tokens;
+   
+    int begin_ind = -1;
+
+    for (size_t i = 0; i < tokens.size(); ++i)
+    {
+        if (tokens[i].find("AU") != string::npos && begin_ind == -1)
+        {
+            begin_ind = i;
+            break;
+        }
+    }
+    int end_ind = begin_ind + num_class + num_reg;
+
+   
+    int noOfAUs = 35;
+
+    for (int i = 1; i < noOfAUs / 2; ++i)
+    {
+        for (int t = 1; t < noOfAUs / 2; ++t)
+        {
+            if (t >= begin_ind && t < end_ind)
+            {
+                if(t - begin_ind < num_reg)
+                {
+                    ss << "reg_" << (t - begin_ind)<< ": " << predictions_reg[inds_reg[t - begin_ind]].second[i - 1] << endl;
+                }
+                else
+                {
+                    ss << "class_" << (t - begin_ind - num_reg) << ": " << predictions_class[inds_class[t - begin_ind - num_reg]].second[i - 1] << endl;
+                }
+            }
+            // else
+            // {
+            // 	cout << ", " << tokens[t];
+            // }
+        }
+        ss << endl;
+    }
+
+    return ss.str();
+}
 
 extern "C"
 {

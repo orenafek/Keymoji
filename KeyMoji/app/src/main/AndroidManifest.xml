@@ -19,20 +19,20 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:replace="android:icon">
 
-        <!-- <activity android:name=".MainActivity"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN" /> -->
+         <activity android:name=".MainActivity">
+         <intent-filter>
+         <action android:name="android.intent.action.MAIN" />
 
 
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
-        <activity android:name=".Open">
+         <category android:name="android.intent.category.LAUNCHER" />
+         </intent-filter>
+         </activity>
+       <!-- <activity android:name=".Open">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
+        </activity>-->
 
         <service
             android:name=".KeyMojiIME"

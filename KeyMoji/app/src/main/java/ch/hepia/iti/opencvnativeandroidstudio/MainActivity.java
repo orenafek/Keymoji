@@ -8,7 +8,10 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceView;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.opencv.android.BaseLoaderCallback;
@@ -23,10 +26,15 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import AndroidAuxilary.ViewAccessor;
+
 public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
     private static final String TAG = "OCVSample::Activity";
     private CameraBridgeViewBase _cameraBridgeViewBase;
+    private int frameCounter = 0;
+    private ViewAccessor viewAccessor = new ViewAccessor(this);
+    private String result = "";
 
     private BaseLoaderCallback _baseLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -49,15 +57,13 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         super.onCreate(savedInstanceState);
 
 
-
-
         // Permissions for Android 6+
         ActivityCompat.requestPermissions(MainActivity.this,
-                new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},
+                new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
                 1);
 
         String toPath = "/data/data/" + getPackageName();  // Your application path
-        copyAssetFolder(getAssets(),"",toPath);
+        copyAssetFolder(getAssets(), "", toPath);
 
 
         // Load ndk built module, as specified
@@ -68,10 +74,19 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         setContentView(R.layout.activity_main);
 
 
-
         _cameraBridgeViewBase = (CameraBridgeViewBase) findViewById(R.id.main_surface);
         _cameraBridgeViewBase.setVisibility(SurfaceView.VISIBLE);
         _cameraBridgeViewBase.setCvCameraViewListener(this);
+
+        Button b = viewAccessor.getView(R.id.main_btn_show_result);
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                TextView tv = viewAccessor.getView(R.id.main_debug_tv);
+                CharSequence newText = tv.getText() != null ? tv.getText() : "";
+                tv.setText(newText + "\n" + result);
+            }
+        });
     }
 
     @Override
@@ -131,19 +146,16 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
         Mat matGray = inputFrame.gray();
-        salt(matGray.getNativeObjAddr(), 2000);
-        getEmoji(matGray.getNativeObjAddr());
+        if (frameCounter % 30 == 0) {
+            result = getEmoji(matGray.getNativeObjAddr());
+        }
+        frameCounter++;
         return matGray;
     }
 
     public native void salt(long matAddrGray, int nbrElem);
 
-    public native int getEmoji(long matAddrGray);
-
-
-
-
-
+    public native String getEmoji(long matAddrGray);
 
 
     private static boolean copyAssetFolder(AssetManager assetManager,
@@ -158,12 +170,11 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
             boolean res = true;
             for (String file : files) {
                 if (file.contains(".")) {
-                    Log.d("OPENCV_TAG","Writing" + file);
+                    Log.d("OPENCV_TAG", "Writing" + file);
                     res &= copyAsset(assetManager,
                             fromAssetPath + file,
-                            toPath  +"/"+ file);
-                }
-                else {
+                            toPath + "/" + file);
+                } else {
                     res &= copyAssetFolder(assetManager,
                             fromAssetPath + file,
                             toPath + "/" + file);
@@ -190,10 +201,10 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
             out.flush();
             out.close();
             out = null;
-            Log.d("OPENCV_TAG","Yay!");
+            Log.d("OPENCV_TAG", "Yay!");
             return true;
-        } catch(Exception e) {
-            Log.d("OPENCV_TAG","Bummer :(");
+        } catch (Exception e) {
+            Log.d("OPENCV_TAG", "Bummer :(");
             e.printStackTrace();
             return false;
         }
@@ -202,7 +213,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     private static void copyFile(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[1024];
         int read;
-        while((read = in.read(buffer)) != -1){
+        while ((read = in.read(buffer)) != -1) {
             out.write(buffer, 0, read);
         }
     }
