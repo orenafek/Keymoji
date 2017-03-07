@@ -27,10 +27,23 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
                                                                   jlong matAddrGray) {
 
 
+    Mat &captured_image = *(Mat *) matAddrGray;
+    string main_clnf_general = "data/data/ch.hepia.iti.opencvnativeandroidstudio/model/main_clnf_general.txt";
+    LandmarkDetector::CLNF face_model(main_clnf_general);
+
 
     string au_loc = "data/data/ch.hepia.iti.opencvnativeandroidstudio/AU_predictors/AU_all_best.txt";
+    string tri_loc = "data/data/ch.hepia.iti.opencvnativeandroidstudio/model/tris_68_full.txt";
+
     auto v = vector<cv::Vec3d>();
     FaceAnalysis::FaceAnalyser face_analyser(v, 0.7, 112, 112, au_loc, tri_loc);
+    int time_stamp = 4;
+    face_analyser.AddNextFrame(captured_image, face_model, time_stamp, false, true);// last parameter is quiet mode inverted !det_parameters.quiet_mode
+
+
+//    cv::Mat sim_warped_img;
+//    face_analyser.GetLatestAlignedFace(sim_warped_img);
+
 
     bool dynamic = true;
     vector<double> certainties;
@@ -40,6 +53,8 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
     vector<std::pair<std::string, vector<double>>> predictions_class;
     face_analyser.ExtractAllPredictionsOfflineReg(predictions_reg, certainties, successes, timestamps, dynamic);
     face_analyser.ExtractAllPredictionsOfflineClass(predictions_class, certainties, successes, timestamps, dynamic);
+
+    return 0;
 
 }
 }

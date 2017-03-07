@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
         Mat matGray = inputFrame.gray();
         salt(matGray.getNativeObjAddr(), 2000);
+        getEmoji(matGray.getNativeObjAddr());
         return matGray;
     }
 
