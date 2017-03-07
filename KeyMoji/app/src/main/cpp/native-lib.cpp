@@ -21,6 +21,12 @@ using namespace cv::ml;
 #define PACKAGE ch.hepia.iti.opencvnativeandroidstudio
 #define PATH "data/data/ch.hepia.itsi.opencvnativeandroidstudio"
 
+string concat(string s1, string s2){
+    stringstream ss;
+    ss << s1 << s2;
+    return ss.str();
+}
+
 string formatter(vector<std::pair<std::string, vector<double>>> predictions_reg,
                  vector<std::pair<std::string, vector<double>>> predictions_class,
                  FaceAnalysis::FaceAnalyser face_analyser);
@@ -33,14 +39,26 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
 
     Mat &captured_image = *(Mat *) matAddrGray;
     string main_clnf_general = "data/data/ch.hepia.iti.opencvnativeandroidstudio/model/main_clnf_general.txt";
+    string face_detector_location = concat(PATH,"/classifiers/haarcascade_frontalface_alt.xml");
+
     LandmarkDetector::CLNF face_model(main_clnf_general);
+    face_model.face_detector_HAAR.load(face_detector_location);
 
 
     string au_loc = "data/data/ch.hepia.iti.opencvnativeandroidstudio/AU_predictors/AU_all_best.txt";
     string tri_loc = "data/data/ch.hepia.iti.opencvnativeandroidstudio/model/tris_68_full.txt";
 
+
     auto v = vector<cv::Vec3d>();
     FaceAnalysis::FaceAnalyser face_analyser(v, 0.7, 112, 112, au_loc, tri_loc);
+    Mat grayscale_image = captured_image.clone();
+    LandmarkDetector::FaceModelParameters det_parameters;
+    det_parameters.init();
+    det_parameters.model_location = main_clnf_general;
+    det_parameters.face_detector_location = face_detector_location;
+
+
+    LandmarkDetector::DetectLandmarksInImage(grayscale_image, face_model, det_parameters);
     int time_stamp = 4;
     face_analyser.AddNextFrame(captured_image, face_model, time_stamp, false, true);// last parameter is quiet mode inverted !det_parameters.quiet_mode
 
