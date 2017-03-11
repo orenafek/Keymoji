@@ -18,10 +18,10 @@
 ANDROID_ABI:UNINITIALIZED=x86_64
 
 //No help, variable specified on the command line.
-ANDROID_NATIVE_API_LEVEL:UNINITIALIZED=21
+ANDROID_NDK:UNINITIALIZED=/home/oren/Android/Sdk/ndk-bundle
 
 //No help, variable specified on the command line.
-ANDROID_NDK:UNINITIALIZED=/home/oren/Android/Sdk/ndk-bundle
+ANDROID_PLATFORM:UNINITIALIZED=android-21
 
 //Path to a program.
 CMAKE_AR:FILEPATH=/home/oren/Android/Sdk/ndk-bundle/toolchains/x86_64-4.9/prebuilt/linux-x86_64/bin/x86_64-linux-android-ar

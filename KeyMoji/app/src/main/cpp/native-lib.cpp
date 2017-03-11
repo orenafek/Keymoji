@@ -6,25 +6,27 @@
 #include "openface/LandmarkDetector/include/LandmarkCoreIncludes.h"
 #include "opencv2/ml/ml.hpp"
 #include <android/log.h>
-#include <vector>
-
 
 
 #include "openface/FaceAnalyser/include/FaceAnalyser.h"
-#include <iostream>
 #include <fstream>
+
 #define  LOG_TAG    "ndk-tag"
 #define  LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 using namespace std;
 using namespace cv;
 using namespace cv::ml;
 #define PACKAGE ch.hepia.iti.opencvnativeandroidstudio
-#define PATH "data/data/ch.hepia.itsi.opencvnativeandroidstudio"
+#define PATH "data/data/ch.hepia.iti.opencvnativeandroidstudio"
 
-string concat(string s1, string s2){
+string concat(const string &s1, const string &s2) {
     stringstream ss;
     ss << s1 << s2;
     return ss.str();
+}
+
+string fullPath(const string &relativePath) {
+    return concat(PATH, concat("/", relativePath));
 }
 
 string formatter(vector<std::pair<std::string, vector<double>>> predictions_reg,
@@ -39,10 +41,7 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
 
     Mat &captured_image = *(Mat *) matAddrGray;
     string main_clnf_general = "data/data/ch.hepia.iti.opencvnativeandroidstudio/model/main_clnf_general.txt";
-    string face_detector_location = concat(PATH,"/classifiers/haarcascade_frontalface_alt.xml");
-
-    LandmarkDetector::CLNF face_model(main_clnf_general);
-    face_model.face_detector_HAAR.load(face_detector_location);
+    string face_detector_location = concat(PATH, "/classifiers/haarcascade_frontalface_alt.xml");
 
 
     string au_loc = "data/data/ch.hepia.iti.opencvnativeandroidstudio/AU_predictors/AU_all_best.txt";
@@ -57,10 +56,15 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
     det_parameters.model_location = main_clnf_general;
     det_parameters.face_detector_location = face_detector_location;
 
+    LandmarkDetector::CLNF face_model;
+    face_model.inits(det_parameters);
+    face_model.face_detector_HAAR = CascadeClassifier(face_detector_location);
+    bool loadedSuccess = face_model.face_detector_HAAR.load(face_detector_location);
 
     LandmarkDetector::DetectLandmarksInImage(grayscale_image, face_model, det_parameters);
     int time_stamp = 4;
-    face_analyser.AddNextFrame(captured_image, face_model, time_stamp, false, true);// last parameter is quiet mode inverted !det_parameters.quiet_mode
+    face_analyser.AddNextFrame(captured_image, face_model, time_stamp, false,
+                               true);// last parameter is quiet mode inverted !det_parameters.quiet_mode
 
 
 //    cv::Mat sim_warped_img;
@@ -73,8 +77,10 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
     vector<double> timestamps;
     vector<std::pair<std::string, vector<double>>> predictions_reg;
     vector<std::pair<std::string, vector<double>>> predictions_class;
-    face_analyser.ExtractAllPredictionsOfflineReg(predictions_reg, certainties, successes, timestamps, dynamic);
-    face_analyser.ExtractAllPredictionsOfflineClass(predictions_class, certainties, successes, timestamps, dynamic);
+    face_analyser.ExtractAllPredictionsOfflineReg(predictions_reg, certainties, successes,
+                                                  timestamps, dynamic);
+    face_analyser.ExtractAllPredictionsOfflineClass(predictions_class, certainties, successes,
+                                                    timestamps, dynamic);
 
 
     string result = formatter(predictions_reg, predictions_class, face_analyser);
@@ -84,8 +90,8 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
 }
 
 string formatter(vector<std::pair<std::string, vector<double>>> predictions_reg,
-               vector<std::pair<std::string, vector<double>>> predictions_class,
-               FaceAnalysis::FaceAnalyser face_analyser){
+                 vector<std::pair<std::string, vector<double>>> predictions_class,
+                 FaceAnalysis::FaceAnalyser face_analyser) {
     stringstream ss;
 
     int num_class = predictions_class.size();
@@ -97,67 +103,57 @@ string formatter(vector<std::pair<std::string, vector<double>>> predictions_reg,
     vector<int> inds_reg;
 
     // write out ar the correct index
-    for (string au_name : au_reg_names)
-    {
-        for (int i = 0; i < num_reg; ++i)
-        {
-            if (au_name.compare(predictions_reg[i].first) == 0)
-            {
+    for (string au_name : au_reg_names) {
+        for (int i = 0; i < num_reg; ++i) {
+            if (au_name.compare(predictions_reg[i].first) == 0) {
                 inds_reg.push_back(i);
                 break;
             }
         }
     }
-    cout << "2***********************************************************************************"<<endl;
+    cout << "2***********************************************************************************"
+         << endl;
 
     vector<string> au_class_names = face_analyser.GetAUClassNames();
     sort(au_class_names.begin(), au_class_names.end());
     vector<int> inds_class;
 
     // write out ar the correct index
-    for (string au_name : au_class_names)
-    {
-        for (int i = 0; i < num_class; ++i)
-        {
-            if (au_name.compare(predictions_class[i].first) == 0)
-            {
+    for (string au_name : au_class_names) {
+        for (int i = 0; i < num_class; ++i) {
+            if (au_name.compare(predictions_class[i].first) == 0) {
                 inds_class.push_back(i);
                 break;
             }
         }
     }
-   
+
     // Read the header and find all _r and _c parts in a file and use their indices
     vector<string> tokens;
-   
+
     int begin_ind = -1;
 
-    for (size_t i = 0; i < tokens.size(); ++i)
-    {
-        if (tokens[i].find("AU") != string::npos && begin_ind == -1)
-        {
+    for (size_t i = 0; i < tokens.size(); ++i) {
+        if (tokens[i].find("AU") != string::npos && begin_ind == -1) {
             begin_ind = i;
             break;
         }
     }
     int end_ind = begin_ind + num_class + num_reg;
 
-   
+
     int noOfAUs = 35;
 
-    for (int i = 1; i < noOfAUs / 2; ++i)
-    {
-        for (int t = 1; t < noOfAUs / 2; ++t)
-        {
-            if (t >= begin_ind && t < end_ind)
-            {
-                if(t - begin_ind < num_reg)
-                {
-                    ss << "reg_" << (t - begin_ind)<< ": " << predictions_reg[inds_reg[t - begin_ind]].second[i - 1] << endl;
-                }
-                else
-                {
-                    ss << "class_" << (t - begin_ind - num_reg) << ": " << predictions_class[inds_class[t - begin_ind - num_reg]].second[i - 1] << endl;
+    for (int i = 1; i < noOfAUs / 2; ++i) {
+        for (int t = 1; t < noOfAUs / 2; ++t) {
+            if (t >= begin_ind && t < end_ind) {
+                if (t - begin_ind < num_reg) {
+                    ss << "reg_" << (t - begin_ind) << ": "
+                       << predictions_reg[inds_reg[t - begin_ind]].second[i - 1] << endl;
+                } else {
+                    ss << "class_" << (t - begin_ind - num_reg) << ": "
+                       << predictions_class[inds_class[t - begin_ind - num_reg]].second[i - 1]
+                       << endl;
                 }
             }
             // else
@@ -191,13 +187,12 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_Open_foo(JNIEnv *env, jobject instan
     Ptr<TrainData> data = TrainData::loadFromCSV(filename, 0);
     data->getLayout();
     dtree->train(data);
-    printf ("OpenCV version %s (%d.%d.%d)\n",
-            CV_VERSION,
-            CV_MAJOR_VERSION, CV_MINOR_VERSION, CV_SUBMINOR_VERSION);
+    printf("OpenCV version %s (%d.%d.%d)\n",
+           CV_VERSION,
+           CV_MAJOR_VERSION, CV_MINOR_VERSION, CV_SUBMINOR_VERSION);
 
     String filenametest = "data/data/ch.hepia.iti.opencvnativeandroidstudio/trainingData/happy3.csv";
     Ptr<TrainData> dataTest = TrainData::loadFromCSV(filenametest, 0);
-
 
 
     float result = dtree->predict(dataTest->getSamples());
@@ -210,9 +205,10 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_Open_foo(JNIEnv *env, jobject instan
 
 extern "C"
 {
-void JNICALL Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_salt(JNIEnv *env, jobject instance,
-                                                                           jlong matAddrGray,
-                                                                           jint nbrElem) {
+void JNICALL
+Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_salt(JNIEnv *env, jobject instance,
+                                                              jlong matAddrGray,
+                                                              jint nbrElem) {
     Mat &mGr = *(Mat *) matAddrGray;
 //    for (int k = 0; k < nbrElem; k++) {
 //        int i = rand() % mGr.cols;
@@ -233,7 +229,7 @@ void JNICALL Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_salt(JNIEn
     clnf_model.face_detector_location_clnf = "data/data/ch.hepia.iti.opencvnativeandroidstudio/classifiers/haarcascade_frontalface_alt.xml";
     clnf_model.inits();
 
-    __android_log_write(ANDROID_LOG_INFO, "JNIDATA",  "Init Successfull!!");
+    __android_log_write(ANDROID_LOG_INFO, "JNIDATA", "Init Successfull!!");
 
 
     cv::Mat_<float> depth_image;
@@ -244,7 +240,8 @@ void JNICALL Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_salt(JNIEn
 
 
     // The actual facial landmark detection / tracking
-    bool detection_success = LandmarkDetector::DetectLandmarksInImage(grayscale_image, depth_image, clnf_model, det_parameters);
+    bool detection_success = LandmarkDetector::DetectLandmarksInImage(grayscale_image, depth_image,
+                                                                      clnf_model, det_parameters);
 
     if (detection_success) {
         LandmarkDetector::Draw(mGr, clnf_model);

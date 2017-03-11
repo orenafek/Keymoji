@@ -1353,3 +1353,13 @@ void CLNF::NonVectorisedMeanShift(cv::Mat_<double>& out_mean_shifts, const std::
     }
 }
 
+/**********************************************************************************************/
+bool CLNF::inits(const FaceModelParameters &parameters) {
+
+    model_location_clnf = parameters.model_location;
+    face_detector_location_clnf = parameters.face_detector_location;
+    this->Read(parameters.model_location);
+    return true;
+}
+/**********************************************************************************************/
+

@@ -163,6 +163,9 @@ public:
     
     bool inits();
 
+    /**********************************************************************************************/
+    bool inits(const FaceModelParameters& parameters);
+    /**********************************************************************************************/
 	// Constructor from a model file
     CLNF(std::string fname);
 	
