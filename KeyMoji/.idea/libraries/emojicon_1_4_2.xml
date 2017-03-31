@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="emojicon-1.4.2">
     <CLASSES>
-      <root url="file://$USER_HOME$/.android/build-cache/f82d7e49a8ec751e489d810a018971ade3165c24/output/res" />
-      <root url="jar://$USER_HOME$/.android/build-cache/f82d7e49a8ec751e489d810a018971ade3165c24/output/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.android/build-cache/066d865171a5804b6df7eb6fb21818b2550a7599/output/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/066d865171a5804b6df7eb6fb21818b2550a7599/output/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

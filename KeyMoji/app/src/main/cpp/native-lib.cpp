@@ -29,6 +29,70 @@ string fullPath(const string &relativePath) {
     return concat(PATH, concat("/", relativePath));
 }
 
+InputArray getPrediction() {
+
+    vector<double> v = {0.410933, 0.39483, -0.644556, 0.338012, -0.00396261,
+                        0.810891, 0.493247, -0.986521, -0.538827, 0.00572037,
+                        0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755,
+                        0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+                        1, 0};
+
+    Mat m = Mat(1, v.size(), CV_32F);
+
+    for (int i = 0; i < v.size(); ++i) {
+        m.at<double>(0, i) = v[i];
+    }
+    return _InputArray(m);
+}
+
+Ptr<DTrees> giveMeTrainedTree() {
+    vector<double> samplesVec = {0.410933, 0.39483, 3.22378, 0.338012, 0.40643, 1.49396, 0.493247,
+                                 -0.125391, -0.36427, 1.12024, 0.20112, 0.409727};
+    vector<vector<double>> allSamples = {
+            {
+                    {
+                            0.410933, 0.39483, 3.22378, 0.338012, 0.40643, 1.49396, 0.493247, -0.125391, -0.36427, 1.12024, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0
+                    },
+                    {
+                            0.410933, 0.39483, 0.637205, 0.338012, 2.18092, 2.28289, 0.493247, 2.11026, 0.542055, 1.10946, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0
+
+                    },
+                    {
+                            3, 0.410933, 0.39483, -1.72799, 0.338012, 0.519962, 0.284628, 0.493247, -0.570612, -0.323785, -0.41892, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0
+                    }
+
+            }
+    };
+
+    Mat m_samples = Mat(allSamples.size(), allSamples[0].size(), CV_32F);
+
+    for (int i = 0; i < allSamples.size(); ++i) {
+        for (int j = 0; j < allSamples[i].size(); ++j) {
+            m_samples.at<double>(i, j) = allSamples[i][j];
+        }
+    }
+
+    Mat m_responses = Mat(allSamples.size(), 1, CV_32F);
+    for (int i = 0; i < allSamples.size(); ++i) {
+        m_responses.at<double>(i) = i + 1;
+    }
+
+    InputArray samples = _InputArray(m_samples);
+    InputArray labels = _InputArray(m_responses);
+    Ptr<DTrees> dtree = RTrees::create();
+    try {
+        dtree->train(samples, 0, labels);
+    } catch (Exception &ex) {
+        cout << "";
+    }
+
+    catch (...) {
+        cout << "";
+    }
+    return dtree;
+
+}
+
 string formatter(vector<std::pair<std::string, vector<double>>> predictions_reg,
                  vector<std::pair<std::string, vector<double>>> predictions_class,
                  FaceAnalysis::FaceAnalyser face_analyser);
@@ -98,31 +162,36 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
     rtrees->setTermCriteria(TermCriteria(TermCriteria::MAX_ITER, 100, 0));
 
     string filename = "/data/data/ch.hepia.iti.opencvnativeandroidstudio/trainingData/TrainingData.csv";
-    Ptr<TrainData> data = TrainData::loadFromCSV(filename,0,0,1);
+    Ptr<TrainData> data = TrainData::loadFromCSV(filename, 0, 0, 1);
 
     bool flag = data.empty();
 
     rtrees->train(data);
     Mat tmp = data->getResponses();
-    String matAsString (tmp.begin< char>(), tmp.end< char>());
-    double x = tmp.at<double>(0,0);
-    double y = tmp.at<double>(0,1);
+    String matAsString(tmp.begin<char>(), tmp.end<char>());
+    double x = tmp.at<double>(0, 0);
+    double y = tmp.at<double>(0, 1);
 
 
     Mat tmp2 = data->getTrainResponses();
-    String matAsString2 (tmp2.begin< char>(), tmp2.end< char>());
-    double x2 = tmp2.at<double>(0,0);
+    String matAsString2(tmp2.begin<char>(), tmp2.end<char>());
+    double x2 = tmp2.at<double>(0, 0);
 
+    Ptr<DTrees> dTrees = giveMeTrainedTree();
 
-    int  nsamples =  data->getNSamples();
-    Mat tmp3 = data->getSamples();
-    string matAsString3 (tmp3.begin<unsigned char>(), tmp3.end<unsigned char>());
-    int x3 = tmp3.at<double>(0,0);
+    bool b = dTrees->isTrained();
 
-    Mat tmp4 = data->getTrainSamples();
-    string matAsString4 (tmp4.begin<unsigned char>(), tmp4.end<unsigned char>());
+    InputArray inputArray = getPrediction();
+    OutputArray outputArray = _OutputArray(Mat(1, 1, CV_32S));
+    try {
+        float f = dTrees->predict(inputArray, outputArray);
+    } catch (Exception &e) {
+        cout << "";
+    }
+    stringstream ss;
+    //ss << outputArray.getMat();
 
-
+    string prediction = ss.str();
     return env->NewStringUTF(result.c_str());
 
 }

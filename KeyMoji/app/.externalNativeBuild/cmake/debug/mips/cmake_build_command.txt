@@ -1,14 +1,14 @@
-Executable : /Users/danielohayon/Library/Android/sdk/cmake/3.6.3155560/bin/cmake
+Executable : C:\Users\oren.afek\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\cmake.exe
 arguments : 
--H/Users/danielohayon/Documents/KeyMoji/githubProject/Keymoji/KeyMoji/app
--B/Users/danielohayon/Documents/KeyMoji/githubProject/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/debug/mips
+-HC:\Users\oren.afek\git\Keymoji\KeyMoji\app
+-BC:\Users\oren.afek\git\Keymoji\KeyMoji\app\.externalNativeBuild\cmake\debug\mips
 -GAndroid Gradle - Ninja
 -DANDROID_ABI=mips
--DANDROID_NDK=/Users/danielohayon/Library/Android/sdk/ndk-bundle
--DCMAKE_LIBRARY_OUTPUT_DIRECTORY=/Users/danielohayon/Documents/KeyMoji/githubProject/Keymoji/KeyMoji/app/build/intermediates/cmake/debug/obj/mips
+-DANDROID_NDK=C:\Users\oren.afek\AppData\Local\Android\Sdk\ndk-bundle
+-DCMAKE_LIBRARY_OUTPUT_DIRECTORY=C:\Users\oren.afek\git\Keymoji\KeyMoji\app\build\intermediates\cmake\debug\obj\mips
 -DCMAKE_BUILD_TYPE=Debug
--DCMAKE_MAKE_PROGRAM=/Users/danielohayon/Library/Android/sdk/cmake/3.6.3155560/bin/ninja
--DCMAKE_TOOLCHAIN_FILE=/Users/danielohayon/Library/Android/sdk/ndk-bundle/build/cmake/android.toolchain.cmake
+-DCMAKE_MAKE_PROGRAM=C:\Users\oren.afek\AppData\Local\Android\Sdk\cmake\3.6.3155560\bin\ninja.exe
+-DCMAKE_TOOLCHAIN_FILE=C:\Users\oren.afek\AppData\Local\Android\Sdk\ndk-bundle\build\cmake\android.toolchain.cmake
 -DANDROID_PLATFORM=android-19
 -DCMAKE_CXX_FLAGS=-frtti -fexceptions -std=c++11
 jvmArgs : 

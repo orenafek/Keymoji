@@ -41,4 +41,6 @@ captures/
 
 # ~~~~~~~~~~~~~~~~~~~~~ User Defined ~~~~~~~~~~~~~~~~~~~~~
 KeyMoji/app/src/main/jniLibs
+*.o
+*.a
 *.cpp.o

@@ -372,7 +372,7 @@ void FaceAnalyser::AddNextFrame(const cv::Mat &frame, const LandmarkDetector::CL
     // That is don't update it when the face is expressive (just retrieve it)
     bool update_median = true;
 
-    // TODO test if this would be useful or not
+    //TODO: test if this would be useful or not
     //if(!this->AU_predictions_reg.empty())
     //{
     //	vector<pair<string, bool>> dyns = this->GetDynamicAUReg();
