@@ -750,21 +750,30 @@ void FaceAnalyser::ExtractAllPredictionsOfflineClass(
         std::vector<double> au_vals = au_iter->second;
 
         // Perform a moving average of 7 frames on classifications
-        int window_size = 7;
-        std::vector<double> au_vals_tmp = au_vals;
-        for (size_t i = (window_size - 1) / 2; i < au_vals.size() - (window_size - 1) / 2; ++i) {
-            double sum = 0;
-            for (int w = -(window_size - 1) / 2; w <= (window_size - 1) / 2; ++w) {
-                sum += au_vals_tmp[i + w];
-            }
-            sum = sum / window_size;
-            if (sum < 0.5)
-                sum = 0;
-            else
-                sum = 1;
-
-            au_vals[i] = sum;
-        }
+//        int window_size = 7;
+//        std::vector<double> au_vals_tmp = au_vals;
+//        size_t tmp = au_vals.size();
+//        int tmp2 = au_vals.size();
+//        int limit = au_vals.size() - (window_size - 1) / 2;
+//
+//        int j = 0;
+//        for (int i = 3; i < -2; ++i){
+//            j++;
+//        }
+//        int initI = (window_size - 1) / 2;
+//        for (int i = initI; i < /*limit*/au_vals.size() - (window_size - 1) / 2; ++i) {
+//            double sum = 0;
+//            for (int w = -(window_size - 1) / 2; w <= (window_size - 1) / 2; ++w) {
+//                sum += au_vals_tmp[i + w];
+//            }
+//            sum = sum / window_size;
+//            if (sum < 0.5)
+//                sum = 0;
+//            else
+//                sum = 1;
+//
+//            au_vals[i] = sum;
+//        }
 
         au_predictions.push_back(std::pair<string, std::vector<double>>(au_name, au_vals));
 
@@ -909,8 +918,7 @@ void FaceAnalyser::ExtractMedian(cv::Mat_<unsigned int> &histogram, int hist_cou
         for (int i = 0; i < histogram.rows; ++i) {
             int cummulative_sum = 0;
             for (int j = 0; j < histogram.cols; ++j) {
-                cummulative_sum += histogram.at < unsigned
-                int > (i, j);
+                cummulative_sum += histogram.at < /*unsigned*/ int > (i, j);
                 if (cummulative_sum > cutoff_point) {
                     median.at<double>(i) =
                             min_val + j * (max_val / num_bins) + (0.5 * (length) / num_bins);

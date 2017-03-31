@@ -16,8 +16,10 @@ import android.widget.Toast;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.JavaCameraView;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
+import org.opencv.core.Core;
 import org.opencv.core.Mat;
 
 import java.io.File;
@@ -31,7 +33,7 @@ import AndroidAuxilary.ViewAccessor;
 public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
     private static final String TAG = "OCVSample::Activity";
-    private CameraBridgeViewBase _cameraBridgeViewBase;
+    private JavaCameraView _cameraBridgeViewBase;
     private int frameCounter = 0;
     private ViewAccessor viewAccessor = new ViewAccessor(this);
     private String result = "";
@@ -74,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         setContentView(R.layout.activity_main);
 
 
-        _cameraBridgeViewBase = (CameraBridgeViewBase) findViewById(R.id.main_surface);
+        _cameraBridgeViewBase = (JavaCameraView) findViewById(R.id.main_surface);
         _cameraBridgeViewBase.setVisibility(SurfaceView.VISIBLE);
         _cameraBridgeViewBase.setCvCameraViewListener(this);
 
@@ -87,6 +89,8 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
                 tv.setText(newText + "\n" + result);
             }
         });
+
+
     }
 
     @Override
@@ -147,6 +151,8 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
         Mat matGray = inputFrame.gray();
         if (frameCounter % 30 == 0) {
+            //TODO: Flip image
+//        Core.flip(matGray.t(), matGray, 1);
             result = getEmoji(matGray.getNativeObjAddr());
         }
         frameCounter++;

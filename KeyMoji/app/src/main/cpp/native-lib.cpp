@@ -84,6 +84,45 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
 
 
     string result = formatter(predictions_reg, predictions_class, face_analyser);
+
+
+    Ptr<RTrees> rtrees = RTrees::create();
+    rtrees->setMaxDepth(10);
+    rtrees->setMinSampleCount(2);
+    rtrees->setRegressionAccuracy(0);
+    rtrees->setUseSurrogates(false);
+    rtrees->setMaxCategories(16);
+    rtrees->setPriors(Mat());
+    rtrees->setCalculateVarImportance(true);
+    rtrees->setActiveVarCount(0);
+    rtrees->setTermCriteria(TermCriteria(TermCriteria::MAX_ITER, 100, 0));
+
+    string filename = "/data/data/ch.hepia.iti.opencvnativeandroidstudio/trainingData/TrainingData.csv";
+    Ptr<TrainData> data = TrainData::loadFromCSV(filename,0,0,1);
+
+    bool flag = data.empty();
+
+    rtrees->train(data);
+    Mat tmp = data->getResponses();
+    String matAsString (tmp.begin< char>(), tmp.end< char>());
+    double x = tmp.at<double>(0,0);
+    double y = tmp.at<double>(0,1);
+
+
+    Mat tmp2 = data->getTrainResponses();
+    String matAsString2 (tmp2.begin< char>(), tmp2.end< char>());
+    double x2 = tmp2.at<double>(0,0);
+
+
+    int  nsamples =  data->getNSamples();
+    Mat tmp3 = data->getSamples();
+    string matAsString3 (tmp3.begin<unsigned char>(), tmp3.end<unsigned char>());
+    int x3 = tmp3.at<double>(0,0);
+
+    Mat tmp4 = data->getTrainSamples();
+    string matAsString4 (tmp4.begin<unsigned char>(), tmp4.end<unsigned char>());
+
+
     return env->NewStringUTF(result.c_str());
 
 }
