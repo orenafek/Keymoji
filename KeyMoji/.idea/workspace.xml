@@ -13,6 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/cpp/data.cpp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" />
@@ -35,7 +36,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/trainingData/TrainingData.csv" afterPath="$PROJECT_DIR$/app/src/main/assets/trainingData/TrainingData.csv" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" afterPath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
     </list>
     <ignored path="KeyMoji.iws" />
@@ -71,23 +71,42 @@
       <file leaf-file-name="native-lib.cpp" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+            <state relative-caret-position="286">
+              <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
               <folding>
                 <element signature="e#648#763#0" expanded="false" />
-                <element signature="e#13536#16054#0" expanded="false" />
-                <element signature="e#16078#17221#0" expanded="false" />
-                <marker date="1491050188486" expanded="false" signature="17501:19904" ph="{...}" />
+                <element signature="e#765#864#0" expanded="false" />
+                <element signature="e#908#969#0" expanded="false" />
+                <element signature="e#1097#1399#0" expanded="false" />
+                <element signature="e#1401#2837#0" expanded="false" />
+                <element signature="e#1680#1879#0" expanded="false" />
+                <element signature="e#3437#5513#0" expanded="false" />
+                <element signature="e#5537#5823#0" expanded="false" />
+                <element signature="e#5827#8345#0" expanded="false" />
+                <element signature="e#8369#9512#0" expanded="false" />
+                <element signature="e#12199#16713#0" expanded="false" />
+                <element signature="e#16715#17728#0" expanded="false" />
+                <marker date="1491053288604" expanded="false" signature="9792:12195" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Boost.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/ml/Boost.java">
+      <file leaf-file-name="cvstd.inl.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.inl.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
+            <state relative-caret-position="267">
+              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="core.hpp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1138">
+              <caret line="3103" column="89" selection-start-line="3103" selection-start-column="84" selection-end-line="3103" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -116,8 +135,8 @@
       <file leaf-file-name="ptr.inl.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/ptr.inl.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+            <state relative-caret-position="157">
+              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -136,8 +155,8 @@
       <file leaf-file-name="mat.inl.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/mat.inl.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1540">
-              <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+            <state relative-caret-position="157">
+              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -146,8 +165,8 @@
       <file leaf-file-name="ml.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/ml.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-195">
-              <caret line="1127" column="41" selection-start-line="1127" selection-start-column="35" selection-end-line="1127" selection-end-column="41" />
+            <state relative-caret-position="-4851">
+              <caret line="298" column="24" selection-start-line="298" selection-start-column="24" selection-end-line="298" selection-end-column="24" />
               <folding>
                 <element signature="e#0#2205#0" expanded="false" />
                 <element signature="e#2384#2998#0" expanded="false" />
@@ -168,7 +187,6 @@
                 <element signature="e#12000#13247#0" expanded="false" />
                 <element signature="e#13541#13603#0" expanded="false" />
                 <element signature="e#13693#13892#1" expanded="false" />
-                <element signature="e#14273#14658#0" expanded="false" />
                 <element signature="e#15039#15856#0" expanded="false" />
                 <element signature="e#15964#16233#0" expanded="false" />
                 <element signature="e#16350#16525#0" expanded="false" />
@@ -330,192 +348,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mat.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/mat.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4664">
-              <caret line="212" column="12" selection-start-line="212" selection-start-column="8" selection-end-line="212" selection-end-column="12" />
-              <folding>
-                <element signature="e#0#2217#0" expanded="false" />
-                <element signature="e#2511#2620#1" expanded="false" />
-                <element signature="e#2744#6818#0" expanded="false" />
-                <element signature="e#6862#7660#1" expanded="false" />
-                <element signature="e#10159#11414#0" expanded="false" />
-                <element signature="e#11415#14630#1" expanded="false" />
-                <element signature="e#11480#11928#1" expanded="false" />
-                <element signature="e#14634#16555#1" expanded="false" />
-                <element signature="e#16980#17370#1" expanded="false" />
-                <element signature="e#17402#17439#0" expanded="false" />
-                <element signature="e#17440#19114#1" expanded="false" />
-                <element signature="e#19207#19564#0" expanded="false" />
-                <element signature="e#19588#20017#1" expanded="false" />
-                <element signature="e#20322#21283#1" expanded="false" />
-                <element signature="e#20355#20513#1" expanded="false" />
-                <element signature="e#21287#21411#1" expanded="false" />
-                <element signature="e#21415#21714#1" expanded="false" />
-                <element signature="e#21717#22020#1" expanded="false" />
-                <element signature="e#22023#22115#0" expanded="false" />
-                <element signature="e#22118#31477#0" expanded="false" />
-                <element signature="e#31478#87763#1" expanded="false" />
-                <element signature="e#31513#31911#0" expanded="false" />
-                <element signature="e#31928#32225#0" expanded="false" />
-                <element signature="e#32270#32625#0" expanded="false" />
-                <element signature="e#32661#33182#0" expanded="false" />
-                <element signature="e#33244#33823#0" expanded="false" />
-                <element signature="e#33876#34193#0" expanded="false" />
-                <element signature="e#34247#34525#0" expanded="false" />
-                <element signature="e#34581#35122#0" expanded="false" />
-                <element signature="e#35193#35695#0" expanded="false" />
-                <element signature="e#35769#36265#0" expanded="false" />
-                <element signature="e#36294#37318#0" expanded="false" />
-                <element signature="e#37398#38478#0" expanded="false" />
-                <element signature="e#38549#39498#0" expanded="false" />
-                <element signature="e#39587#40497#0" expanded="false" />
-                <element signature="e#40588#41341#0" expanded="false" />
-                <element signature="e#41429#41960#0" expanded="false" />
-                <element signature="e#42006#42577#0" expanded="false" />
-                <element signature="e#42627#43198#0" expanded="false" />
-                <element signature="e#43261#44530#0" expanded="false" />
-                <element signature="e#44627#44647#0" expanded="false" />
-                <element signature="e#44745#44765#0" expanded="false" />
-                <element signature="e#44874#44894#0" expanded="false" />
-                <element signature="e#44984#45004#0" expanded="false" />
-                <element signature="e#45095#45115#0" expanded="false" />
-                <element signature="e#45339#45798#0" expanded="false" />
-                <element signature="e#45840#46297#0" expanded="false" />
-                <element signature="e#46462#47887#0" expanded="false" />
-                <element signature="e#47919#48289#0" expanded="false" />
-                <element signature="e#48321#48675#0" expanded="false" />
-                <element signature="e#48731#48827#0" expanded="false" />
-                <element signature="e#48873#49239#0" expanded="false" />
-                <element signature="e#49295#49391#0" expanded="false" />
-                <element signature="e#49437#50037#0" expanded="false" />
-                <element signature="e#50072#50266#0" expanded="false" />
-                <element signature="e#50307#50561#0" expanded="false" />
-                <element signature="e#50590#51338#0" expanded="false" />
-                <element signature="e#51384#51702#0" expanded="false" />
-                <element signature="e#51765#52486#0" expanded="false" />
-                <element signature="e#52577#52853#0" expanded="false" />
-                <element signature="e#52907#53052#0" expanded="false" />
-                <element signature="e#53097#53388#0" expanded="false" />
-                <element signature="e#53455#54977#0" expanded="false" />
-                <element signature="e#55111#55587#0" expanded="false" />
-                <element signature="e#55616#55982#0" expanded="false" />
-                <element signature="e#56033#56564#0" expanded="false" />
-                <element signature="e#56623#56971#0" expanded="false" />
-                <element signature="e#57012#57473#0" expanded="false" />
-                <element signature="e#57515#58122#0" expanded="false" />
-                <element signature="e#58184#58321#0" expanded="false" />
-                <element signature="e#58374#58530#0" expanded="false" />
-                <element signature="e#58598#59309#0" expanded="false" />
-                <element signature="e#59370#59507#0" expanded="false" />
-                <element signature="e#59559#59715#0" expanded="false" />
-                <element signature="e#59782#60295#0" expanded="false" />
-                <element signature="e#60355#60488#0" expanded="false" />
-                <element signature="e#60539#61894#0" expanded="false" />
-                <element signature="e#61947#62076#0" expanded="false" />
-                <element signature="e#62120#62281#0" expanded="false" />
-                <element signature="e#62343#62461#0" expanded="false" />
-                <element signature="e#62525#63133#0" expanded="false" />
-                <element signature="e#63158#64051#0" expanded="false" />
-                <element signature="e#64243#64604#0" expanded="false" />
-                <element signature="e#64639#64935#0" expanded="false" />
-                <element signature="e#64969#65081#0" expanded="false" />
-                <element signature="e#65198#65534#0" expanded="false" />
-                <element signature="e#65600#65654#0" expanded="false" />
-                <element signature="e#65726#65774#0" expanded="false" />
-                <element signature="e#65814#66070#0" expanded="false" />
-                <element signature="e#66112#66847#0" expanded="false" />
-                <element signature="e#66910#68497#0" expanded="false" />
-                <element signature="e#68571#69292#0" expanded="false" />
-                <element signature="e#69358#69439#0" expanded="false" />
-                <element signature="e#69490#69581#0" expanded="false" />
-                <element signature="e#69636#69727#0" expanded="false" />
-                <element signature="e#70264#74076#0" expanded="false" />
-                <element signature="e#74212#74422#0" expanded="false" />
-                <element signature="e#74457#74732#0" expanded="false" />
-                <element signature="e#74768#74995#0" expanded="false" />
-                <element signature="e#75023#75775#0" expanded="false" />
-                <element signature="e#75804#75916#0" expanded="false" />
-                <element signature="e#75948#76129#0" expanded="false" />
-                <element signature="e#76168#76406#0" expanded="false" />
-                <element signature="e#76436#76610#0" expanded="false" />
-                <element signature="e#76851#77104#0" expanded="false" />
-                <element signature="e#77195#77301#0" expanded="false" />
-                <element signature="e#77340#77446#0" expanded="false" />
-                <element signature="e#78066#78172#0" expanded="false" />
-                <element signature="e#78232#78338#0" expanded="false" />
-                <element signature="e#78937#80549#0" expanded="false" />
-                <element signature="e#80600#80662#0" expanded="false" />
-                <element signature="e#80725#80831#0" expanded="false" />
-                <element signature="e#80890#80996#0" expanded="false" />
-                <element signature="e#81068#81214#0" expanded="false" />
-                <element signature="e#81279#81425#0" expanded="false" />
-                <element signature="e#81503#81566#0" expanded="false" />
-                <element signature="e#81623#81686#0" expanded="false" />
-                <element signature="e#81945#82110#0" expanded="false" />
-                <element signature="e#82161#82326#0" expanded="false" />
-                <element signature="e#82390#84012#0" expanded="false" />
-                <element signature="e#84137#84355#0" expanded="false" />
-                <element signature="e#84476#86330#0" expanded="false" />
-                <element signature="e#86619#86735#1" expanded="false" />
-                <element signature="e#86741#86813#1" expanded="false" />
-                <element signature="e#86820#86965#0" expanded="false" />
-                <element signature="e#87849#89704#0" expanded="false" />
-                <element signature="e#89728#96407#1" expanded="false" />
-                <element signature="e#97088#105688#1" expanded="false" />
-                <element signature="e#104798#104914#1" expanded="false" />
-                <element signature="e#104920#104992#1" expanded="false" />
-                <element signature="e#104999#105144#0" expanded="false" />
-                <element signature="e#105780#109599#0" expanded="false" />
-                <element signature="e#109600#120358#1" expanded="false" />
-                <element signature="e#109733#109818#1" expanded="false" />
-                <element signature="e#109858#110205#1" expanded="false" />
-                <element signature="e#110265#110497#1" expanded="false" />
-                <element signature="e#110504#110554#0" expanded="false" />
-                <element signature="e#110577#110733#0" expanded="false" />
-                <element signature="e#110794#110949#0" expanded="false" />
-                <element signature="e#110990#111145#0" expanded="false" />
-                <element signature="e#112031#112533#0" expanded="false" />
-                <element signature="e#112727#112934#0" expanded="false" />
-                <element signature="e#114634#115200#0" expanded="false" />
-                <element signature="e#115746#116042#0" expanded="false" />
-                <element signature="e#116600#116891#0" expanded="false" />
-                <element signature="e#117461#117710#0" expanded="false" />
-                <element signature="e#118615#118710#0" expanded="false" />
-                <element signature="e#119217#119333#0" expanded="false" />
-                <element signature="e#120451#120788#0" expanded="false" />
-                <element signature="e#120812#124013#1" expanded="false" />
-                <element signature="e#124106#126233#1" expanded="false" />
-                <element signature="e#126326#126366#0" expanded="false" />
-                <element signature="e#126390#128234#1" expanded="false" />
-                <element signature="e#128327#128367#0" expanded="false" />
-                <element signature="e#128391#129987#1" expanded="false" />
-                <element signature="e#130080#130405#0" expanded="false" />
-                <element signature="e#130406#131605#1" expanded="false" />
-                <element signature="e#131698#131867#0" expanded="false" />
-                <element signature="e#131868#132897#1" expanded="false" />
-                <element signature="e#132990#133190#0" expanded="false" />
-                <element signature="e#133214#134079#1" expanded="false" />
-                <element signature="e#134172#134378#0" expanded="false" />
-                <element signature="e#134402#135230#1" expanded="false" />
-                <element signature="e#135323#137958#0" expanded="false" />
-                <element signature="e#137959#139075#1" expanded="false" />
-                <element signature="e#139168#141162#1" expanded="false" />
-                <element signature="e#141165#143814#0" expanded="false" />
-                <element signature="e#143815#144790#1" expanded="false" />
-                <element signature="e#148916#149477#0" expanded="false" />
-                <element signature="e#149516#149560#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="cvstd.hpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.hpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="531">
-              <caret line="305" column="10" selection-start-line="305" selection-start-column="10" selection-end-line="305" selection-end-column="10" />
+            <state relative-caret-position="179">
+              <caret line="664" column="0" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -3261,6 +3098,56 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trainingData" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classifiers" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="cpp" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidJniFolderNode" />
             </PATH_ELEMENT>
@@ -3706,7 +3593,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490983301663</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Currently Classifier clarifies but not good.&#10;It seems that Angray == Happy&#10;FML">
+      <created>1491050441914</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1491050441914</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3728,20 +3622,20 @@
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1433902" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.44147158" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="combo" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="combo" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3799,7 +3693,8 @@
     <MESSAGE value="currently not crashing but does nothing :(" />
     <MESSAGE value="now crashing" />
     <MESSAGE value="Well, training is good (we think)&#10;but prediction crashes. WHOL!&#10;PLEASE KILL ME" />
-    <option name="LAST_COMMIT_MESSAGE" value="Well, training is good (we think)&#10;but prediction crashes. WHOL!&#10;PLEASE KILL ME" />
+    <MESSAGE value="Currently Classifier clarifies but not good.&#10;It seems that Angray == Happy&#10;FML" />
+    <option name="LAST_COMMIT_MESSAGE" value="Currently Classifier clarifies but not good.&#10;It seems that Angray == Happy&#10;FML" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -3808,59 +3703,24 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>171</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>262</line>
+          <line>168</line>
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>98</line>
-          <option name="timeStamp" value="142" />
+          <line>110</line>
+          <option name="timeStamp" value="196" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>100</line>
-          <option name="timeStamp" value="144" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>104</line>
-          <option name="timeStamp" value="145" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>39</line>
-          <option name="timeStamp" value="155" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>254</line>
-          <option name="timeStamp" value="170" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>140</line>
-          <option name="timeStamp" value="172" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>144</line>
-          <option name="timeStamp" value="173" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>79</line>
-          <option name="timeStamp" value="177" />
+          <line>94</line>
+          <option name="timeStamp" value="198" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="187" />
+      <option name="time" value="200" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="AndroidRunConfigurationType">
@@ -3872,19 +3732,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="32" column="39" selection-start-line="32" selection-start-column="39" selection-end-line="32" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest">
-        <state />
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/appcompat-v7/25.0.1/appcompat-v7-25.0.1-sources.jar!/android/support/v7/app/AppCompatActivity.java" />
-    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-fragment/25.0.1/support-fragment-25.0.1-sources.jar!/android/support/v4/app/FragmentActivity.java" />
     <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-fragment/25.0.1/support-fragment-25.0.1-sources.jar!/android/support/v4/app/BaseFragmentActivityJB.java" />
     <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-fragment/25.0.1/support-fragment-25.0.1-sources.jar!/android/support/v4/app/BaseFragmentActivityHoneycomb.java" />
     <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/app/Activity.java" />
@@ -3943,13 +3790,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1149">
           <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/classifiers/haarcascade_frontalface_alt.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8118">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -4090,14 +3930,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1540">
           <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/mat.inl.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1540">
-          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -4305,26 +4137,66 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.hpp">
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/trainingData/TrainingData.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="531">
-          <caret line="305" column="10" selection-start-line="305" selection-start-column="10" selection-end-line="305" selection-end-column="10" />
+        <state relative-caret-position="396">
+          <caret line="18" column="193" selection-start-line="1" selection-start-column="0" selection-end-line="18" selection-end-column="193" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/mat.inl.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/data.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/classifiers/haarcascade_frontalface_alt.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1452">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/ptr.inl.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="103" column="7" selection-start-line="103" selection-start-column="7" selection-end-line="103" selection-end-column="7" />
+        <state relative-caret-position="157">
+          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.inl.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="179">
+          <caret line="664" column="0" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/ml.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-195">
-          <caret line="1127" column="41" selection-start-line="1127" selection-start-column="35" selection-end-line="1127" selection-end-column="41" />
+        <state relative-caret-position="-4851">
+          <caret line="298" column="24" selection-start-line="298" selection-start-column="24" selection-end-line="298" selection-end-column="24" />
           <folding>
             <element signature="e#0#2205#0" expanded="false" />
             <element signature="e#2384#2998#0" expanded="false" />
@@ -4345,7 +4217,6 @@
             <element signature="e#12000#13247#0" expanded="false" />
             <element signature="e#13541#13603#0" expanded="false" />
             <element signature="e#13693#13892#1" expanded="false" />
-            <element signature="e#14273#14658#0" expanded="false" />
             <element signature="e#15039#15856#0" expanded="false" />
             <element signature="e#15964#16233#0" expanded="false" />
             <element signature="e#16350#16525#0" expanded="false" />
@@ -4506,23 +4377,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/trainingData/TrainingData.csv">
+    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="193" selection-start-line="1" selection-start-column="0" selection-end-line="18" selection-end-column="193" />
+        <state relative-caret-position="1138">
+          <caret line="3103" column="89" selection-start-line="3103" selection-start-column="84" selection-end-line="3103" selection-end-column="89" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="78" column="28" selection-start-line="78" selection-start-column="28" selection-end-line="78" selection-end-column="28" />
+        <state relative-caret-position="286">
+          <caret line="98" column="23" selection-start-line="98" selection-start-column="23" selection-end-line="98" selection-end-column="23" />
           <folding>
             <element signature="e#648#763#0" expanded="false" />
-            <element signature="e#13536#16054#0" expanded="false" />
-            <element signature="e#16078#17221#0" expanded="false" />
-            <marker date="1491050188486" expanded="false" signature="17501:19904" ph="{...}" />
+            <element signature="e#765#864#0" expanded="false" />
+            <element signature="e#908#969#0" expanded="false" />
+            <element signature="e#1097#1399#0" expanded="false" />
+            <element signature="e#1401#2837#0" expanded="false" />
+            <element signature="e#1680#1879#0" expanded="false" />
+            <element signature="e#3437#5513#0" expanded="false" />
+            <element signature="e#5537#5823#0" expanded="false" />
+            <element signature="e#5827#8345#0" expanded="false" />
+            <element signature="e#8369#9512#0" expanded="false" />
+            <element signature="e#12199#16713#0" expanded="false" />
+            <element signature="e#16715#17728#0" expanded="false" />
+            <marker date="1491053288604" expanded="false" signature="9792:12195" ph="{...}" />
           </folding>
         </state>
       </provider>

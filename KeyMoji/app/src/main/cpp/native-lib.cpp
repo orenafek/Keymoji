@@ -29,74 +29,61 @@ string fullPath(const string &relativePath) {
     return concat(PATH, concat("/", relativePath));
 }
 
-InputArray getPrediction() {
+void initAllSamples();
 
-    vector<double> v = {0.410933, 0.39483, -0.644556, 0.338012, -0.00396261,
-                        0.810891, 0.493247, -0.986521, -0.538827, 0.00572037,
-                        0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755,
-                        0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                        1, 0};
+void initTests();
 
-    Mat m = Mat(1, v.size(), CV_32FC1);
-
-    for (int i = 0; i < v.size(); ++i) {
-        m.at<double>(0, i) = v[i];
-    }
-    return _InputArray(m);
+void initAllData() {
+    initAllSamples();
+    initTests();
 }
 
-Ptr<RTrees> giveMeTrainedTree() {
-    vector<vector<double>> allSamples = {
+vector<vector<double>> allSamples;
+vector<double> testFromTrainingData;
+vector<double> testHappy;
+vector<double> testHappy2;
 
-            {0.410933, 0.39483, 3.22378,    0.338012, 0.40643,     1.49396,    0.493247, -0.125391, -0.36427,   1.12024,    0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, -2.50168,   0.338012, 0.330743,    -0.416294,  0.493247, 0.112535,  0.779947,   1.42247,    0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, -1.1583,    0.338012, 0.74171,     0.941366,   0.493247, 1.12709,   -0.0490878, 0.961765,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, 0.637205,   0.338012, 2.18092,     2.28289,    0.493247, 2.11026,   0.542055,   1.10946,    0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, 1.74978,    0.338012, 1.34671,     2.46181,    0.493247, 1.45197,   -0.31531,   -0.0953508, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, 3.4129,     0.338012, 1.37541,     2.17323,    0.493247, 1.42742,   0.188008,   0.669802,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, -1.72799,   0.338012, 0.519962,    0.284628,   0.493247, -0.570612, -0.323785,  -0.41892,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0.410933, 0.39483, -0.644556,  0.338012, -0.00396261, 0.810891,   0.493247, -0.986521, -0.538827,  0.00572037, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0.410933, 0.39483, -1.1519,    0.338012, -0.00368801, 0.300969,   0.493247, -1.41105,  -0.468906,  0.301558,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
-            {0.410933, 0.39483, -0.875947,  0.338012, 0.965427,    1.89435,    0.493247, 0.0170946, 1.76937,    0.703147,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, -1.09291,   0.338012, 2.14627,     2.23894,    0.493247, 0.790758,  3.58058,    0.449637,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0.410933, 0.39483, -1.21545,   0.338012, 2.30475,     1.53966,    0.493247, 1.22476,   3.89454,    0.218981,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0.410933, 0.39483, -0.28376,   0.338012, 0.29978,     0.444429,   0.493247, -0.943913, 0.0922714,  -0.257487,  0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
-            {0.410933, 0.39483, -0.0634723, 0.338012, -0.43969,    -0.0686456, 0.493247, -0.622837, 0.254162,   0.776314,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, -0.525441,  0.338012, -0.0131235,  -0.0758604, 0.493247, -0.391211, 0.173861,   0.482653,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, 0.263136,   0.338012, 0.694583,    1.33617,    0.493247, 0.771077,  0.674101,   -1.41127,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
-            {0.410933, 0.39483, 0.260817,   0.338012, 0.701528,    1.13569,    0.493247, -0.73648,  -0.289481,  0.790368,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0},
-            {0.410933, 0.39483, -0.958556,  0.338012, 0.375496,    0.825136,   0.493247, -0.931186, -0.334404,  -0.0454756, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}
-    };
+float predict(Ptr<RTrees> &classifier, vector<double> &samples) {
 
-    Mat m_samples = Mat(allSamples.size(), allSamples[0].size(), CV_32FC1);
+    Mat mat = Mat(1, samples.size(), CV_32FC1);
+    for (int i = 0; i < samples.size(); ++i) {
+        mat.at<double>(0, i) = samples[i];
+    }
+    InputArray inputArray = _InputArray(mat);
+    return classifier->predict(inputArray);
+}
 
-    for (int i = 0; i < allSamples.size(); ++i) {
-        for (int j = 0; j < allSamples[i].size(); ++j) {
-            m_samples.at<double>(i, j) = allSamples[i][j];
+Ptr<RTrees> &train(Ptr<RTrees> &classifier, vector<vector<double>> &samples) {
+
+    //classifier->setMaxDepth(10);
+    classifier->setMinSampleCount(2);
+    //classifier->setRegressionAccuracy(0);
+    classifier->setUseSurrogates(false);
+    classifier->setMaxCategories(6);
+    /*classifier->setPriors(Mat());
+    classifier->setCalculateVarImportance(true);
+    classifier->setActiveVarCount(0);
+    classifier->setTermCriteria(TermCriteria(TermCriteria::MAX_ITER, 100, 0));*/
+
+    Mat m_samples = Mat(samples.size(), samples[0].size(), CV_32FC1);
+
+    for (int i = 0; i < samples.size(); ++i) {
+        for (int j = 0; j < samples[i].size(); ++j) {
+            m_samples.at<double>(i, j) = samples[i][j];
         }
     }
 
     vector<int> all_responses = {1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6};
-    Mat m_responses = Mat(allSamples.size(), 1, CV_32S);
+    Mat m_responses = Mat(samples.size(), 1, CV_32S);
 
-    for (int i = 0; i < allSamples.size(); ++i) {
+    for (int i = 0; i < samples.size(); ++i) {
         m_responses.at<int>(i) = all_responses[i];
     }
 
-    InputArray samples = _InputArray(m_samples);
-    InputArray labels = _InputArray(m_responses);
-    Ptr<RTrees> rTree = RTrees::create();
-    //rTree->setMaxDepth(10);
-    rTree->setMinSampleCount(2);
-    //rTree->setRegressionAccuracy(0);
-    rTree->setUseSurrogates(false);
-    rTree->setMaxCategories(6);
-    /*rTree->setPriors(Mat());
-    rTree->setCalculateVarImportance(true);
-    rTree->setActiveVarCount(0);
-    rTree->setTermCriteria(TermCriteria(TermCriteria::MAX_ITER, 100, 0));*/
+    InputArray samplesInputArray = _InputArray(m_samples);
+    InputArray labelsInputArray = _InputArray(m_responses);
     try {
-        rTree->train(samples, 0, labels);
+        classifier->train(samplesInputArray, 0, labelsInputArray);
     } catch (Exception &ex) {
         cout << "";
     }
@@ -104,64 +91,34 @@ Ptr<RTrees> giveMeTrainedTree() {
     catch (...) {
         cout << "";
     }
+    string modelFileName = "data/data/ch.hepia.iti.opencvnativeandroidstudio/classifiers/ourModel.xml";
 
+    classifier->save(modelFileName);
+    return classifier;
+}
 
-    vector<double> testFromTrainingData = {0.410933, 0.39483, -0.958556, 0.338012, 0.375496,
-                                           0.825136, 0.493247,
-                                           -0.931186, -0.334404, -0.0454756, 0.20112, 0.409727,
-                                           0.378909, 0.563469,
-                                           0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0,
-                                           0, 0, 0, 0, 1, 0,
-                                           0, 1, 0};
+void trainAndPredict() {
 
-    vector<double> testHappy = {
-            0.410933, 0.39483, -0.958556, 0.338012, 0.375496, 0.825136, 0.493247, -0.931186,
-            -0.334404, -0.0454756, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755,
-            0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0
+    initAllData();
 
-    };
-
-    vector<double> testHappy2 = {
-            0.410933, 0.39483, -1.78038, 0.338012, 1.0528, 1.05572, 0.493247, -0.538045, 2.23443,
-            1.25076, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0,
-            1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0
-    };
-
-    Mat testFromTrainingDataMat = Mat(1, testFromTrainingData.size(), CV_32FC1);
-    Mat testHappyMat = Mat(1, testHappy.size(), CV_32FC1);
-    Mat testHappyMat2 = Mat(1, testHappy2.size(), CV_32FC1);
-
-    for (int i = 0; i < testFromTrainingData.size(); ++i) {
-        testFromTrainingDataMat.at<double>(0, i) = testFromTrainingData[i];
-        testHappyMat.at<double>(0, i) = testHappy[i];
-        testHappyMat2.at<double>(0, i) = testHappy2[i];
-    }
-    InputArray testFromTrainingDataInputArray = _InputArray(testFromTrainingDataMat);
-    InputArray testHappyInputArray = _InputArray(testHappyMat);
-    InputArray testHappyInputArray2 = _InputArray(testHappyMat2);
-
+    Ptr<RTrees> rTree = RTrees::create();
+    rTree = train(rTree, allSamples);
+    vector<float> results;
     try {
-        float testFromTrainingDataResult = rTree->predict(testFromTrainingDataInputArray);
-        float testHappyResult = rTree->predict(testHappyInputArray);
-        float testHappyResult2 = rTree->predict(testHappyInputArray2);
+
+        results = {predict(rTree, testFromTrainingData),
+                   predict(rTree, testHappy),
+                   predict(rTree, testHappy2)};
     } catch (Exception &e) {
         cout << "";
     }
-
-    return rTree;
-
 }
 
 string formatter(vector<std::pair<std::string, vector<double>>> predictions_reg,
                  vector<std::pair<std::string, vector<double>>> predictions_class,
                  FaceAnalysis::FaceAnalyser face_analyser);
 
-extern "C" {
-JNIEXPORT jstring JNICALL
-Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, jobject instance,
-                                                                  jlong matAddrGray) {
-
-
+void getAUs(jlong matAddrGray) {
     Mat &captured_image = *(Mat *) matAddrGray;
     string main_clnf_general = "data/data/ch.hepia.iti.opencvnativeandroidstudio/model/main_clnf_general.txt";
     string face_detector_location = concat(PATH, "/classifiers/haarcascade_frontalface_alt.xml");
@@ -189,11 +146,6 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
     face_analyser.AddNextFrame(captured_image, face_model, time_stamp, false,
                                true);// last parameter is quiet mode inverted !det_parameters.quiet_mode
 
-
-//    cv::Mat sim_warped_img;
-//    face_analyser.GetLatestAlignedFace(sim_warped_img);
-
-
     bool dynamic = true;
     vector<double> certainties;
     vector<bool> successes;
@@ -205,65 +157,17 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, j
     face_analyser.ExtractAllPredictionsOfflineClass(predictions_class, certainties, successes,
                                                     timestamps, dynamic);
 
-
     string result = formatter(predictions_reg, predictions_class, face_analyser);
+}
 
+extern "C" {
+JNIEXPORT jstring JNICALL
+Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, jobject instance,
+                                                                  jlong matAddrGray) {
+    getAUs(matAddrGray);
+    trainAndPredict();
 
-    Ptr<RTrees> rtrees = RTrees::create();
-    rtrees->setMaxDepth(10);
-    rtrees->setMinSampleCount(2);
-    rtrees->setRegressionAccuracy(0);
-    rtrees->setUseSurrogates(false);
-    rtrees->setMaxCategories(16);
-    rtrees->setPriors(Mat());
-    rtrees->setCalculateVarImportance(true);
-    rtrees->setActiveVarCount(0);
-    rtrees->setTermCriteria(TermCriteria(TermCriteria::MAX_ITER, 100, 0));
-
-    string filename = "/data/data/ch.hepia.iti.opencvnativeandroidstudio/trainingData/TrainingData.csv";
-    Ptr<TrainData> data = TrainData::loadFromCSV(filename, 0, 0, 1);
-
-    bool flag = data.empty();
-
-    rtrees->train(data);
-    Mat tmp = data->getResponses();
-    String matAsString(tmp.begin<char>(), tmp.end<char>());
-    double x = tmp.at<double>(0, 0);
-    double y = tmp.at<double>(0, 1);
-
-
-    Mat tmp2 = data->getTrainResponses();
-    String matAsString2(tmp2.begin<char>(), tmp2.end<char>());
-    double x2 = tmp2.at<double>(0, 0);
-
-    Ptr<RTrees> rTrees = giveMeTrainedTree();
-
-    bool b = rTrees->isTrained();
-
-    //InputArray inputArray = getPrediction();
-    vector<double> v2 = {0.410933, 0.39483, -0.644556, 0.338012, -0.00396261,
-                         0.810891, 0.493247, -0.986521, -0.538827, 0.00572037,
-                         0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755,
-                         0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-                         1, 0};
-
-    Mat m = Mat(1, v2.size(), CV_32FC1);
-
-    for (int i = 0; i < v2.size(); ++i) {
-        m.at<double>(0, i) = v2[i];
-    }
-    InputArray inputArray = _InputArray(m);
-    OutputArray outputArray = _OutputArray(Mat(1, 1, CV_32S));
-    try {
-        float f = rTrees->predict(inputArray);
-    } catch (Exception &e) {
-        cout << "";
-    }
-    stringstream ss;
-    //ss << outputArray.getMat();
-
-    string prediction = ss.str();
-    return env->NewStringUTF(result.c_str());
+    return env->NewStringUTF("");
 
 }
 }
@@ -458,4 +362,50 @@ Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_salt(JNIEnv *env, jobje
 
 
 }
+}
+
+void initAllSamples() {
+    allSamples = {
+            {0.410933, 0.39483, 3.22378,    0.338012, 0.40643,     1.49396,    0.493247, -0.125391, -0.36427,   1.12024,    0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, -2.50168,   0.338012, 0.330743,    -0.416294,  0.493247, 0.112535,  0.779947,   1.42247,    0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, -1.1583,    0.338012, 0.74171,     0.941366,   0.493247, 1.12709,   -0.0490878, 0.961765,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, 0.637205,   0.338012, 2.18092,     2.28289,    0.493247, 2.11026,   0.542055,   1.10946,    0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, 1.74978,    0.338012, 1.34671,     2.46181,    0.493247, 1.45197,   -0.31531,   -0.0953508, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, 3.4129,     0.338012, 1.37541,     2.17323,    0.493247, 1.42742,   0.188008,   0.669802,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, -1.72799,   0.338012, 0.519962,    0.284628,   0.493247, -0.570612, -0.323785,  -0.41892,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
+            {0.410933, 0.39483, -0.644556,  0.338012, -0.00396261, 0.810891,   0.493247, -0.986521, -0.538827,  0.00572037, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0},
+            {0.410933, 0.39483, -1.1519,    0.338012, -0.00368801, 0.300969,   0.493247, -1.41105,  -0.468906,  0.301558,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0},
+            {0.410933, 0.39483, -0.875947,  0.338012, 0.965427,    1.89435,    0.493247, 0.0170946, 1.76937,    0.703147,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, -1.09291,   0.338012, 2.14627,     2.23894,    0.493247, 0.790758,  3.58058,    0.449637,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
+            {0.410933, 0.39483, -1.21545,   0.338012, 2.30475,     1.53966,    0.493247, 1.22476,   3.89454,    0.218981,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0},
+            {0.410933, 0.39483, -0.28376,   0.338012, 0.29978,     0.444429,   0.493247, -0.943913, 0.0922714,  -0.257487,  0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+            {0.410933, 0.39483, -0.0634723, 0.338012, -0.43969,    -0.0686456, 0.493247, -0.622837, 0.254162,   0.776314,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, -0.525441,  0.338012, -0.0131235,  -0.0758604, 0.493247, -0.391211, 0.173861,   0.482653,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, 0.263136,   0.338012, 0.694583,    1.33617,    0.493247, 0.771077,  0.674101,   -1.41127,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0},
+            {0.410933, 0.39483, 0.260817,   0.338012, 0.701528,    1.13569,    0.493247, -0.73648,  -0.289481,  0.790368,   0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0},
+            {0.410933, 0.39483, -0.958556,  0.338012, 0.375496,    0.825136,   0.493247, -0.931186, -0.334404,  -0.0454756, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0}
+    };
+}
+
+void initTests() {
+    testFromTrainingData = {0.410933, 0.39483, -0.958556, 0.338012, 0.375496,
+                            0.825136, 0.493247,
+                            -0.931186, -0.334404, -0.0454756, 0.20112, 0.409727,
+                            0.378909, 0.563469,
+                            0.543542, 0.480755, 0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0,
+                            0, 0, 0, 0, 1, 0,
+                            0, 1, 0};
+
+    testHappy = {
+            0.410933, 0.39483, -0.958556, 0.338012, 0.375496, 0.825136, 0.493247, -0.931186,
+            -0.334404, -0.0454756, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755,
+            0.613564, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0
+
+    };
+
+    testHappy2 = {
+            0.410933, 0.39483, -1.78038, 0.338012, 1.0528, 1.05572, 0.493247, -0.538045, 2.23443,
+            1.25076, 0.20112, 0.409727, 0.378909, 0.563469, 0.543542, 0.480755, 0.613564, 0, 0, 0,
+            1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0
+    };
 }
