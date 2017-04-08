@@ -19,7 +19,6 @@ import org.opencv.android.CameraBridgeViewBase;
 import org.opencv.android.JavaCameraView;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
-import org.opencv.core.Core;
 import org.opencv.core.Mat;
 
 import java.io.File;
@@ -37,6 +36,8 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     private int frameCounter = 0;
     private ViewAccessor viewAccessor = new ViewAccessor(this);
     private String result = "";
+    private TextView main_debug_tv;
+
 
     private BaseLoaderCallback _baseLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -80,13 +81,12 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         _cameraBridgeViewBase.setVisibility(SurfaceView.VISIBLE);
         _cameraBridgeViewBase.setCvCameraViewListener(this);
 
+
         Button b = viewAccessor.getView(R.id.main_btn_show_result);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView tv = viewAccessor.getView(R.id.main_debug_tv);
-                CharSequence newText = tv.getText() != null ? tv.getText() : "";
-                tv.setText(newText + "\n" + result);
+                appendResult();
             }
         });
 
@@ -137,6 +137,25 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         disableCamera();
     }
 
+    private int occurrencesOf(CharSequence s, char c) {
+        int result = 0;
+        for (int i = 0; i < s.length(); ++i) {
+            char ch = s.charAt(i);
+            result += ch == c ? 1 : 0;
+        }
+
+        return result;
+    }
+
+    private void appendResult() {
+        main_debug_tv = viewAccessor.getView(R.id.main_debug_tv);
+        if (main_debug_tv != null) {
+            if (occurrencesOf(main_debug_tv.getText(), '\n') > 6) {
+                main_debug_tv.setText("");
+            }
+            main_debug_tv.setText(main_debug_tv.getText() + "\n" + result);
+        }
+    }
     public void disableCamera() {
         if (_cameraBridgeViewBase != null)
             _cameraBridgeViewBase.disableView();

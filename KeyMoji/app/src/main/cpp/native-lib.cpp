@@ -33,6 +33,8 @@ void initAllSamples();
 
 void initTests();
 
+int tree(vector<double> v_r, vector<double> v_c);
+
 void initAllData() {
     initAllSamples();
     initTests();
@@ -43,7 +45,7 @@ vector<double> testFromTrainingData;
 vector<double> testHappy;
 vector<double> testHappy2;
 
-float predict(Ptr<RTrees> &classifier, vector<double> &samples) {
+float predict(Ptr<DTrees> &classifier, vector<double> &samples) {
 
     Mat mat = Mat(1, samples.size(), CV_32FC1);
     for (int i = 0; i < samples.size(); ++i) {
@@ -53,7 +55,7 @@ float predict(Ptr<RTrees> &classifier, vector<double> &samples) {
     return classifier->predict(inputArray);
 }
 
-Ptr<RTrees> &train(Ptr<RTrees> &classifier, vector<vector<double>> &samples) {
+Ptr<DTrees> &train(Ptr<DTrees> &classifier, vector<vector<double>> &samples) {
 
     //classifier->setMaxDepth(10);
     classifier->setMinSampleCount(2);
@@ -93,7 +95,7 @@ Ptr<RTrees> &train(Ptr<RTrees> &classifier, vector<vector<double>> &samples) {
     }
     string modelFileName = "data/data/ch.hepia.iti.opencvnativeandroidstudio/classifiers/ourModel.xml";
 
-    classifier->save(modelFileName);
+    //classifier->save(modelFileName);
     return classifier;
 }
 
@@ -101,7 +103,7 @@ void trainAndPredict() {
 
     initAllData();
 
-    Ptr<RTrees> rTree = RTrees::create();
+    Ptr<DTrees> rTree = Boost::create();
     rTree = train(rTree, allSamples);
     vector<float> results;
     try {
@@ -118,7 +120,26 @@ string formatter(vector<std::pair<std::string, vector<double>>> predictions_reg,
                  vector<std::pair<std::string, vector<double>>> predictions_class,
                  FaceAnalysis::FaceAnalyser face_analyser);
 
-void getAUs(jlong matAddrGray) {
+
+vector<double> getSeconds(vector<std::pair<string, vector<double>>> v) {
+    vector<double> result;
+    for (std::pair<string, vector<double>> p : v) {
+        assert(p.second.size() == 1);
+        result.push_back(p.second[0]);
+    }
+    return result;
+};
+
+string getStrings(vector<std::pair<string, vector<double>>> v) {
+    string s = "";
+    for (std::pair<string, vector<double>> p : v) {
+        assert(p.second.size() == 1);
+        s += p.first + ", ";
+    }
+    return s.substr(0, s.size() - 1);
+};
+
+int getAUs(jlong matAddrGray) {
     Mat &captured_image = *(Mat *) matAddrGray;
     string main_clnf_general = "data/data/ch.hepia.iti.opencvnativeandroidstudio/model/main_clnf_general.txt";
     string face_detector_location = concat(PATH, "/classifiers/haarcascade_frontalface_alt.xml");
@@ -157,17 +178,30 @@ void getAUs(jlong matAddrGray) {
     face_analyser.ExtractAllPredictionsOfflineClass(predictions_class, certainties, successes,
                                                     timestamps, dynamic);
 
+    string regs_string = getStrings(predictions_reg);
+    string classes_string = getStrings(predictions_class);
+
+    vector<double> regs = getSeconds(predictions_reg);
+    vector<double> classes = getSeconds(predictions_class);
+
+    int prediction = tree(regs, classes);
+
+
     string result = formatter(predictions_reg, predictions_class, face_analyser);
+
+    return prediction;
 }
 
 extern "C" {
 JNIEXPORT jstring JNICALL
 Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, jobject instance,
                                                                   jlong matAddrGray) {
-    getAUs(matAddrGray);
-    trainAndPredict();
 
-    return env->NewStringUTF("");
+    //trainAndPredict();
+
+    ostringstream ss;
+    ss << getAUs(matAddrGray);
+    return env->NewStringUTF(ss.str().c_str());
 
 }
 }
