@@ -1,12 +1,9 @@
 package il.ac.technion.gip.keymoji;
 
-import android.graphics.drawable.Drawable;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.media.AudioManager;
-import android.os.Parcel;
-import android.support.annotation.DrawableRes;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.View;
@@ -16,7 +13,6 @@ import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SuggestionsInfo;
 
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,6 +20,7 @@ import java.util.List;
 import AndroidAuxilary.Inflater;
 import io.github.rockerhieu.emojicon.emoji.Emojicon;
 
+import static il.ac.technion.gip.keymoji.KeyMojiIME.NOTHING.NOTHING;
 import static io.github.rockerhieu.emojicon.emoji.Emojicon.TYPE_PEOPLE;
 
 /**
@@ -53,7 +50,6 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     private int lastDisplayWidth;
     private boolean isCompletionOn = false;
-    private SpellCheckerSession spellCheckSession;
     private StringBuilder composing = new StringBuilder();
     private List<String> suggestions;
     private CandidateView candidateView;
@@ -85,7 +81,6 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     public View onCreateInputView() {
         keyboardView = new Inflater(this).inflate(R.layout.keyboard);
         keyboard = new Keyboard(this, R.xml.qwerty);
-        registerEmoji(keyboard, R.drawable.emoji_1f618);
         keyboardView.setKeyboard(keyboard);
         emojis = initializeEmojisMap();
         keyboardView.setOnKeyboardActionListener(new KeyboardView.OnKeyboardActionListener() {
@@ -211,54 +206,13 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         }
     }
 
-    private int getEmojiCode(@DrawableRes int emojiRes) {
-        for (Field f : io.github.rockerhieu.emojicon.R.drawable.class.getFields()) {
-            try {
-                String name = f.getName();
-                if (name.contains("emoji") && f.getInt(null) == emojiRes) {
-                    name = name.replace("emoji_", "").replace("_", "");
-                    return Integer.parseInt(name, name.matches(".*[A-Za-z]+.*") ? 16 : 10);
-                }
-            } catch (IllegalAccessException | NumberFormatException ignore) {/**/}
-        }
-
-        return -1;
-    }
-
-    private void registerEmoji(Keyboard keyboard, @DrawableRes int emojiRes) {
-        List<Keyboard.Key> keys = keyboard.getKeys();
-        Keyboard.Row row = new Keyboard.Row(keyboard);
-        row.defaultHeight = 80;
-
-        Drawable emoji = getResources().getDrawable(emojiRes);
-
-        Emojicon emojicon = Emojicon.fromResource(emojiRes, 0);
-        Parcel p = Parcel.obtain();
-        emojicon.writeToParcel(p, 0);
-        Keyboard.Key key = new Keyboard.Key(row);
-        key.codes = new int[]{emojiRes};
-        key.gap = 10;
-        key.height = row.defaultHeight = emoji.getMinimumHeight();
-        key.width = row.defaultWidth = emoji.getMinimumWidth();
-        key.icon = emoji;
-        keys.add(key);
-    }
-
-    private void changeKeyMode(int primaryKey, Keyboard keyboard) {
-        int index = primaryKey + Integer.parseInt(getString(R.string.emoji_anger));
-        keyboard.getKeys().get(index).height = 0;
-        keyboard.getKeys().get(index).width = 0;
-    }
-
-    public void pickSuggestionManually(int suggestion) {
-
-    }
-
     @Override
     public void onFinishInput() {
         super.onFinishInput();
-
+        composing.setLength(0);
         updateCandidates();
+        setCandidatesViewShown(false);
+
     }
 
     private void updateCandidates() {
@@ -282,6 +236,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         }
     }
 
+
     @Override
     public void onGetSuggestions(SuggestionsInfo[] results) {
 
@@ -290,5 +245,14 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     @Override
     public void onGetSentenceSuggestions(SentenceSuggestionsInfo[] results) {
 
+    }
+
+    private void DO(NOTHING __) {
+    }
+
+    enum NOTHING {NOTHING}
+
+    public void pickSuggestionManually(int mSelectedIndex) {
+        DO(NOTHING);
     }
 }
