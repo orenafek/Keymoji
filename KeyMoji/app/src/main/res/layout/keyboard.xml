@@ -2,10 +2,15 @@
 <android.inputmethodservice.KeyboardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/keyboard_keyboardView"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:keyBackground="@color/colorKeyboardKeyBackground"
-    android:keyTextColor="@color/colorKeyboardKeyText"
-    android:keyTextSize="@dimen/dimenKeyboardTextSize"
-    android:keyHeight="20%p" />
+    style="@android:style/Widget.KeyboardView" />
+
+    <!--
+
+     android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:keyBackground="@color/colorKeyboardKeyBackground"
+        android:keyTextColor="@color/colorKeyboardKeyText"
+        android:keyTextSize="@dimen/dimenKeyboardTextSize"
+        android:keyHeight="20%p"
+    !-->

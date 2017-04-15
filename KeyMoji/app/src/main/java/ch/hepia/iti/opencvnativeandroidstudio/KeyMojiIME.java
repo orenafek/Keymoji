@@ -7,9 +7,14 @@ import android.inputmethodservice.KeyboardView;
 import android.media.AudioManager;
 import android.os.Parcel;
 import android.support.annotation.DrawableRes;
+import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.InputConnection;
+import android.view.textservice.SentenceSuggestionsInfo;
+import android.view.textservice.SpellCheckerSession;
+import android.view.textservice.SuggestionsInfo;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
@@ -26,10 +31,11 @@ import static io.github.rockerhieu.emojicon.emoji.Emojicon.TYPE_PEOPLE;
  * @since 27/02/17
  */
 
-public class KeyMojiIME extends InputMethodService {
+public class KeyMojiIME extends InputMethodService implements SpellCheckerSession.SpellCheckerSessionListener {
 
     private static final List<Emojicon> allEmojis;
     private static final List<String> allEmojisStrings;
+    private SparseArray<String> emojis;
 
     static {
         allEmojis = new ArrayList<>();
@@ -46,6 +52,11 @@ public class KeyMojiIME extends InputMethodService {
     }
 
     private int lastDisplayWidth;
+    private boolean isCompletionOn = false;
+    private SpellCheckerSession spellCheckSession;
+    private StringBuilder composing = new StringBuilder();
+    private List<String> suggestions;
+    private CandidateView candidateView;
 
     @Override
     public void onInitializeInterface() {
@@ -60,9 +71,10 @@ public class KeyMojiIME extends InputMethodService {
     }
 
     private boolean isEmoji(int primaryCode) {
-        int emojiCode = getEmojiCode(primaryCode);
-        return emojiCode != -1 && allEmojis.contains(Emojicon.fromCodePoint(emojiCode));
+        List<String> emojis = Arrays.asList(getResources().getStringArray(R.array.emoji_primary_codes));
+        return emojis.contains(String.valueOf(primaryCode));
     }
+
 
     private KeyboardView keyboardView;
     private Keyboard keyboard;
@@ -75,6 +87,7 @@ public class KeyMojiIME extends InputMethodService {
         keyboard = new Keyboard(this, R.xml.qwerty);
         registerEmoji(keyboard, R.drawable.emoji_1f618);
         keyboardView.setKeyboard(keyboard);
+        emojis = initializeEmojisMap();
         keyboardView.setOnKeyboardActionListener(new KeyboardView.OnKeyboardActionListener() {
             @Override
             public void onPress(int primaryCode) {
@@ -105,16 +118,20 @@ public class KeyMojiIME extends InputMethodService {
                         break;
                     default: {
                         if (isEmoji(primaryCode)) {
-                            ic.commitText(Emojicon.fromCodePoint
-                                    (getEmojiCode(primaryCode)).getEmoji(), 1);
+                            ic.commitText(emojis.get(primaryCode), 1);
                         } else {
                             char c = (char) primaryCode;
                             ic.commitText(String.valueOf(Character.isLetter(c) && !capsLock ?
                                     c : Character.toUpperCase(c)), 1);
                         }
+
+                        composing.append((char) primaryCode);
+                        updateCandidates();
                     }
 
                 }
+
+
             }
 
             @Override
@@ -144,6 +161,36 @@ public class KeyMojiIME extends InputMethodService {
         });
         return keyboardView;
     }
+
+    private SparseArray<String> initializeEmojisMap() {
+        SparseArray<String> map = new SparseArray<>();
+        int[] unicodes = getResources().getIntArray(R.array.emojis_unicode);
+        String[] primaryCodes = getResources().getStringArray(R.array.emoji_primary_codes);
+        if (BuildConfig.DEBUG && unicodes.length != primaryCodes.length) {
+            throw new RuntimeException();
+        }
+        for (int i = 0; i < unicodes.length; i++) {
+            map.put(Integer.parseInt(primaryCodes[i]), new String(Character.toChars(unicodes[i])));
+        }
+
+        return map;
+    }
+
+    @Override
+    public void onDisplayCompletions(CompletionInfo[] completions) {
+        super.onDisplayCompletions(completions);
+        System.out.println("");
+
+    }
+
+    @Override
+    public View onCreateCandidatesView() {
+        super.onCreateCandidatesView();
+        candidateView = new CandidateView(this);
+        candidateView.setService(this);
+        return candidateView;
+    }
+
 
     private void playClick(int primaryCode) {
         AudioManager am = (AudioManager) getSystemService(AUDIO_SERVICE);
@@ -181,7 +228,7 @@ public class KeyMojiIME extends InputMethodService {
     private void registerEmoji(Keyboard keyboard, @DrawableRes int emojiRes) {
         List<Keyboard.Key> keys = keyboard.getKeys();
         Keyboard.Row row = new Keyboard.Row(keyboard);
-
+        row.defaultHeight = 80;
 
         Drawable emoji = getResources().getDrawable(emojiRes);
 
@@ -195,5 +242,53 @@ public class KeyMojiIME extends InputMethodService {
         key.width = row.defaultWidth = emoji.getMinimumWidth();
         key.icon = emoji;
         keys.add(key);
+    }
+
+    private void changeKeyMode(int primaryKey, Keyboard keyboard) {
+        int index = primaryKey + Integer.parseInt(getString(R.string.emoji_anger));
+        keyboard.getKeys().get(index).height = 0;
+        keyboard.getKeys().get(index).width = 0;
+    }
+
+    public void pickSuggestionManually(int suggestion) {
+
+    }
+
+    @Override
+    public void onFinishInput() {
+        super.onFinishInput();
+
+        updateCandidates();
+    }
+
+    private void updateCandidates() {
+        if (!isCompletionOn) {
+            if (composing.length() > 0) {
+                setSuggestions(Arrays.asList(emojis.get(-54), emojis.get(-55)), true, true);
+            } else {
+                setSuggestions(null, false, false);
+            }
+        }
+
+    }
+
+    private void setSuggestions(List<String> suggestions, boolean completions, boolean typedWordValid) {
+        if ((suggestions != null && suggestions.size() > 0) || isExtractViewShown()) {
+            setCandidatesViewShown(true);
+        }
+        this.suggestions = suggestions;
+        if (this.candidateView != null) {
+            this.candidateView.setSuggestions(suggestions, completions, typedWordValid);
+        }
+    }
+
+    @Override
+    public void onGetSuggestions(SuggestionsInfo[] results) {
+
+    }
+
+    @Override
+    public void onGetSentenceSuggestions(SentenceSuggestionsInfo[] results) {
+
     }
 }

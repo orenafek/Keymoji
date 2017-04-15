@@ -192,6 +192,16 @@ int getAUs(jlong matAddrGray) {
     return prediction;
 }
 
+
+extern "C" {
+JNIEXPORT jint JNICALL
+Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmotion(JNIEnv *env, jobject instance,
+                                                                    jlong matAddrGray) {
+    return getAUs(matAddrGray);
+}
+}
+
+
 extern "C" {
 JNIEXPORT jstring JNICALL
 Java_ch_hepia_iti_opencvnativeandroidstudio_MainActivity_getEmoji(JNIEnv *env, jobject instance,
@@ -525,3 +535,4 @@ int tree(vector<double> v_r, vector<double> v_c) {
     }
     return -1;
 }
+

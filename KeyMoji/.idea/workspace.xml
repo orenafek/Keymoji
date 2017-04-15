@@ -6,17 +6,48 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/MainActivity.java" description="// Load ndk built module, as specified" line="70" />
+    <bookmark url="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/MainActivity.java" description="// Load ndk built module, as specified" line="85" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="">
+    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="Refactored. saving is not working">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/oren_afek.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/CandidateView.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values-land/dimens.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/values/EmojisUnicode.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/assets/trainingData/emotions.csv" afterPath="$PROJECT_DIR$/app/src/main/assets/trainingData/emotions.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" afterPath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java" afterPath="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/MainActivity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml" afterPath="$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml" />
     </list>
     <ignored path="KeyMoji.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -48,281 +79,323 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="native-lib.cpp" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
+      <file leaf-file-name="KeyMojiIME.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="461" column="33" selection-start-line="461" selection-start-column="33" selection-end-line="461" selection-end-column="33" />
+            <state relative-caret-position="151">
+              <caret line="268" column="17" selection-start-line="268" selection-start-column="17" selection-end-line="268" selection-end-column="17" />
               <folding>
-                <element signature="e#648#763#0" expanded="false" />
-                <element signature="e#765#864#0" expanded="false" />
+                <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
+                <element signature="initializer##0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#onInitializeInterface#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="e#2235#2305#0" expanded="false" />
+                <element signature="method#onPress#0;class#3286:5319" expanded="false" />
+                <element signature="method#onRelease#0;class#3286:5319" expanded="false" />
+                <element signature="method#onText#0;class#3286:5319" expanded="false" />
+                <element signature="method#swipeLeft#0;class#3286:5319" expanded="false" />
+                <element signature="method#swipeRight#0;class#3286:5319" expanded="false" />
+                <element signature="method#swipeDown#0;class#3286:5319" expanded="false" />
+                <element signature="method#swipeUp#0;class#3286:5319" expanded="false" />
+                <element signature="method#initializeEmojisMap#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#playClick#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#getEmojiCode#0;class#KeyMojiIME#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cvstd.inl.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.inl.hpp">
+      <file leaf-file-name="SparseArray.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/util/SparseArray.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1230">
-              <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
+            <state relative-caret-position="157">
+              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="core.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp">
+      <file leaf-file-name="Collections.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/java/util/Collections.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46545">
-              <caret line="3103" column="89" selection-start-line="3103" selection-start-column="84" selection-end-line="3103" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DTrees.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/ml/DTrees.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RTrees.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/ml/RTrees.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ptr.inl.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/ptr.inl.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3255">
-              <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TrainingData.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/assets/trainingData/TrainingData.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="193" selection-start-line="1" selection-start-column="0" selection-end-line="18" selection-end-column="193" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mat.inl.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/mat.inl.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="870">
-              <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ml.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/ml.hpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4470">
-              <caret line="298" column="24" selection-start-line="298" selection-start-column="24" selection-end-line="298" selection-end-column="24" />
+            <state relative-caret-position="144">
+              <caret line="4440" column="5" selection-start-line="4440" selection-start-column="5" selection-end-line="4440" selection-end-column="5" />
               <folding>
-                <element signature="e#0#2205#0" expanded="false" />
-                <element signature="e#2384#2998#0" expanded="false" />
-                <element signature="e#3088#3260#1" expanded="false" />
-                <element signature="e#3290#3349#1" expanded="false" />
-                <element signature="e#3543#3767#0" expanded="false" />
-                <element signature="e#3768#4621#1" expanded="false" />
-                <element signature="e#4147#4599#0" expanded="false" />
-                <element signature="e#4624#5029#0" expanded="false" />
-                <element signature="e#5030#13538#1" expanded="false" />
-                <element signature="e#5642#6259#0" expanded="false" />
-                <element signature="e#6454#6625#0" expanded="false" />
-                <element signature="e#6686#6981#0" expanded="false" />
-                <element signature="e#8026#8156#0" expanded="false" />
-                <element signature="e#8309#8427#0" expanded="false" />
-                <element signature="e#8511#8966#0" expanded="false" />
-                <element signature="e#9406#11561#0" expanded="false" />
-                <element signature="e#12000#13247#0" expanded="false" />
-                <element signature="e#13541#13603#0" expanded="false" />
-                <element signature="e#13693#13892#1" expanded="false" />
-                <element signature="e#15039#15856#0" expanded="false" />
-                <element signature="e#15964#16233#0" expanded="false" />
-                <element signature="e#16350#16525#0" expanded="false" />
-                <element signature="e#16350#16748#0" expanded="false" />
-                <element signature="e#16753#17025#0" expanded="false" />
-                <element signature="e#17027#17114#0" expanded="false" />
-                <element signature="e#17115#17959#1" expanded="false" />
-                <element signature="e#17189#17649#0" expanded="false" />
-                <element signature="e#17815#17901#0" expanded="false" />
-                <element signature="e#17962#18234#0" expanded="false" />
-                <element signature="e#18236#18320#0" expanded="false" />
-                <element signature="e#18321#21501#1" expanded="false" />
-                <element signature="e#19368#20899#0" expanded="false" />
-                <element signature="e#21166#21224#0" expanded="false" />
-                <element signature="e#21229#21291#1" expanded="false" />
-                <element signature="e#21298#21456#0" expanded="false" />
-                <element signature="e#21504#21776#0" expanded="false" />
-                <element signature="e#21778#21840#0" expanded="false" />
-                <element signature="e#21841#33558#1" expanded="false" />
-                <element signature="e#21898#22114#1" expanded="false" />
-                <element signature="e#22121#22204#0" expanded="false" />
-                <element signature="e#22369#22496#0" expanded="false" />
-                <element signature="e#22672#22772#0" expanded="false" />
-                <element signature="e#22948#23034#0" expanded="false" />
-                <element signature="e#23215#23336#0" expanded="false" />
-                <element signature="e#23492#23622#0" expanded="false" />
-                <element signature="e#23783#23888#0" expanded="false" />
-                <element signature="e#24044#24438#0" expanded="false" />
-                <element signature="e#24658#24978#0" expanded="false" />
-                <element signature="e#25216#25298#0" expanded="false" />
-                <element signature="e#25355#25430#0" expanded="false" />
-                <element signature="e#25492#25582#0" expanded="false" />
-                <element signature="e#25672#26773#1" expanded="false" />
-                <element signature="e#25693#25860#0" expanded="false" />
-                <element signature="e#25888#26130#0" expanded="false" />
-                <element signature="e#26159#26354#0" expanded="false" />
-                <element signature="e#26386#26605#0" expanded="false" />
-                <element signature="e#26635#26748#0" expanded="false" />
-                <element signature="e#26780#27200#0" expanded="false" />
-                <element signature="e#27205#28235#1" expanded="false" />
-                <element signature="e#27337#27520#0" expanded="false" />
-                <element signature="e#27547#27649#0" expanded="false" />
-                <element signature="e#27674#27807#0" expanded="false" />
-                <element signature="e#27934#28102#0" expanded="false" />
-                <element signature="e#28267#28380#1" expanded="false" />
-                <element signature="e#28387#30301#0" expanded="false" />
-                <element signature="e#30865#31046#0" expanded="false" />
-                <element signature="e#31107#31449#0" expanded="false" />
-                <element signature="e#31510#32460#0" expanded="false" />
-                <element signature="e#32569#32910#0" expanded="false" />
-                <element signature="e#32969#33175#0" expanded="false" />
-                <element signature="e#33219#33498#0" expanded="false" />
-                <element signature="e#33561#33833#0" expanded="false" />
-                <element signature="e#33835#33932#0" expanded="false" />
-                <element signature="e#33933#44523#1" expanded="false" />
-                <element signature="e#34025#35155#1" expanded="false" />
-                <element signature="e#34046#34524#0" expanded="false" />
-                <element signature="e#34562#34755#0" expanded="false" />
-                <element signature="e#34792#35081#0" expanded="false" />
-                <element signature="e#35189#35238#1" expanded="false" />
-                <element signature="e#35270#35326#1" expanded="false" />
-                <element signature="e#35333#35616#0" expanded="false" />
-                <element signature="e#35831#35922#0" expanded="false" />
-                <element signature="e#36167#36480#0" expanded="false" />
-                <element signature="e#36710#36841#0" expanded="false" />
-                <element signature="e#36894#37109#0" expanded="false" />
-                <element signature="e#37160#37399#0" expanded="false" />
-                <element signature="e#37480#38142#0" expanded="false" />
-                <element signature="e#38232#40175#0" expanded="false" />
-                <element signature="e#40411#42455#0" expanded="false" />
-                <element signature="e#42813#43989#0" expanded="false" />
-                <element signature="e#44240#44484#0" expanded="false" />
-                <element signature="e#44526#44798#0" expanded="false" />
-                <element signature="e#45362#45457#1" expanded="false" />
-                <element signature="e#45464#46378#0" expanded="false" />
-                <element signature="e#46588#46977#0" expanded="false" />
-                <element signature="e#47162#47289#0" expanded="false" />
-                <element signature="e#47504#47670#0" expanded="false" />
-                <element signature="e#47850#48062#0" expanded="false" />
-                <element signature="e#48274#48456#0" expanded="false" />
-                <element signature="e#48653#48881#0" expanded="false" />
-                <element signature="e#49118#49377#0" expanded="false" />
-                <element signature="e#49616#50705#0" expanded="false" />
-                <element signature="e#50895#50956#0" expanded="false" />
-                <element signature="e#50961#51735#1" expanded="false" />
-                <element signature="e#51742#51807#0" expanded="false" />
-                <element signature="e#51812#53013#1" expanded="false" />
-                <element signature="e#52323#52626#0" expanded="false" />
-                <element signature="e#52650#53007#0" expanded="false" />
-                <element signature="e#53020#53067#0" expanded="false" />
-                <element signature="e#53130#53231#0" expanded="false" />
-                <element signature="e#53295#53398#0" expanded="false" />
-                <element signature="e#53464#53587#0" expanded="false" />
-                <element signature="e#53653#53945#0" expanded="false" />
-                <element signature="e#54413#54556#0" expanded="false" />
-                <element signature="e#54813#55063#0" expanded="false" />
-                <element signature="e#55278#55855#0" expanded="false" />
-                <element signature="e#56085#56334#0" expanded="false" />
-                <element signature="e#56394#56574#0" expanded="false" />
-                <element signature="e#56620#56892#0" expanded="false" />
-                <element signature="e#56894#56977#0" expanded="false" />
-                <element signature="e#56978#58794#1" expanded="false" />
-                <element signature="e#57033#57123#0" expanded="false" />
-                <element signature="e#57313#57377#0" expanded="false" />
-                <element signature="e#57567#57836#0" expanded="false" />
-                <element signature="e#58057#58150#0" expanded="false" />
-                <element signature="e#58155#58603#1" expanded="false" />
-                <element signature="e#58610#58752#0" expanded="false" />
-                <element signature="e#58797#59069#0" expanded="false" />
-                <element signature="e#59071#59814#0" expanded="false" />
-                <element signature="e#59816#60088#0" expanded="false" />
-                <element signature="e#60182#60815#0" expanded="false" />
-                <element signature="e#60816#68152#1" expanded="false" />
-                <element signature="e#60914#61072#1" expanded="false" />
-                <element signature="e#61079#61441#0" expanded="false" />
-                <element signature="e#61638#62083#0" expanded="false" />
-                <element signature="e#62189#62490#0" expanded="false" />
-                <element signature="e#62565#62838#0" expanded="false" />
-                <element signature="e#62899#63215#0" expanded="false" />
-                <element signature="e#63438#63550#0" expanded="false" />
-                <element signature="e#63796#64120#0" expanded="false" />
-                <element signature="e#64376#64479#0" expanded="false" />
-                <element signature="e#64670#64754#0" expanded="false" />
-                <element signature="e#64960#65044#0" expanded="false" />
-                <element signature="e#65255#65368#0" expanded="false" />
-                <element signature="e#65569#65668#0" expanded="false" />
-                <element signature="e#65910#66485#1" expanded="false" />
-                <element signature="e#66014#66366#0" expanded="false" />
-                <element signature="e#66517#67468#1" expanded="false" />
-                <element signature="e#66543#66706#0" expanded="false" />
-                <element signature="e#66743#67162#0" expanded="false" />
-                <element signature="e#67199#67434#0" expanded="false" />
-                <element signature="e#67536#67760#0" expanded="false" />
-                <element signature="e#67808#68087#0" expanded="false" />
-                <element signature="e#68155#68427#0" expanded="false" />
-                <element signature="e#68429#68508#0" expanded="false" />
-                <element signature="e#68509#71621#1" expanded="false" />
-                <element signature="e#69598#69852#0" expanded="false" />
-                <element signature="e#70359#70502#1" expanded="false" />
-                <element signature="e#70534#70665#1" expanded="false" />
-                <element signature="e#70672#71047#0" expanded="false" />
-                <element signature="e#71164#71404#0" expanded="false" />
-                <element signature="e#71465#71566#0" expanded="false" />
-                <element signature="e#71625#71897#0" expanded="false" />
-                <element signature="e#71899#75376#0" expanded="false" />
-                <element signature="e#75378#78791#1" expanded="false" />
-                <element signature="e#75446#75506#0" expanded="false" />
-                <element signature="e#75511#75638#1" expanded="false" />
-                <element signature="e#75668#75883#1" expanded="false" />
-                <element signature="e#75890#75996#0" expanded="false" />
-                <element signature="e#76044#76148#0" expanded="false" />
-                <element signature="e#76196#76447#0" expanded="false" />
-                <element signature="e#76494#76695#0" expanded="false" />
-                <element signature="e#78329#78561#0" expanded="false" />
-                <element signature="e#78795#79067#0" expanded="false" />
-                <element signature="e#79069#79291#0" expanded="false" />
+                <element signature="e#156188#156189#0" expanded="true" />
+                <element signature="e#156233#156234#0" expanded="true" />
+                <element signature="e#171326#171327#0" expanded="true" />
+                <element signature="e#171384#171385#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cvstd.hpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.hpp">
+      <file leaf-file-name="CandidateView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/CandidateView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="9960">
-              <caret line="664" column="0" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="130">
+              <caret line="238" column="28" selection-start-line="238" selection-start-column="28" selection-end-line="238" selection-end-column="28" />
+              <folding>
+                <element signature="e#1708#1716#0" expanded="true" />
+                <element signature="e#2959#3018#0" expanded="true" />
+                <element signature="e#3160#3214#0" expanded="true" />
+                <element signature="e#3307#3990#0" expanded="true" />
+                <element signature="e#3989#3990#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/view/View.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="19761" column="16" selection-start-line="19761" selection-start-column="16" selection-end-line="19761" selection-end-column="16" />
+              <folding>
+                <element signature="e#468711#468712#0" expanded="true" />
+                <element signature="e#468742#468743#0" expanded="true" />
+                <element signature="e#470166#470167#0" expanded="true" />
+                <element signature="e#470224#470225#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputMethodService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/inputmethodservice/InputMethodService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="149">
+              <caret line="1023" column="0" selection-start-line="1023" selection-start-column="0" selection-end-line="1023" selection-end-column="0" />
+              <folding>
+                <element signature="docComment;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#BACK_DISPOSITION_DEFAULT#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#BACK_DISPOSITION_WILL_NOT_DISMISS#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#BACK_DISPOSITION_WILL_DISMISS#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#IME_ACTIVE#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#IME_VISIBLE#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#mShouldClearInsetOfPreviousIme#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#14144#14209#0" expanded="false" />
+                <element signature="docComment;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#attachToken#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#attachToken#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#bindInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#bindInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#unbindInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#unbindInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#startInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#restartInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#hideSoftInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#hideSoftInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#showSoftInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#showSoftInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#18822#18901#0" expanded="false" />
+                <element signature="method#changeInputMethodSubtype#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#finishInput#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#displayCompletions#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#displayCompletions#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#updateExtractedText#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#updateExtractedText#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#viewClicked#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#updateCursor#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#updateCursor#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#appPrivateCommand#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#appPrivateCommand#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#toggleSoftInput#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#toggleSoftInput#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#updateCursorAnchorInfo#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#updateCursorAnchorInfo#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#contentTopInsets#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#visibleTopInsets#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#touchableRegion#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#TOUCHABLE_INSETS_FRAME#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#TOUCHABLE_INSETS_CONTENT#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#TOUCHABLE_INSETS_VISIBLE#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#TOUCHABLE_INSETS_REGION#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;field#touchableInsets#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+                <element signature="class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#26963#26997#0" expanded="false" />
+                <element signature="class#ShowImeWithHardKeyboardType#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#SettingsObserver#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#createAndRegister#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#createAndRegister#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#shouldShowImeWithHardKeyboard#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onChange#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#30423#30465#0" expanded="false" />
+                <element signature="method#toString#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#setTheme#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#setTheme#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#enableHardwareAcceleration#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#enableHardwareAcceleration#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onCreate#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#33172#33264#0" expanded="false" />
+                <element signature="docComment;method#onInitializeInterface#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onInitializeInterface#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#initialize#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#initViews#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onDestroy#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#36546#36598#0" expanded="false" />
+                <element signature="docComment;method#onConfigurationChanged#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onConfigurationChanged#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#resetStateForNewConfiguration#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#39162#39219#0" expanded="false" />
+                <element signature="docComment;method#onCreateInputMethodInterface#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onCreateInputMethodSessionInterface#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onCreateInputMethodSessionInterface#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#getMaxWidth#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#getMaxWidth#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#getCurrentInputBinding#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#getCurrentInputConnection#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#getCurrentInputConnection#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#updateFullscreenMode#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onConfigureWindow#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#isFullscreenMode#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onEvaluateFullscreenMode#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onEvaluateFullscreenMode#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#setExtractViewShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#setExtractViewShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#isExtractViewShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#updateExtractFrameVisibility#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onComputeInsets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onComputeInsets#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#updateInputViewShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#updateInputViewShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#isShowInputRequested#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#isInputViewShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onEvaluateInputViewShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onEvaluateInputViewShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#setCandidatesViewShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#54067#54133#0" expanded="false" />
+                <element signature="docComment;method#getCandidatesHiddenVisibility#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#getCandidatesHiddenVisibility#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#showStatusIcon#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#hideStatusIcon#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#switchInputMethod#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#setExtractView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#setCandidatesView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#setCandidatesView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#setInputView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#setInputView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onCreateExtractTextView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onCreateExtractTextView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onCreateInputView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onStartInputView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onStartInputView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onFinishInputView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onStartCandidatesView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onStartCandidatesView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onFinishCandidatesView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onFinishCandidatesView#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onShowInputRequested#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#64297#64362#0" expanded="false" />
+                <element signature="e#64868#64923#0" expanded="false" />
+                <element signature="docComment;method#dispatchOnShowInputRequested#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#dispatchOnShowInputRequested#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#67080#67167#0" expanded="false" />
+                <element signature="e#67409#67497#0" expanded="false" />
+                <element signature="e#69949#70021#0" expanded="false" />
+                <element signature="method#finishViews#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#doHideWindow#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#hideWindow#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onWindowShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onWindowShown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onWindowHidden#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onWindowHidden#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#clearInsetOfPreviousIme#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#clearInsetOfPreviousIme#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onBindInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onBindInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onUnbindInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onUnbindInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onStartInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onStartInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#doFinishInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#doStartInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onFinishInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onDisplayCompletions#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onDisplayCompletions#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onUpdateExtractedText#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onUpdateExtractedText#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onUpdateSelection#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onUpdateSelection#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onViewClicked#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onViewClicked#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onUpdateCursor#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onUpdateCursor#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onUpdateCursorAnchorInfo#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onUpdateCursorAnchorInfo#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#requestHideSelf#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#requestShowSelf#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#handleBack#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#80935#80992#0" expanded="false" />
+                <element signature="e#81207#81266#0" expanded="false" />
+                <element signature="e#81391#81448#0" expanded="false" />
+                <element signature="docComment;method#getExtractEditTextIfVisible#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#getExtractEditTextIfVisible#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onKeyDown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onKeyDown#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onKeyLongPress#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onKeyMultiple#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onKeyMultiple#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onKeyUp#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onKeyUp#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onTrackballEvent#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onTrackballEvent#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onGenericMotionEvent#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onGenericMotionEvent#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onAppPrivateCommand#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onToggleSoftInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onToggleSoftInput#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#reportExtractedMovement#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#doMovementKey#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#87842#87902#0" expanded="false" />
+                <element signature="e#88186#88246#0" expanded="false" />
+                <element signature="e#89708#89769#0" expanded="false" />
+                <element signature="docComment;method#sendDownUpKeyEvents#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#sendDownUpKeyEvents#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#sendDefaultEditorAction#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#sendDefaultEditorAction#0;class#InputMethodService#0" expanded="false" />
+                <element signature="e#93116#93177#0" expanded="false" />
+                <element signature="docComment;method#sendKeyChar#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#sendKeyChar#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onExtractedSelectionChanged#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onExtractedSelectionChanged#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onExtractedDeleteText#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onExtractedDeleteText#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onExtractedReplaceText#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onExtractedReplaceText#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onExtractedSetSpan#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onExtractedSetSpan#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onExtractedTextClicked#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onExtractedTextClicked#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onExtractedCursorMovement#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onExtractedCursorMovement#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onExtractTextContextMenuItem#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onExtractTextContextMenuItem#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#getTextForImeAction#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#getTextForImeAction#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#getIconForImeAction#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#getIconForImeAction#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onUpdateExtractingVisibility#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onUpdateExtractingVisibility#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onUpdateExtractingViews#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onUpdateExtractingViews#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onExtractingInputChanged#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onExtractingInputChanged#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#startExtractingText#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#onCurrentInputMethodSubtypeChanged#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#onCurrentInputMethodSubtypeChanged#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#getInputMethodWindowRecommendedHeight#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#getInputMethodWindowRecommendedHeight#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#exposeContent#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#exposeContent#0;class#InputMethodService#0" expanded="false" />
+                <element signature="docComment;method#dump#0;class#InputMethodService#0" expanded="false" />
+                <element signature="method#dump#0;class#InputMethodService#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -333,17 +406,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="ASClass" />
+        <option value="valueResourceFile" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="UPDATE_TYPE" value="MERGE" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-3.3-all/55gk2rcmfc6p2dg9u9ohc3hw9/gradle-3.3" />
+        <entry key="$PROJECT_DIR$" value="C:\Users\oren.afek\.gradle\wrapper\dists\gradle-3.3-all\55gk2rcmfc6p2dg9u9ohc3hw9\gradle-3.3" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -2989,26 +3062,36 @@
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_open.xml" />
         <option value="$PROJECT_DIR$/app/src/main/assets/trainingData/happy3.csv" />
         <option value="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/Open.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/ViewAccessor.java" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/include/LandmarkDetectorModel.h" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/src/LandmarkDetectorModel.cpp" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/openface/FaceAnalyser/include/FaceAnalyser.h" />
-        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/openface/FaceAnalyser/src/FaceAnalyser.cpp" />
-        <option value="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/assets/trainingData/emotions.csv" />
         <option value="$PROJECT_DIR$/app/src/main/assets/trainingData/TrainingData.csv" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/EmojisUnicode.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/CandidateView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/colors.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-land/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1440" />
-    <option name="height" value="801" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -3035,9 +3118,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scratches" />
-      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -3046,24 +3129,71 @@
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="opencvnativeandroidstudio" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidPsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="device.picker.selection" value="192.168.249.101:5555" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../AndroidCustomKeyboard" />
+    <property name="device.picker.selection" value="192.168.210.101:5555" />
     <property name="UI_DESIGNER_EDITOR_MODE.NlPaletteManager-NlPreviewForm.SHOW" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/assets/trainingData" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="ch.hepia.iti.opencvnativeandroidstudio" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/src/main/assets/trainingData" />
     </key>
   </component>
@@ -3477,32 +3607,46 @@
       <option name="project" value="LOCAL" />
       <updated>1491050441914</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Refactored. saving is not working">
+      <created>1491053971282</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1491053971282</updated>
+    </task>
+    <task id="LOCAL-00009" summary="getting predictions even though classifier isnot something....">
+      <created>1491657741414</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1491657741414</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="801" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32664436" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38172042" sideWeight="0.50193477" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38059703" sideWeight="0.49806523" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26616916" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329429" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.43143812" sideWeight="0.50319827" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3873874" sideWeight="0.49806523" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26463965" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32871974" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14306152" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07835821" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4407028" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4313063" sideWeight="0.4968017" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -3514,7 +3658,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32889125" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32887402" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -3571,33 +3715,50 @@
     <MESSAGE value="now crashing" />
     <MESSAGE value="Well, training is good (we think)&#10;but prediction crashes. WHOL!&#10;PLEASE KILL ME" />
     <MESSAGE value="Currently Classifier clarifies but not good.&#10;It seems that Angray == Happy&#10;FML" />
-    <option name="LAST_COMMIT_MESSAGE" value="Currently Classifier clarifies but not good.&#10;It seems that Angray == Happy&#10;FML" />
+    <MESSAGE value="Refactored. saving is not working" />
+    <MESSAGE value="getting predictions even though classifier isnot something...." />
+    <option name="LAST_COMMIT_MESSAGE" value="getting predictions even though classifier isnot something...." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>168</line>
-          <option name="timeStamp" value="128" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java</url>
+          <line>193</line>
+          <properties />
+          <option name="timeStamp" value="228" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>110</line>
-          <option name="timeStamp" value="196" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/inputmethodservice/InputMethodService.java</url>
+          <line>1528</line>
+          <properties />
+          <option name="timeStamp" value="230" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp</url>
-          <line>94</line>
-          <option name="timeStamp" value="198" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/CandidateView.java</url>
+          <line>240</line>
+          <properties />
+          <option name="timeStamp" value="231" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java</url>
+          <line>131</line>
+          <properties />
+          <option name="timeStamp" value="234" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java</url>
+          <line>270</line>
+          <properties />
+          <option name="timeStamp" value="235" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="200" />
+      <option name="time" value="244" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="AndroidRunConfigurationType">
@@ -3605,163 +3766,13 @@
         <watch expression="au_predictions.size()" />
         <watch expression="allSamples.size()" />
         <watch expression="testHappyMat2" />
+        <watch expression="regs" />
+        <watch expression="p.first" />
+        <watch expression="p.first" />
       </configuration>
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-fragment/25.0.1/support-fragment-25.0.1-sources.jar!/android/support/v4/app/BaseFragmentActivityJB.java" />
-    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-fragment/25.0.1/support-fragment-25.0.1-sources.jar!/android/support/v4/app/BaseFragmentActivityHoneycomb.java" />
-    <entry file="file://$USER_HOME$/Android/Sdk/sources/android-25/android/app/Activity.java" />
-    <entry file="jar://$USER_HOME$/Android/Sdk/extras/android/m2repository/com/android/support/support-fragment/25.0.1/support-fragment-25.0.1-sources.jar!/android/support/v4/app/BaseFragmentActivityGingerbread.java" />
-    <entry file="file://$USER_HOME$/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/bits/stl_pair.h" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/ViewAccessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/include/LandmarkDetectorParameters.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2750">
-          <caret line="125" column="30" selection-start-line="125" selection-start-column="30" selection-end-line="125" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/include/LandmarkDetectorFunc.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1760">
-          <caret line="80" column="9" selection-start-line="80" selection-start-column="9" selection-end-line="80" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/types.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34408">
-          <caret line="1564" column="0" selection-start-line="1564" selection-start-column="0" selection-end-line="1564" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/include/LandmarkDetectorUtils.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3212">
-          <caret line="146" column="18" selection-start-line="146" selection-start-column="18" selection-end-line="146" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../old_work/FeatureExtraction.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22132">
-          <caret line="1006" column="5" selection-start-line="1006" selection-start-column="5" selection-end-line="1006" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="443">
-          <caret line="106" column="51" selection-start-line="106" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/include/LandmarkDetectorModel.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1149">
-          <caret line="115" column="43" selection-start-line="115" selection-start-column="43" selection-end-line="115" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/objdetect.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-36">
-          <caret line="238" column="17" selection-start-line="238" selection-start-column="17" selection-end-line="238" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/src/LandmarkDetectorFunc.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12716">
-          <caret line="578" column="0" selection-start-line="578" selection-start-column="0" selection-end-line="578" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/src/LandmarkDetectorParameters.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2882">
-          <caret line="131" column="38" selection-start-line="131" selection-start-column="38" selection-end-line="131" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/src/LandmarkDetectorModel.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4307">
-          <caret line="370" column="11" selection-start-line="370" selection-start-column="11" selection-end-line="370" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/complex" />
-    <entry file="file://$USER_HOME$/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/bits/stl_vector.h" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/LandmarkDetector/src/LandmarkDetectorUtils.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18840">
-          <caret line="1256" column="0" selection-start-line="1256" selection-start-column="0" selection-end-line="1256" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/FaceAnalyser/include/SVR_dynamic_lin_regressors.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1290">
-          <caret line="86" column="29" selection-start-line="86" selection-start-column="29" selection-end-line="86" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/FaceAnalyser/include/FaceAnalyser.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3195">
-          <caret line="213" column="32" selection-start-line="213" selection-start-column="32" selection-end-line="213" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/FaceAnalyser/src/SVM_dynamic_lin.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1095">
-          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/bits/regex.h" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/FaceAnalyser/src/SVR_dynamic_lin_regressors.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1815">
-          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Android/Sdk/ndk-bundle/platforms/android-21/arch-arm64/usr/include/sys/cdefs.h" />
-    <entry file="file://$USER_HOME$/Android/Sdk/ndk-bundle/platforms/android-21/arch-arm64/usr/include/android/log.h" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="30" column="22" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/JavaCameraView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3985">
-          <caret line="58" column="23" selection-start-line="58" selection-start-column="23" selection-end-line="58" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/core/Mat.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="11506">
@@ -3776,26 +3787,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2794">
-          <caret line="155" column="37" selection-start-line="155" selection-start-column="37" selection-end-line="155" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Android/sdk/ndk-bundle/sources/cxx-stl/gnu-libstdc++/4.9/include/bits/stl_vector.h" />
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/trainingData/emotions.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="11" column="98" selection-start-line="11" selection-start-column="98" selection-end-line="11" selection-end-column="98" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/FaceAnalyser/src/FaceAnalyser.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23606">
-          <caret line="1073" column="55" selection-start-line="1073" selection-start-column="38" selection-end-line="1073" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -3820,13 +3816,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/data.cpp">
+    <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/ml/RTrees.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="286">
+          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/assets/trainingData/TrainingData.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" column="193" selection-start-line="1" selection-start-column="0" selection-end-line="18" selection-end-column="193" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/mat.inl.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1276">
+          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/data.cpp" />
     <entry file="file://$PROJECT_DIR$/app/src/main/assets/classifiers/haarcascade_frontalface_alt.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1452">
@@ -3834,262 +3845,583 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
+    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/ptr.inl.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="461" column="33" selection-start-line="461" selection-start-column="33" selection-end-line="461" selection-end-column="33" />
-          <folding>
-            <element signature="e#648#763#0" expanded="false" />
-            <element signature="e#765#864#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="4774">
+          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.inl.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1230">
+        <state relative-caret-position="1804">
           <caret line="82" column="0" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46545">
-          <caret line="3103" column="89" selection-start-line="3103" selection-start-column="84" selection-end-line="3103" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/ml/DTrees.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/ml/RTrees.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="16" column="6" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/ptr.inl.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3255">
-          <caret line="217" column="0" selection-start-line="217" selection-start-column="0" selection-end-line="217" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/assets/trainingData/TrainingData.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="193" selection-start-line="1" selection-start-column="0" selection-end-line="18" selection-end-column="193" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/mat.inl.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="870">
-          <caret line="58" column="25" selection-start-line="58" selection-start-column="25" selection-end-line="58" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/ml.hpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4470">
-          <caret line="298" column="24" selection-start-line="298" selection-start-column="24" selection-end-line="298" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#2205#0" expanded="false" />
-            <element signature="e#2384#2998#0" expanded="false" />
-            <element signature="e#3088#3260#1" expanded="false" />
-            <element signature="e#3290#3349#1" expanded="false" />
-            <element signature="e#3543#3767#0" expanded="false" />
-            <element signature="e#3768#4621#1" expanded="false" />
-            <element signature="e#4147#4599#0" expanded="false" />
-            <element signature="e#4624#5029#0" expanded="false" />
-            <element signature="e#5030#13538#1" expanded="false" />
-            <element signature="e#5642#6259#0" expanded="false" />
-            <element signature="e#6454#6625#0" expanded="false" />
-            <element signature="e#6686#6981#0" expanded="false" />
-            <element signature="e#8026#8156#0" expanded="false" />
-            <element signature="e#8309#8427#0" expanded="false" />
-            <element signature="e#8511#8966#0" expanded="false" />
-            <element signature="e#9406#11561#0" expanded="false" />
-            <element signature="e#12000#13247#0" expanded="false" />
-            <element signature="e#13541#13603#0" expanded="false" />
-            <element signature="e#13693#13892#1" expanded="false" />
-            <element signature="e#15039#15856#0" expanded="false" />
-            <element signature="e#15964#16233#0" expanded="false" />
-            <element signature="e#16350#16525#0" expanded="false" />
-            <element signature="e#16350#16748#0" expanded="false" />
-            <element signature="e#16753#17025#0" expanded="false" />
-            <element signature="e#17027#17114#0" expanded="false" />
-            <element signature="e#17115#17959#1" expanded="false" />
-            <element signature="e#17189#17649#0" expanded="false" />
-            <element signature="e#17815#17901#0" expanded="false" />
-            <element signature="e#17962#18234#0" expanded="false" />
-            <element signature="e#18236#18320#0" expanded="false" />
-            <element signature="e#18321#21501#1" expanded="false" />
-            <element signature="e#19368#20899#0" expanded="false" />
-            <element signature="e#21166#21224#0" expanded="false" />
-            <element signature="e#21229#21291#1" expanded="false" />
-            <element signature="e#21298#21456#0" expanded="false" />
-            <element signature="e#21504#21776#0" expanded="false" />
-            <element signature="e#21778#21840#0" expanded="false" />
-            <element signature="e#21841#33558#1" expanded="false" />
-            <element signature="e#21898#22114#1" expanded="false" />
-            <element signature="e#22121#22204#0" expanded="false" />
-            <element signature="e#22369#22496#0" expanded="false" />
-            <element signature="e#22672#22772#0" expanded="false" />
-            <element signature="e#22948#23034#0" expanded="false" />
-            <element signature="e#23215#23336#0" expanded="false" />
-            <element signature="e#23492#23622#0" expanded="false" />
-            <element signature="e#23783#23888#0" expanded="false" />
-            <element signature="e#24044#24438#0" expanded="false" />
-            <element signature="e#24658#24978#0" expanded="false" />
-            <element signature="e#25216#25298#0" expanded="false" />
-            <element signature="e#25355#25430#0" expanded="false" />
-            <element signature="e#25492#25582#0" expanded="false" />
-            <element signature="e#25672#26773#1" expanded="false" />
-            <element signature="e#25693#25860#0" expanded="false" />
-            <element signature="e#25888#26130#0" expanded="false" />
-            <element signature="e#26159#26354#0" expanded="false" />
-            <element signature="e#26386#26605#0" expanded="false" />
-            <element signature="e#26635#26748#0" expanded="false" />
-            <element signature="e#26780#27200#0" expanded="false" />
-            <element signature="e#27205#28235#1" expanded="false" />
-            <element signature="e#27337#27520#0" expanded="false" />
-            <element signature="e#27547#27649#0" expanded="false" />
-            <element signature="e#27674#27807#0" expanded="false" />
-            <element signature="e#27934#28102#0" expanded="false" />
-            <element signature="e#28267#28380#1" expanded="false" />
-            <element signature="e#28387#30301#0" expanded="false" />
-            <element signature="e#30865#31046#0" expanded="false" />
-            <element signature="e#31107#31449#0" expanded="false" />
-            <element signature="e#31510#32460#0" expanded="false" />
-            <element signature="e#32569#32910#0" expanded="false" />
-            <element signature="e#32969#33175#0" expanded="false" />
-            <element signature="e#33219#33498#0" expanded="false" />
-            <element signature="e#33561#33833#0" expanded="false" />
-            <element signature="e#33835#33932#0" expanded="false" />
-            <element signature="e#33933#44523#1" expanded="false" />
-            <element signature="e#34025#35155#1" expanded="false" />
-            <element signature="e#34046#34524#0" expanded="false" />
-            <element signature="e#34562#34755#0" expanded="false" />
-            <element signature="e#34792#35081#0" expanded="false" />
-            <element signature="e#35189#35238#1" expanded="false" />
-            <element signature="e#35270#35326#1" expanded="false" />
-            <element signature="e#35333#35616#0" expanded="false" />
-            <element signature="e#35831#35922#0" expanded="false" />
-            <element signature="e#36167#36480#0" expanded="false" />
-            <element signature="e#36710#36841#0" expanded="false" />
-            <element signature="e#36894#37109#0" expanded="false" />
-            <element signature="e#37160#37399#0" expanded="false" />
-            <element signature="e#37480#38142#0" expanded="false" />
-            <element signature="e#38232#40175#0" expanded="false" />
-            <element signature="e#40411#42455#0" expanded="false" />
-            <element signature="e#42813#43989#0" expanded="false" />
-            <element signature="e#44240#44484#0" expanded="false" />
-            <element signature="e#44526#44798#0" expanded="false" />
-            <element signature="e#45362#45457#1" expanded="false" />
-            <element signature="e#45464#46378#0" expanded="false" />
-            <element signature="e#46588#46977#0" expanded="false" />
-            <element signature="e#47162#47289#0" expanded="false" />
-            <element signature="e#47504#47670#0" expanded="false" />
-            <element signature="e#47850#48062#0" expanded="false" />
-            <element signature="e#48274#48456#0" expanded="false" />
-            <element signature="e#48653#48881#0" expanded="false" />
-            <element signature="e#49118#49377#0" expanded="false" />
-            <element signature="e#49616#50705#0" expanded="false" />
-            <element signature="e#50895#50956#0" expanded="false" />
-            <element signature="e#50961#51735#1" expanded="false" />
-            <element signature="e#51742#51807#0" expanded="false" />
-            <element signature="e#51812#53013#1" expanded="false" />
-            <element signature="e#52323#52626#0" expanded="false" />
-            <element signature="e#52650#53007#0" expanded="false" />
-            <element signature="e#53020#53067#0" expanded="false" />
-            <element signature="e#53130#53231#0" expanded="false" />
-            <element signature="e#53295#53398#0" expanded="false" />
-            <element signature="e#53464#53587#0" expanded="false" />
-            <element signature="e#53653#53945#0" expanded="false" />
-            <element signature="e#54413#54556#0" expanded="false" />
-            <element signature="e#54813#55063#0" expanded="false" />
-            <element signature="e#55278#55855#0" expanded="false" />
-            <element signature="e#56085#56334#0" expanded="false" />
-            <element signature="e#56394#56574#0" expanded="false" />
-            <element signature="e#56620#56892#0" expanded="false" />
-            <element signature="e#56894#56977#0" expanded="false" />
-            <element signature="e#56978#58794#1" expanded="false" />
-            <element signature="e#57033#57123#0" expanded="false" />
-            <element signature="e#57313#57377#0" expanded="false" />
-            <element signature="e#57567#57836#0" expanded="false" />
-            <element signature="e#58057#58150#0" expanded="false" />
-            <element signature="e#58155#58603#1" expanded="false" />
-            <element signature="e#58610#58752#0" expanded="false" />
-            <element signature="e#58797#59069#0" expanded="false" />
-            <element signature="e#59071#59814#0" expanded="false" />
-            <element signature="e#59816#60088#0" expanded="false" />
-            <element signature="e#60182#60815#0" expanded="false" />
-            <element signature="e#60816#68152#1" expanded="false" />
-            <element signature="e#60914#61072#1" expanded="false" />
-            <element signature="e#61079#61441#0" expanded="false" />
-            <element signature="e#61638#62083#0" expanded="false" />
-            <element signature="e#62189#62490#0" expanded="false" />
-            <element signature="e#62565#62838#0" expanded="false" />
-            <element signature="e#62899#63215#0" expanded="false" />
-            <element signature="e#63438#63550#0" expanded="false" />
-            <element signature="e#63796#64120#0" expanded="false" />
-            <element signature="e#64376#64479#0" expanded="false" />
-            <element signature="e#64670#64754#0" expanded="false" />
-            <element signature="e#64960#65044#0" expanded="false" />
-            <element signature="e#65255#65368#0" expanded="false" />
-            <element signature="e#65569#65668#0" expanded="false" />
-            <element signature="e#65910#66485#1" expanded="false" />
-            <element signature="e#66014#66366#0" expanded="false" />
-            <element signature="e#66517#67468#1" expanded="false" />
-            <element signature="e#66543#66706#0" expanded="false" />
-            <element signature="e#66743#67162#0" expanded="false" />
-            <element signature="e#67199#67434#0" expanded="false" />
-            <element signature="e#67536#67760#0" expanded="false" />
-            <element signature="e#67808#68087#0" expanded="false" />
-            <element signature="e#68155#68427#0" expanded="false" />
-            <element signature="e#68429#68508#0" expanded="false" />
-            <element signature="e#68509#71621#1" expanded="false" />
-            <element signature="e#69598#69852#0" expanded="false" />
-            <element signature="e#70359#70502#1" expanded="false" />
-            <element signature="e#70534#70665#1" expanded="false" />
-            <element signature="e#70672#71047#0" expanded="false" />
-            <element signature="e#71164#71404#0" expanded="false" />
-            <element signature="e#71465#71566#0" expanded="false" />
-            <element signature="e#71625#71897#0" expanded="false" />
-            <element signature="e#71899#75376#0" expanded="false" />
-            <element signature="e#75378#78791#1" expanded="false" />
-            <element signature="e#75446#75506#0" expanded="false" />
-            <element signature="e#75511#75638#1" expanded="false" />
-            <element signature="e#75668#75883#1" expanded="false" />
-            <element signature="e#75890#75996#0" expanded="false" />
-            <element signature="e#76044#76148#0" expanded="false" />
-            <element signature="e#76196#76447#0" expanded="false" />
-            <element signature="e#76494#76695#0" expanded="false" />
-            <element signature="e#78329#78561#0" expanded="false" />
-            <element signature="e#78795#79067#0" expanded="false" />
-            <element signature="e#79069#79291#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core/cvstd.hpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9960">
+        <state relative-caret-position="14608">
           <caret line="664" column="0" selection-start-line="664" selection-start-column="0" selection-end-line="664" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/ml/DTrees.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/core.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68266">
+          <caret line="3103" column="89" selection-start-line="3103" selection-start-column="84" selection-end-line="3103" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../OpenCV-android-sdk/sdk/native/jni/include/opencv2/ml.hpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="1190" column="0" selection-start-line="1190" selection-start-column="0" selection-end-line="1190" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/ViewAccessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="18" column="24" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/java/lang/CharSequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2090">
+          <caret line="116" column="21" selection-start-line="116" selection-start-column="21" selection-end-line="116" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/java/util/List.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="236" column="12" selection-start-line="236" selection-start-column="12" selection-end-line="236" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/inputmethodservice/Keyboard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="335" column="12" selection-start-line="335" selection-start-column="12" selection-end-line="335" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="29" column="49" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/openface/FaceAnalyser/src/FaceAnalyser.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="617" column="19" selection-start-line="617" selection-start-column="19" selection-end-line="617" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_open.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="63" column="1" selection-start-line="63" selection-start-column="1" selection-end-line="68" selection-end-column="39" />
+          <folding>
+            <element signature="class#1492:1963" expanded="false" />
+            <element signature="method#onManagerConnected#0;class#1492:1963" expanded="false" />
+            <element signature="e#2810#2848#0" expanded="false" />
+            <element signature="e#3369#3517#0" expanded="false" />
+            <element signature="e#3516#3517#0" expanded="false" />
+            <element signature="method#onPause#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onResume#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onRequestPermissionsResult#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#4522#4560#0" expanded="false" />
+            <element signature="e#4667#4705#0" expanded="false" />
+            <element signature="e#4977#5017#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#occurrencesOf#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#disableCamera#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCameraViewStarted#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#onCameraViewStopped#0;class#MainActivity#0" expanded="false" />
+            <element signature="e#6208#6226#0" expanded="false" />
+            <element signature="method#copyAssetFolder#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#copyAsset#0;class#MainActivity#0" expanded="false" />
+            <element signature="method#copyFile#0;class#MainActivity#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="880">
+          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/java/util/Hashtable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build/generated/source/buildConfig/debug/ch/hepia/iti/opencvnativeandroidstudio/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/content/res/Resources.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="518" column="20" selection-start-line="518" selection-start-column="20" selection-end-line="518" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="159">
+          <caret line="112" column="19" selection-start-line="112" selection-start-column="19" selection-end-line="112" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/strings.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="17" column="26" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/platforms/android-25/data/res/values/styles.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="731" column="16" selection-start-line="731" selection-start-column="16" selection-end-line="731" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.android/build-cache/066d865171a5804b6df7eb6fb21818b2550a7599/output/res/drawable-hdpi-v4/sym_keyboard_delete_holo_dark.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/EmojisUnicode.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="12" selection-start-line="13" selection-start-column="12" selection-end-line="13" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider editor-type-id="android-manifest">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="69" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-land/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="42" selection-end-line="2" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values-w820dp/dimens.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="4" column="57" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/view/textservice/SpellCheckerSession.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3652">
+          <caret line="521" column="20" selection-start-line="521" selection-start-column="20" selection-end-line="521" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml-keyssoft/qwerty.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="63" column="41" selection-start-line="63" selection-start-column="41" selection-end-line="63" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/colors.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/view/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="19761" column="16" selection-start-line="19761" selection-start-column="16" selection-end-line="19761" selection-end-column="16" />
+          <folding>
+            <element signature="e#468711#468712#0" expanded="true" />
+            <element signature="e#468742#468743#0" expanded="true" />
+            <element signature="e#470166#470167#0" expanded="true" />
+            <element signature="e#470224#470225#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/CandidateView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="238" column="28" selection-start-line="238" selection-start-column="28" selection-end-line="238" selection-end-column="28" />
+          <folding>
+            <element signature="e#1708#1716#0" expanded="true" />
+            <element signature="e#2959#3018#0" expanded="true" />
+            <element signature="e#3160#3214#0" expanded="true" />
+            <element signature="e#3307#3990#0" expanded="true" />
+            <element signature="e#3989#3990#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/inputmethodservice/InputMethodService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="1023" column="0" selection-start-line="1023" selection-start-column="0" selection-end-line="1023" selection-end-column="0" />
+          <folding>
+            <element signature="docComment;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#BACK_DISPOSITION_DEFAULT#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#BACK_DISPOSITION_WILL_NOT_DISMISS#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#BACK_DISPOSITION_WILL_DISMISS#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#IME_ACTIVE#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#IME_VISIBLE#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#mShouldClearInsetOfPreviousIme#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#14144#14209#0" expanded="false" />
+            <element signature="docComment;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#attachToken#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#attachToken#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#bindInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#bindInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#unbindInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#unbindInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#startInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#restartInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#hideSoftInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#hideSoftInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#showSoftInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#showSoftInput#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#18822#18901#0" expanded="false" />
+            <element signature="method#changeInputMethodSubtype#0;class#InputMethodImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#finishInput#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#displayCompletions#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#displayCompletions#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#updateExtractedText#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#updateExtractedText#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#viewClicked#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#updateCursor#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#updateCursor#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#appPrivateCommand#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#appPrivateCommand#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#toggleSoftInput#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#toggleSoftInput#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#updateCursorAnchorInfo#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#updateCursorAnchorInfo#0;class#InputMethodSessionImpl#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#contentTopInsets#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#visibleTopInsets#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#touchableRegion#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#TOUCHABLE_INSETS_FRAME#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#TOUCHABLE_INSETS_CONTENT#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#TOUCHABLE_INSETS_VISIBLE#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#TOUCHABLE_INSETS_REGION#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;field#touchableInsets#0;class#Insets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+            <element signature="class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#26963#26997#0" expanded="false" />
+            <element signature="class#ShowImeWithHardKeyboardType#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#SettingsObserver#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#createAndRegister#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#createAndRegister#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#shouldShowImeWithHardKeyboard#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onChange#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#30423#30465#0" expanded="false" />
+            <element signature="method#toString#0;class#SettingsObserver#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#setTheme#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#setTheme#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#enableHardwareAcceleration#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#enableHardwareAcceleration#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onCreate#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#33172#33264#0" expanded="false" />
+            <element signature="docComment;method#onInitializeInterface#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onInitializeInterface#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#initialize#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#initViews#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onDestroy#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#36546#36598#0" expanded="false" />
+            <element signature="docComment;method#onConfigurationChanged#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onConfigurationChanged#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#resetStateForNewConfiguration#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#39162#39219#0" expanded="false" />
+            <element signature="docComment;method#onCreateInputMethodInterface#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onCreateInputMethodSessionInterface#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onCreateInputMethodSessionInterface#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#getMaxWidth#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#getMaxWidth#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#getCurrentInputBinding#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#getCurrentInputConnection#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#getCurrentInputConnection#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#updateFullscreenMode#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onConfigureWindow#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#isFullscreenMode#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onEvaluateFullscreenMode#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onEvaluateFullscreenMode#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#setExtractViewShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#setExtractViewShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#isExtractViewShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#updateExtractFrameVisibility#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onComputeInsets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onComputeInsets#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#updateInputViewShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#updateInputViewShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#isShowInputRequested#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#isInputViewShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onEvaluateInputViewShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onEvaluateInputViewShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#setCandidatesViewShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#54067#54133#0" expanded="false" />
+            <element signature="docComment;method#getCandidatesHiddenVisibility#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#getCandidatesHiddenVisibility#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#showStatusIcon#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#hideStatusIcon#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#switchInputMethod#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#setExtractView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#setCandidatesView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#setCandidatesView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#setInputView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#setInputView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onCreateExtractTextView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onCreateExtractTextView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onCreateInputView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onStartInputView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onStartInputView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onFinishInputView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onStartCandidatesView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onStartCandidatesView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onFinishCandidatesView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onFinishCandidatesView#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onShowInputRequested#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#64297#64362#0" expanded="false" />
+            <element signature="e#64868#64923#0" expanded="false" />
+            <element signature="docComment;method#dispatchOnShowInputRequested#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#dispatchOnShowInputRequested#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#67080#67167#0" expanded="false" />
+            <element signature="e#67409#67497#0" expanded="false" />
+            <element signature="e#69949#70021#0" expanded="false" />
+            <element signature="method#finishViews#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#doHideWindow#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#hideWindow#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onWindowShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onWindowShown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onWindowHidden#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onWindowHidden#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#clearInsetOfPreviousIme#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#clearInsetOfPreviousIme#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onBindInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onBindInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onUnbindInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onUnbindInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onStartInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onStartInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#doFinishInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#doStartInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onFinishInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onDisplayCompletions#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onDisplayCompletions#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onUpdateExtractedText#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onUpdateExtractedText#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onUpdateSelection#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onUpdateSelection#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onViewClicked#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onViewClicked#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onUpdateCursor#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onUpdateCursor#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onUpdateCursorAnchorInfo#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onUpdateCursorAnchorInfo#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#requestHideSelf#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#requestShowSelf#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#handleBack#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#80935#80992#0" expanded="false" />
+            <element signature="e#81207#81266#0" expanded="false" />
+            <element signature="e#81391#81448#0" expanded="false" />
+            <element signature="docComment;method#getExtractEditTextIfVisible#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#getExtractEditTextIfVisible#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onKeyDown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onKeyDown#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onKeyLongPress#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onKeyMultiple#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onKeyMultiple#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onKeyUp#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onKeyUp#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onTrackballEvent#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onTrackballEvent#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onGenericMotionEvent#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onGenericMotionEvent#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onAppPrivateCommand#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onToggleSoftInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onToggleSoftInput#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#reportExtractedMovement#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#doMovementKey#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#87842#87902#0" expanded="false" />
+            <element signature="e#88186#88246#0" expanded="false" />
+            <element signature="e#89708#89769#0" expanded="false" />
+            <element signature="docComment;method#sendDownUpKeyEvents#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#sendDownUpKeyEvents#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#sendDefaultEditorAction#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#sendDefaultEditorAction#0;class#InputMethodService#0" expanded="false" />
+            <element signature="e#93116#93177#0" expanded="false" />
+            <element signature="docComment;method#sendKeyChar#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#sendKeyChar#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onExtractedSelectionChanged#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onExtractedSelectionChanged#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onExtractedDeleteText#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onExtractedDeleteText#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onExtractedReplaceText#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onExtractedReplaceText#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onExtractedSetSpan#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onExtractedSetSpan#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onExtractedTextClicked#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onExtractedTextClicked#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onExtractedCursorMovement#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onExtractedCursorMovement#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onExtractTextContextMenuItem#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onExtractTextContextMenuItem#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#getTextForImeAction#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#getTextForImeAction#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#getIconForImeAction#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#getIconForImeAction#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onUpdateExtractingVisibility#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onUpdateExtractingVisibility#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onUpdateExtractingViews#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onUpdateExtractingViews#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onExtractingInputChanged#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onExtractingInputChanged#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#startExtractingText#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#onCurrentInputMethodSubtypeChanged#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#onCurrentInputMethodSubtypeChanged#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#getInputMethodWindowRecommendedHeight#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#getInputMethodWindowRecommendedHeight#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#exposeContent#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#exposeContent#0;class#InputMethodService#0" expanded="false" />
+            <element signature="docComment;method#dump#0;class#InputMethodService#0" expanded="false" />
+            <element signature="method#dump#0;class#InputMethodService#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/java/util/AbstractList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1709">
+          <caret line="70" column="22" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/java/util/Collections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="4440" column="5" selection-start-line="4440" selection-start-column="5" selection-end-line="4440" selection-end-column="5" />
+          <folding>
+            <element signature="e#156188#156189#0" expanded="true" />
+            <element signature="e#156233#156234#0" expanded="true" />
+            <element signature="e#171326#171327#0" expanded="true" />
+            <element signature="e#171384#171385#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/util/SparseArray.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/ch/hepia/iti/opencvnativeandroidstudio/KeyMojiIME.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="268" column="17" selection-start-line="268" selection-start-column="17" selection-end-line="268" selection-end-column="17" />
+          <folding>
+            <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
+            <element signature="initializer##0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#onInitializeInterface#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="e#2235#2305#0" expanded="false" />
+            <element signature="method#onPress#0;class#3286:5319" expanded="false" />
+            <element signature="method#onRelease#0;class#3286:5319" expanded="false" />
+            <element signature="method#onText#0;class#3286:5319" expanded="false" />
+            <element signature="method#swipeLeft#0;class#3286:5319" expanded="false" />
+            <element signature="method#swipeRight#0;class#3286:5319" expanded="false" />
+            <element signature="method#swipeDown#0;class#3286:5319" expanded="false" />
+            <element signature="method#swipeUp#0;class#3286:5319" expanded="false" />
+            <element signature="method#initializeEmojisMap#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#playClick#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#getEmojiCode#0;class#KeyMojiIME#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

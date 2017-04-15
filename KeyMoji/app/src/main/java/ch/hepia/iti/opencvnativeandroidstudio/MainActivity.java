@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.SurfaceView;
 import android.view.View;
 import android.view.WindowManager;
@@ -35,9 +36,9 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
     private JavaCameraView _cameraBridgeViewBase;
     private int frameCounter = 0;
     private ViewAccessor viewAccessor = new ViewAccessor(this);
-    private String result = "";
+    private int result;
     private TextView main_debug_tv;
-
+    private static SparseArray<String> emotionsMap;
 
     private BaseLoaderCallback _baseLoaderCallback = new BaseLoaderCallback(this) {
         @Override
@@ -54,6 +55,17 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
             }
         }
     };
+
+    static {
+        emotionsMap = new SparseArray<>(6);
+        emotionsMap.put(0, "Unknown");
+        emotionsMap.put(1, "Anger");
+        emotionsMap.put(2, "Disgust");
+        emotionsMap.put(3, "Fear");
+        emotionsMap.put(4, "Happy");
+        emotionsMap.put(5, "Sad");
+        emotionsMap.put(6, "Surprised");
+    }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -153,7 +165,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
             if (occurrencesOf(main_debug_tv.getText(), '\n') > 6) {
                 main_debug_tv.setText("");
             }
-            main_debug_tv.setText(main_debug_tv.getText() + "\n" + result);
+            main_debug_tv.setText(main_debug_tv.getText() + "\n" + emotionsMap.get(result));
         }
     }
     public void disableCamera() {
@@ -172,7 +184,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         if (frameCounter % 30 == 0) {
             //TODO: Flip image
 //        Core.flip(matGray.t(), matGray, 1);
-            result = getEmoji(matGray.getNativeObjAddr());
+            result = getEmotion(matGray.getNativeObjAddr());
         }
         frameCounter++;
         return matGray;
@@ -182,6 +194,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
     public native String getEmoji(long matAddrGray);
 
+    public native int getEmotion(long matAddrGray);
 
     private static boolean copyAssetFolder(AssetManager assetManager,
                                            String fromAssetPath, String toPath) {

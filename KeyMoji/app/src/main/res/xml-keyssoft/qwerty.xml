@@ -5,8 +5,30 @@
     android:verticalGap="0px"
     android:keyHeight="60dp"
     >
-    <Row android:keyboardMode="@string/querty_suggestion_mode" />
+
     <Row>
+        <Key
+            android:codes="@string/emoji_anger"
+            android:keyIcon="@drawable/emoji_1f621" />
+        <Key
+            android:codes="@string/emoji_disgust"
+            android:keyIcon="@drawable/emoji_1f623" />
+        <Key
+            android:codes="@string/emoji_fear"
+            android:keyIcon="@drawable/emoji_1f628" />
+        <Key
+            android:codes="@string/emoji_happy"
+            android:keyIcon="@drawable/emoji_1f642" />
+        <Key
+            android:codes="@string/emoji_sad"
+            android:keyIcon="@drawable/emoji_1f622" />
+        <Key
+            android:codes="@string/emoji_surprised"
+            android:keyIcon="@drawable/emoji_1f62e" />
+
+    </Row>
+
+    <!--<Row>
         <Key android:codes="49" android:keyLabel="1" android:keyEdgeFlags="left"/>
         <Key android:codes="50" android:keyLabel="2"/>
         <Key android:codes="51" android:keyLabel="3"/>
@@ -17,7 +39,12 @@
         <Key android:codes="56" android:keyLabel="8"/>
         <Key android:codes="57" android:keyLabel="9"/>
         <Key android:codes="48" android:keyLabel="0" android:keyEdgeFlags="right"/>
-    </Row>
+
+
+        <Key android:codes="35,64" android:keyLabel="\# \@" android:keyEdgeFlags="right"/>
+
+    </Row>-->
+
     <Row>
         <Key android:codes="113" android:keyLabel="q" android:keyEdgeFlags="left"/>
         <Key android:codes="119" android:keyLabel="w"/>
@@ -29,6 +56,11 @@
         <Key android:codes="105" android:keyLabel="i"/>
         <Key android:codes="111" android:keyLabel="o"/>
         <Key android:codes="112" android:keyLabel="p" android:keyEdgeFlags="right"/>
+        <Key
+            android:codes="-5"
+            android:keyIcon="@android:drawable/ic_input_delete"
+            android:keyWidth="20%p"
+            android:isRepeatable="true" />
     </Row>
     <Row>
         <Key android:codes="97" android:keyLabel="a" android:keyEdgeFlags="left"/>
@@ -40,7 +72,12 @@
         <Key android:codes="106" android:keyLabel="j"/>
         <Key android:codes="107" android:keyLabel="k"/>
         <Key android:codes="108" android:keyLabel="l"/>
-        <Key android:codes="35,64" android:keyLabel="\# \@" android:keyEdgeFlags="right"/>
+        <Key
+            android:codes="-4"
+            android:keyIcon="@android:drawable/ic_input_delete"
+            android:keyWidth="20%p"
+            android:keyEdgeFlags="right" />
+
     </Row>
     <Row>
         <Key android:codes="-1" android:keyLabel="CAPS" android:keyEdgeFlags="left"/>
