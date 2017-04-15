@@ -1,10 +1,10 @@
-package ch.hepia.iti.opencvnativeandroidstudio;
+package il.ac.technion.gip.keymoji;
 
 import android.Manifest;
 import android.content.res.AssetManager;
+import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -36,11 +36,6 @@ public class Open extends AppCompatActivity {
     };
 
 
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,11 +43,11 @@ public class Open extends AppCompatActivity {
         System.loadLibrary("native-lib");
         // Permissions for Android 6+
         ActivityCompat.requestPermissions(Open.this,
-                new String[]{Manifest.permission.CAMERA,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.READ_EXTERNAL_STORAGE},
+                new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
                 1);
 
         String toPath = "/data/data/" + getPackageName();  // Your application path
-        copyAssetFolder(getAssets(),"",toPath);
+        copyAssetFolder(getAssets(), "", toPath);
 
         if (!OpenCVLoader.initDebug()) {
             Log.d(TAG, "Internal OpenCV library not found. Using OpenCV Manager for initialization");
@@ -61,19 +56,14 @@ public class Open extends AppCompatActivity {
             Log.d(TAG, "OpenCV library found inside package. Using it!");
             _baseLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
-        TextView text = (TextView)findViewById(R.id.text);
+        TextView text = (TextView) findViewById(R.id.text);
 //        text.setText();
 
 
     }
 
 
-
-
-
-
     public native String foo();
-
 
 
     private static boolean copyAssetFolder(AssetManager assetManager,
@@ -88,12 +78,11 @@ public class Open extends AppCompatActivity {
             boolean res = true;
             for (String file : files) {
                 if (file.contains(".")) {
-                    Log.d("OPENCV_TAG","Writing" + file);
+                    Log.d("OPENCV_TAG", "Writing" + file);
                     res &= copyAsset(assetManager,
                             fromAssetPath + file,
-                            toPath  +"/"+ file);
-                }
-                else {
+                            toPath + "/" + file);
+                } else {
                     res &= copyAssetFolder(assetManager,
                             fromAssetPath + file,
                             toPath + "/" + file);
@@ -120,10 +109,10 @@ public class Open extends AppCompatActivity {
             out.flush();
             out.close();
             out = null;
-            Log.d("OPENCV_TAG","Yay!");
+            Log.d("OPENCV_TAG", "Yay!");
             return true;
-        } catch(Exception e) {
-            Log.d("OPENCV_TAG","Bummer :(");
+        } catch (Exception e) {
+            Log.d("OPENCV_TAG", "Bummer :(");
             e.printStackTrace();
             return false;
         }
@@ -132,7 +121,7 @@ public class Open extends AppCompatActivity {
     private static void copyFile(InputStream in, OutputStream out) throws IOException {
         byte[] buffer = new byte[1024];
         int read;
-        while((read = in.read(buffer)) != -1){
+        while ((read = in.read(buffer)) != -1) {
             out.write(buffer, 0, read);
         }
     }

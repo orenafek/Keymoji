@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package ch.hepia.iti.opencvnativeandroidstudio;
+package il.ac.technion.gip.keymoji;
 
 import android.content.Context;
 import android.content.res.Resources;

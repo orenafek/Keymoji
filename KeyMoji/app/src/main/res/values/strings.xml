@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">OpenCVNativeAndroidStudio</string>
+    <string name="app_name">KeyMoji</string>
     <string name="keymoji_ime">KeyMoji IME</string>
     <string name="method_subtype_en_us">English (US)</string>
     <string name="method_subtype_he_il">Hebrew (IL)</string>

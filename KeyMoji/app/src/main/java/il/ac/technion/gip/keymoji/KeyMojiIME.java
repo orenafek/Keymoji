@@ -1,4 +1,4 @@
-package ch.hepia.iti.opencvnativeandroidstudio;
+package il.ac.technion.gip.keymoji;
 
 import android.graphics.drawable.Drawable;
 import android.inputmethodservice.InputMethodService;

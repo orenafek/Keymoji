@@ -1,4 +1,4 @@
-package ch.hepia.iti.opencvnativeandroidstudio;
+package il.ac.technion.gip.keymoji;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
@@ -168,6 +168,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
             main_debug_tv.setText(main_debug_tv.getText() + "\n" + emotionsMap.get(result));
         }
     }
+
     public void disableCamera() {
         if (_cameraBridgeViewBase != null)
             _cameraBridgeViewBase.disableView();
@@ -189,10 +190,6 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
         frameCounter++;
         return matGray;
     }
-
-    public native void salt(long matAddrGray, int nbrElem);
-
-    public native String getEmoji(long matAddrGray);
 
     public native int getEmotion(long matAddrGray);
 
