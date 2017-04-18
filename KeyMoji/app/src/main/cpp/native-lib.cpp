@@ -180,6 +180,13 @@ int tree(vector<double> v_r, vector<double> v_c) {
     return -1;
 }
 
+JNIEXPORT jint JNICALL
+Java_il_ac_technion_gip_keymoji_KeyMojiIME_getEmotion(JNIEnv *env, jobject instance,
+                                                      jlong matAddrGray) {
+    return getAUs(matAddrGray);
+
+}
+
 extern "C" {
 JNIEXPORT jint JNICALL
 Java_il_ac_technion_gip_keymoji_MainActivity_getEmotion(JNIEnv *env, jobject instance,

@@ -1,5 +1,6 @@
 package il.ac.technion.gip.keymoji;
 
+import android.Manifest;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -13,14 +14,25 @@ import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SuggestionsInfo;
 
+import com.permissioneverywhere.PermissionEverywhere;
+import com.permissioneverywhere.PermissionResponse;
+import com.permissioneverywhere.PermissionResultCallback;
+
+import org.opencv.android.CameraBridgeViewBase;
+import org.opencv.android.JavaCameraView;
+import org.opencv.core.Mat;
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import AndroidAuxilary.Inflater;
+import AndroidAuxilary.Wrapper;
 import io.github.rockerhieu.emojicon.emoji.Emojicon;
 
-import static il.ac.technion.gip.keymoji.KeyMojiIME.NOTHING.NOTHING;
+import static AndroidAuxilary.AssetCopier.copyAssetFolder;
+import static il.ac.technion.gip.keymoji.KeyMojiIME.ACTION.NOTHING;
 import static io.github.rockerhieu.emojicon.emoji.Emojicon.TYPE_PEOPLE;
 
 /**
@@ -32,6 +44,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     private static final List<Emojicon> allEmojis;
     private static final List<String> allEmojisStrings;
+    private static final int REQ_CODE = 99999;
+    private final Wrapper<Integer> result = new Wrapper<>(-1);
     private SparseArray<String> emojis;
 
     static {
@@ -53,6 +67,47 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private StringBuilder composing = new StringBuilder();
     private List<String> suggestions;
     private CandidateView candidateView;
+    private JavaCameraView camera;
+
+    @Override
+    public void onCreate() {
+        super.onCreate();
+        // Permissions for Android 6+
+        PermissionEverywhere.getPermission(getApplicationContext(),
+                new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
+                REQ_CODE,
+                "Notification title",
+                "This app needs a write permission",
+                R.mipmap.ic_launcher)
+                .enqueue(new PermissionResultCallback() {
+                    @Override
+                    public void onComplete(PermissionResponse permissionResponse) {
+                    }
+                });
+
+        String toPath = "/data/data/" + getPackageName();  // Your application path
+        copyAssetFolder(getAssets(), "", toPath);
+
+
+        // Load ndk built module, as specified
+        // in moduleName in build.gradle
+        System.loadLibrary("native-lib");
+
+        camera = new JavaCameraView(getApplicationContext(), 3);
+        camera.setCvCameraViewListener(new CameraListener());
+
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        disableCamera();
+    }
+
+    private void disableCamera() {
+        camera.disableView();
+    }
+
 
     @Override
     public void onInitializeInterface() {
@@ -218,9 +273,13 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private void updateCandidates() {
         if (!isCompletionOn) {
             if (composing.length() > 0) {
-                setSuggestions(Arrays.asList(emojis.get(-54), emojis.get(-55)), true, true);
-            } else {
-                setSuggestions(null, false, false);
+                synchronized (result) {
+                    if (!result.isDefaulted()) {
+                        setSuggestions(Collections.singletonList(emojis.get(result.get())), true, true);
+                    } else {
+                        setSuggestions(null, false, false);
+                    }
+                }
             }
         }
 
@@ -236,6 +295,45 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         }
     }
 
+    private class CameraListener implements CameraBridgeViewBase.CvCameraViewListener2 {
+
+        private int frameCounter = 0;
+
+
+        @Override
+        public void onCameraViewStarted(int width, int height) {
+            DO(NOTHING);
+        }
+
+        @Override
+        public void onCameraViewStopped() {
+            DO(NOTHING);
+        }
+
+        @Override
+        public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
+            synchronized (result) {
+                result.setDefault();
+            }
+            Mat matGray = inputFrame.gray();
+            if (frameCounter % 30 == 0) {
+                /* TODO: Flip image
+                  FIXME: Core.flip(matGray.t(), matGray, 1);
+                */
+                int suggestion = getEmotion(matGray.getNativeObjAddr());
+                if (suggestion != 0) {
+                    synchronized (result) {
+                        result.set(suggestion);
+                    }
+                }
+
+            }
+            frameCounter++;
+            return matGray;
+        }
+    }
+
+    public native int getEmotion(long matAddrGray);
 
     @Override
     public void onGetSuggestions(SuggestionsInfo[] results) {
@@ -247,10 +345,10 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     }
 
-    private void DO(NOTHING __) {
+    private void DO(ACTION __) {
     }
 
-    enum NOTHING {NOTHING}
+    enum ACTION {NOTHING}
 
     public void pickSuggestionManually(int mSelectedIndex) {
         DO(NOTHING);
