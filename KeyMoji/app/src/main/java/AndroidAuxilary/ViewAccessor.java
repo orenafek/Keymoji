@@ -2,7 +2,7 @@ package AndroidAuxilary;
 
 import android.app.Activity;
 import android.support.annotation.IdRes;
-import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 /**
  * @author oren
@@ -12,11 +12,24 @@ import android.support.v7.app.AppCompatActivity;
 public class ViewAccessor {
 
     private Activity activity;
+    private View view;
 
     public ViewAccessor(Activity activity){
-        this.activity = activity;
+        this(activity, null);
     }
+
+    public ViewAccessor(View v) {
+        this(null, v);
+    }
+
+    private ViewAccessor(Activity a, View v) {
+        this.activity = a;
+        this.view = v;
+    }
+
     public <T> T getView(@IdRes int id){
-        return (T)activity.findViewById(id);
+        return activity != null ?
+                (T) activity.findViewById(id) : (
+                view != null ? (T) view.findViewById(id) : null);
     }
 }

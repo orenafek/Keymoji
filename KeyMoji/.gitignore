@@ -40,19 +40,19 @@ captures/
 *.jks
 
 # ~~~~~~~~~~~~~~~~~~~~~ User Defined ~~~~~~~~~~~~~~~~~~~~~
-KeyMoji/app/src/main/jniLibs
+app/src/main/jniLibs
 *.o
 *.a
 *.cpp.o
 
 # since 25.4.17
 
-KeyMoji/.gradle
-KeyMoji/.idea
-KeyMoji/**/*.iml
-KeyMoji/local.properties
-KeyMoji/build
-KeyMoji/*~
-KeyMoji/.externalNativeBuild
-KeyMoji/libwebp
-KeyMoji/.DS_Store
+.gradle
+.idea
+**/*.iml
+local.properties
+build
+*~
+.externalNativeBuild
+libwebp
+.DS_Store

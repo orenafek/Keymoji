@@ -1,6 +1,8 @@
 package il.ac.technion.gip.keymoji;
 
 import android.Manifest;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -9,65 +11,62 @@ import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.CompletionInfo;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SuggestionsInfo;
+import android.widget.FrameLayout;
+import android.widget.Toast;
 
+import com.google.android.cameraview.CameraView;
+import com.intentfilter.androidpermissions.PermissionManager;
 import com.permissioneverywhere.PermissionEverywhere;
 import com.permissioneverywhere.PermissionResponse;
 import com.permissioneverywhere.PermissionResultCallback;
 
-import org.opencv.android.CameraBridgeViewBase;
-import org.opencv.android.JavaCameraView;
+import org.opencv.android.Utils;
 import org.opencv.core.Mat;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import AndroidAuxilary.Inflater;
+import AndroidAuxilary.ViewAccessor;
 import AndroidAuxilary.Wrapper;
-import io.github.rockerhieu.emojicon.emoji.Emojicon;
 
 import static AndroidAuxilary.AssetCopier.copyAssetFolder;
 import static il.ac.technion.gip.keymoji.KeyMojiIME.ACTION.NOTHING;
-import static io.github.rockerhieu.emojicon.emoji.Emojicon.TYPE_PEOPLE;
-
+import static java.util.Collections.singleton;
 /**
  * @author Oren Afek
  * @since 27/02/17
  */
 
-public class KeyMojiIME extends InputMethodService implements SpellCheckerSession.SpellCheckerSessionListener {
+public class KeyMojiIME extends InputMethodService implements SpellCheckerSession.SpellCheckerSessionListener,
+        KeyboardView.OnKeyboardActionListener {
 
-    private static final List<Emojicon> allEmojis;
-    private static final List<String> allEmojisStrings;
+
     private static final int REQ_CODE = 99999;
     private final Wrapper<Integer> result = new Wrapper<>(-1);
+    private Inflater inflater;
+    private CameraView cameraView;
     private SparseArray<String> emojis;
-
-    static {
-        allEmojis = new ArrayList<>();
-        allEmojisStrings = new ArrayList<>();
-        int[] emojiTypes = new int[]{
-                TYPE_PEOPLE/*, TYPE_NATURE, TYPE_OBJECTS, TYPE_PLACES, TYPE_SYMBOLS*/};
-        for (int type : emojiTypes) {
-            allEmojis.addAll(Arrays.asList(Emojicon.getEmojicons(type)));
-        }
-
-        for (Emojicon emoji : allEmojis) {
-            allEmojisStrings.add(emoji.getEmoji());
-        }
-    }
-
     private int lastDisplayWidth;
     private boolean isCompletionOn = false;
     private StringBuilder composing = new StringBuilder();
     private List<String> suggestions;
     private CandidateView candidateView;
-    private JavaCameraView camera;
+    private FrameLayout mainLayout;
+    private KeyboardView keyboardView;
+    private Keyboard keyboard;
+    private boolean capsLock = false;
+    private ViewAccessor viewAccessor;
+
+
 
     @Override
     public void onCreate() {
@@ -92,10 +91,6 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         // Load ndk built module, as specified
         // in moduleName in build.gradle
         System.loadLibrary("native-lib");
-
-        camera = new JavaCameraView(getApplicationContext(), 3);
-        camera.setCvCameraViewListener(new CameraListener());
-
     }
 
     @Override
@@ -105,9 +100,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     }
 
     private void disableCamera() {
-        camera.disableView();
+        /*cameraView.disableView();*/
     }
-
 
     @Override
     public void onInitializeInterface() {
@@ -118,7 +112,11 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
             int displayWidth = getMaxWidth();
             if (displayWidth == lastDisplayWidth) return;
             lastDisplayWidth = displayWidth;
+            return;
         }
+
+        keyboard = new Keyboard(this, R.xml.qwerty);
+
     }
 
     private boolean isEmoji(int primaryCode) {
@@ -126,92 +124,72 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         return emojis.contains(String.valueOf(primaryCode));
     }
 
-
-    private KeyboardView keyboardView;
-    private Keyboard keyboard;
-
-    private boolean capsLock = false;
-
     @Override
     public View onCreateInputView() {
-        keyboardView = new Inflater(this).inflate(R.layout.keyboard);
-        keyboard = new Keyboard(this, R.xml.qwerty);
-        keyboardView.setKeyboard(keyboard);
-        emojis = initializeEmojisMap();
-        keyboardView.setOnKeyboardActionListener(new KeyboardView.OnKeyboardActionListener() {
+        this.inflater = new Inflater(this);
+        mainLayout = inflater.inflate(R.layout.keyboard);
+        viewAccessor = new ViewAccessor(mainLayout);
+        keyboardView = (KeyboardView) mainLayout.getChildAt(0);
+        keyboardView.setPreviewEnabled(false);
+        cameraView = viewAccessor.getView(R.id.camera);
+        cameraView.addCallback(new CameraView.Callback() {
             @Override
-            public void onPress(int primaryCode) {
-
+            public void onCameraOpened(CameraView cameraView) {
+                super.onCameraOpened(cameraView);
             }
 
             @Override
-            public void onRelease(int primaryCode) {
-
+            public void onCameraClosed(CameraView cameraView) {
+                super.onCameraClosed(cameraView);
             }
 
             @Override
-            public void onKey(int primaryCode, int[] keyCodes) {
-                InputConnection ic = getCurrentInputConnection();
-                playClick(primaryCode);
-                switch (primaryCode) {
-                    case Keyboard.KEYCODE_DELETE:
-                        ic.deleteSurroundingText(1, 0);
-                        break;
-                    case Keyboard.KEYCODE_SHIFT: {
-                        capsLock = !capsLock;
-                        keyboard.setShifted(capsLock);
-                        keyboardView.invalidateAllKeys();
-                    }
-                    break;
-                    case Keyboard.KEYCODE_DONE:
-                        ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
-                        break;
-                    default: {
-                        if (isEmoji(primaryCode)) {
-                            ic.commitText(emojis.get(primaryCode), 1);
-                        } else {
-                            char c = (char) primaryCode;
-                            ic.commitText(String.valueOf(Character.isLetter(c) && !capsLock ?
-                                    c : Character.toUpperCase(c)), 1);
-                        }
-
-                        composing.append((char) primaryCode);
+            public void onPictureTaken(CameraView cameraView, byte[] data) {
+                super.onPictureTaken(cameraView, data);
+                Bitmap b = BitmapFactory.decodeByteArray(data, 0, data.length);
+                Mat m = new Mat();
+                Utils.bitmapToMat(b, m);
+                int suggestion = A(m.getNativeObjAddr());
+                if (suggestion != 0) {
+                    synchronized (result) {
+                        result.set(suggestion);
                         updateCandidates();
                     }
-
                 }
 
-
-            }
-
-            @Override
-            public void onText(CharSequence text) {
-
-            }
-
-            @Override
-            public void swipeLeft() {
-
-            }
-
-            @Override
-            public void swipeRight() {
-
-            }
-
-            @Override
-            public void swipeDown() {
-
-            }
-
-            @Override
-            public void swipeUp() {
+                System.out.println("");
 
             }
         });
-        return keyboardView;
+        PermissionManager permissionManager = PermissionManager.getInstance(getApplicationContext());
+        permissionManager.checkPermissions(singleton(Manifest.permission.CAMERA),
+                new PermissionManager.PermissionRequestListener() {
+            @Override
+            public void onPermissionGranted() {
+
+            }
+
+            @Override
+            public void onPermissionDenied() {
+                Toast.makeText(getApplicationContext(), "Permissions Denied", Toast.LENGTH_SHORT).show();
+            }
+                });
+
+        keyboardView.setKeyboard(keyboard);
+        emojis = initializeEmojisMap();
+        keyboardView.setOnKeyboardActionListener(this);
+
+        new Timer().scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                //cameraView.takePicture();
+            }
+        }, 5, 3000);// First time start after 5 mili second and repead after 1 second
+        return mainLayout;
     }
 
+
+    public native int A(long add);
     private SparseArray<String> initializeEmojisMap() {
         SparseArray<String> map = new SparseArray<>();
         int[] unicodes = getResources().getIntArray(R.array.emojis_unicode);
@@ -295,45 +273,19 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         }
     }
 
-    private class CameraListener implements CameraBridgeViewBase.CvCameraViewListener2 {
+    public native int getEmotion(long matAddrGray);
 
-        private int frameCounter = 0;
-
-
-        @Override
-        public void onCameraViewStarted(int width, int height) {
-            DO(NOTHING);
-        }
-
-        @Override
-        public void onCameraViewStopped() {
-            DO(NOTHING);
-        }
-
-        @Override
-        public Mat onCameraFrame(CameraBridgeViewBase.CvCameraViewFrame inputFrame) {
-            synchronized (result) {
-                result.setDefault();
-            }
-            Mat matGray = inputFrame.gray();
-            if (frameCounter % 30 == 0) {
-                /* TODO: Flip image
-                  FIXME: Core.flip(matGray.t(), matGray, 1);
-                */
-                int suggestion = getEmotion(matGray.getNativeObjAddr());
-                if (suggestion != 0) {
-                    synchronized (result) {
-                        result.set(suggestion);
-                    }
-                }
-
-            }
-            frameCounter++;
-            return matGray;
-        }
+    @Override
+    public void onStartInput(EditorInfo attribute, boolean restarting) {
+        super.onStartInput(attribute, restarting);
+        DO(NOTHING);
     }
 
-    public native int getEmotion(long matAddrGray);
+    @Override
+    public void onStartInputView(EditorInfo info, boolean restarting) {
+        super.onStartInputView(info, restarting);
+        keyboardView.closing();
+    }
 
     @Override
     public void onGetSuggestions(SuggestionsInfo[] results) {
@@ -348,9 +300,95 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private void DO(ACTION __) {
     }
 
-    enum ACTION {NOTHING}
-
     public void pickSuggestionManually(int mSelectedIndex) {
         DO(NOTHING);
+        sendText(indexToEmoji(mSelectedIndex));
     }
+
+    enum ACTION {NOTHING}
+
+    private CharSequence indexToEmoji(int relativeIndex) {
+        return emojis.get(-54 + relativeIndex);
+    }
+
+    @Override
+    public void onPress(int primaryCode) {
+
+    }
+
+    @Override
+    public void onRelease(int primaryCode) {
+
+    }
+
+    @Override
+    public void onKey(int primaryCode, int[] keyCodes) {
+        InputConnection ic = getCurrentInputConnection();
+        playClick(primaryCode);
+        switch (primaryCode) {
+            case Keyboard.KEYCODE_DELETE:
+                ic.deleteSurroundingText(1, 0);
+                break;
+            case Keyboard.KEYCODE_SHIFT: {
+                capsLock = !capsLock;
+                keyboard.setShifted(capsLock);
+                keyboardView.invalidateAllKeys();
+            }
+            break;
+            case Keyboard.KEYCODE_DONE:
+                ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
+                break;
+
+            case KeyMojiKeyboard.KEYCODE_LANGUAGE_SWITCH:
+
+
+            default: {
+                if (isEmoji(primaryCode)) {
+                    sendText(emojis.get(primaryCode));
+                } else {
+                    char c = (char) primaryCode;
+                    sendText(String.valueOf(Character.isLetter(c) && !capsLock ?
+                            c : Character.toUpperCase(c)));
+                }
+
+                composing.append((char) primaryCode);
+                updateCandidates();
+                setSuggestions(Collections.singletonList(emojis.get((-54))), true, true);
+            }
+
+        }
+
+    }
+
+    private void sendText(CharSequence cs) {
+        InputConnection ic = getCurrentInputConnection();
+        ic.commitText(cs, 1);
+    }
+
+    @Override
+    public void onText(CharSequence text) {
+
+    }
+
+    @Override
+    public void swipeLeft() {
+
+    }
+
+    @Override
+    public void swipeRight() {
+
+    }
+
+    @Override
+    public void swipeDown() {
+
+    }
+
+    @Override
+    public void swipeUp() {
+
+    }
+
+
 }

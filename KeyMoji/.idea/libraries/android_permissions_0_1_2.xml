@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="android-permissions-0.1.2">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.android/build-cache/3d8470fb1fec0ad5cf668770b636f8b6f97cc7c1/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/3d8470fb1fec0ad5cf668770b636f8b6f97cc7c1/output/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.intentfilter/android-permissions/0.1.2/620024849bfdaea27bd5184b98d3b87cffd709b7/android-permissions-0.1.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

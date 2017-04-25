@@ -8,55 +8,84 @@
     <Row>
         <Key
             android:codes="113"
-            android:keyLabel="q"
+            android:keyLabel="ק"
             android:keyEdgeFlags="left"
             android:popupCharacters="1"
             android:popupKeyboard="@xml/keyboard_popup_template" />
         <Key
             android:codes="119"
-            android:keyLabel="w"
+            android:keyLabel="ר"
             android:popupCharacters="2"
             android:popupKeyboard="@xml/keyboard_popup_template" />
         <Key
             android:codes="101"
-            android:keyLabel="e"
+            android:keyLabel="א"
             android:popupCharacters="3"
             android:popupKeyboard="@xml/keyboard_popup_template" />
         <Key
             android:codes="114"
-            android:keyLabel="r"
+            android:keyLabel="ט"
             android:popupCharacters="4"
             android:popupKeyboard="@xml/keyboard_popup_template" />
         <Key
             android:codes="116"
-            android:keyLabel="t"
+            android:keyLabel="ו"
             android:popupCharacters="5"
             android:popupKeyboard="@xml/keyboard_popup_template" />
-        <Key android:codes="121" android:keyLabel="y"/>
-        <Key android:codes="117" android:keyLabel="u"/>
-        <Key android:codes="105" android:keyLabel="i"/>
-        <Key android:codes="111" android:keyLabel="o"/>
-        <Key android:codes="112" android:keyLabel="p" android:keyEdgeFlags="right"/>
+        <Key
+            android:codes="121"
+            android:keyLabel="ן" />
+        <Key
+            android:codes="117"
+            android:keyLabel="ם" />
+        <Key
+            android:codes="105"
+            android:keyLabel="פ" />
+
     </Row>
 
     <Row>
         <Key
-            android:codes="97"
-            android:keyLabel="a"
-            android:horizontalGap="5%p"
+            android:codes="113"
+            android:keyLabel="ש"
             android:keyEdgeFlags="left"
-            android:popupKeyboard="@xml/keyboard_popup_template"
-            android:popupCharacters="áăä" />
-        <Key android:codes="115" android:keyLabel="s"/>
-        <Key android:codes="100" android:keyLabel="d"/>
-        <Key android:codes="102" android:keyLabel="f"/>
-        <Key android:codes="103" android:keyLabel="g"/>
-        <Key android:codes="104" android:keyLabel="h"/>
-        <Key android:codes="106" android:keyLabel="j"/>
-        <Key android:codes="107" android:keyLabel="k"/>
+            android:popupCharacters="1"
+            android:popupKeyboard="@xml/keyboard_popup_template" />
+        <Key
+            android:codes="119"
+            android:keyLabel="ד"
+            android:popupCharacters="2"
+            android:popupKeyboard="@xml/keyboard_popup_template" />
+        <Key
+            android:codes="101"
+            android:keyLabel="ג"
+            android:popupCharacters="3"
+            android:popupKeyboard="@xml/keyboard_popup_template" />
+        <Key
+            android:codes="114"
+            android:keyLabel="כ"
+            android:popupCharacters="4"
+            android:popupKeyboard="@xml/keyboard_popup_template" />
+        <Key
+            android:codes="116"
+            android:keyLabel="ע"
+            android:popupCharacters="5"
+            android:popupKeyboard="@xml/keyboard_popup_template" />
+        <Key
+            android:codes="121"
+            android:keyLabel="י" />
+        <Key
+            android:codes="117"
+            android:keyLabel="ח" />
+        <Key
+            android:codes="105"
+            android:keyLabel="ל" />
         <Key
             android:codes="108"
-            android:keyLabel="l"
+            android:keyLabel="ך" />
+        <Key
+            android:codes="108"
+            android:keyLabel="ף"
             android:keyEdgeFlags="right" />
     </Row>
 
@@ -68,13 +97,27 @@
             android:isModifier="true"
             android:isSticky="true"
             android:keyEdgeFlags="left" />
-        <Key android:codes="122" android:keyLabel="z"/>
-        <Key android:codes="120" android:keyLabel="x"/>
-        <Key android:codes="99" android:keyLabel="c"/>
-        <Key android:codes="118" android:keyLabel="v"/>
-        <Key android:codes="98" android:keyLabel="b"/>
-        <Key android:codes="110" android:keyLabel="n"/>
-        <Key android:codes="109" android:keyLabel="m"/>
+        <Key
+            android:codes="122"
+            android:keyLabel="z" />
+        <Key
+            android:codes="120"
+            android:keyLabel="x" />
+        <Key
+            android:codes="99"
+            android:keyLabel="c" />
+        <Key
+            android:codes="118"
+            android:keyLabel="v" />
+        <Key
+            android:codes="98"
+            android:keyLabel="b" />
+        <Key
+            android:codes="110"
+            android:keyLabel="n" />
+        <Key
+            android:codes="109"
+            android:keyLabel="m" />
         <Key
             android:codes="-5"
             android:keyIcon="@drawable/sym_keyboard_delete"

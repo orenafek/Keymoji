@@ -100,95 +100,212 @@ int getAUs(jlong matAddrGray) {
 
 
 int tree(vector<double> v_r, vector<double> v_c) {
-    if (v_r[8] <= 1.0120500326156616) {
-        if (v_r[7] <= 1.2769999504089355) {
-            if (v_r[2] <= 1.8274999856948853) {
-                if (v_r[4] <= 0.6072999835014343) {
-                    if (v_r[9] <= 0.023579999804496765) {
-                        if (v_r[4] <= 0.4477499723434448) {
-                            if (v_r[9] <= 0.002859999891370535) {
-                                if (v_r[16] <= 0.5) {
-                                    if (v_r[5] <= 0.5) {
-                                        if (v_r[5] <= 0.22220000624656677) {
-                                            return 0;
-                                        } else { // if(v_r[5] > 0.22220000624656677)
-                                            return 5;
-                                        }
-                                    } else { // if(v_r[5] > 0.5)
-                                        return 3;
-                                    }
-                                } else { // if(v_r[16] > 0.5)
-                                    if (v_r[2] <= 1.142699956893921) {
-                                        return 6;
-                                    } else { // if(v_r[2] > 1.142699956893921)
-                                        return 5;
-                                    }
-                                }
-                            } else { // if(v_r[9] > 0.002859999891370535)
+    if (v_r[8] <= 1.03194999695) {
+        if (v_r[2] <= 0.5) {
+            if (v_r[3] <= 0.5) {
+                if (v_r[9] <= 0.5) {
+                    if (v_r[9] <= 0.0207199994475) {
+                        if (v_r[5] <= 0.141100004315) {
+                            if (v_r[13] <= 0.5) {
+                                return 0;
+                            } else { // if(v_r[13] > 0.5)
                                 return 2;
                             }
-                        } else { // if(v_r[4] > 0.4477499723434448)
-                            return 2;
+                        } else { // if(v_r[5] > 0.141100004315)
+                            return 3;
                         }
-                    } else { // if(v_r[9] > 0.023579999804496765)
-                        if (v_c[4] <= 0.5) {
-                            if (v_c[2] <= 0.690750002861023) {
-                                if (v_c[9] <= 0.3237999975681305) {
-                                    if (v_c[9] <= 0.2062000036239624) {
-                                        return 5;
-                                    } else { // if(v_c[9] > 0.2062000036239624)
-                                        return 2;
+                    } else { // if(v_r[9] > 0.0207199994475)
+                        return 2;
+                    }
+                } else { // if(v_r[9] > 0.5)
+                    return 0;
+                }
+            } else { // if(v_r[3] > 0.5)
+                if (v_r[9] <= 0.299499988556) {
+                    if (v_r[9] <= 0.5) {
+                        if (v_r[2] <= 0.54935002327) {
+                            if (v_r[4] <= 0.149900004268) {
+                                if (v_r[5] <= 0.5) {
+                                    return 3;
+                                } else { // if(v_r[5] > 0.5)
+                                    if (v_c[5] <= 0.0246450006962) {
+                                        return 1;
+                                    } else { // if(v_c[5] > 0.0246450006962)
+                                        return 3;
                                     }
-                                } else { // if(v_c[9] > 0.3237999975681305)
-                                    return 5;
                                 }
-                            } else { // if(v_c[2] > 0.690750002861023)
-                                if (v_c[2] <= 0.9946500062942505) {
-                                    return 6;
-                                } else { // if(v_c[2] > 0.9946500062942505)
-                                    return 5;
+                            } else { // if(v_r[4] > 0.149900004268)
+                                if (v_c[5] <= 0.634750008583) {
+                                    return 2;
+                                } else { // if(v_c[5] > 0.634750008583)
+                                    return 3;
                                 }
                             }
-                        } else { // if(v_c[4] > 0.5)
+                        } else { // if(v_r[2] > 0.54935002327)
+                            if (v_c[2] <= 0.790849983692) {
+                                return 2;
+                            } else { // if(v_c[2] > 0.790849983692)
+                                return 3;
+                            }
+                        }
+                    } else { // if(v_r[9] > 0.5)
+                        if (v_c[5] <= 0.000298900005873) {
+                            return 0;
+                        } else { // if(v_c[5] > 0.000298900005873)
+                            return 3;
+                        }
+                    }
+                } else { // if(v_r[9] > 0.299499988556)
+                    if (v_c[9] <= 0.559800028801) {
+                        return 2;
+                    } else { // if(v_c[9] > 0.559800028801)
+                        if (v_c[4] <= 0.182600006461) {
+                            return 3;
+                        } else { // if(v_c[4] > 0.182600006461)
+                            if (v_c[9] <= 0.5) {
+                                return 0;
+                            } else { // if(v_c[9] > 0.5)
+                                return 3;
+                            }
+                        }
+                    }
+                }
+            }
+        } else { // if(v_r[2] > 0.5)
+            if (v_c[4] <= 0.5) {
+                if (v_c[2] <= 1.27500009537) {
+                    if (v_c[3] <= 0.5) {
+                        if (v_c[4] <= 0.431699991226) {
+                            if (v_c[8] <= 0.831250011921) {
+                                return 2;
+                            } else { // if(v_c[8] > 0.831250011921)
+                                return 3;
+                            }
+                        } else { // if(v_c[4] > 0.431699991226)
+                            return 0;
+                        }
+                    } else { // if(v_c[3] > 0.5)
+                        if (v_c[9] <= 0.5) {
+                            if (v_c[5] <= 0.191500008106) {
+                                if (v_c[16] <= 0.5) {
+                                    if (v_c[5] <= 0.140450000763) {
+                                        if (v_c[7] <= 0.10095000267) {
+                                            if (v_c[2] <= 0.996100008488) {
+                                                return 3;
+                                            } else { // if(v_c[2] > 0.996100008488)
+                                                if (v_c[2] <= 1.14199995995) {
+                                                    return 2;
+                                                } else { // if(v_c[2] > 1.14199995995)
+                                                    return 3;
+                                                }
+                                            }
+                                        } else { // if(v_c[7] > 0.10095000267)
+                                            return 2;
+                                        }
+                                    } else { // if(v_c[5] > 0.140450000763)
+                                        return 2;
+                                    }
+                                } else { // if(v_c[16] > 0.5)
+                                    return 2;
+                                }
+                            } else { // if(v_c[5] > 0.191500008106)
+                                if (v_c[5] <= 0.486900001764) {
+                                    if (v_c[5] <= 0.436300009489) {
+                                        return 3;
+                                    } else { // if(v_c[5] > 0.436300009489)
+                                        return 2;
+                                    }
+                                } else { // if(v_c[5] > 0.486900001764)
+                                    return 3;
+                                }
+                            }
+                        } else { // if(v_c[9] > 0.5)
                             return 0;
                         }
                     }
-                } else { // if(v_r[4] > 0.6072999835014343)
-                    if (v_c[9] <= 0.8761000037193298) {
-                        return 6;
-                    } else { // if(v_c[9] > 0.8761000037193298)
+                } else { // if(v_c[2] > 1.27500009537)
+                    if (v_c[9] <= 0.5) {
+                        if (v_c[5] <= 1.25900006294) {
+                            if (v_c[2] <= 1.96650004387) {
+                                if (v_c[5] <= 0.5) {
+                                    return 2;
+                                } else { // if(v_c[5] > 0.5)
+                                    return 0;
+                                }
+                            } else { // if(v_c[2] > 1.96650004387)
+                                if (v_c[3] <= 0.5) {
+                                    if (v_c[16] <= 0.5) {
+                                        return 2;
+                                    } else { // if(v_c[16] > 0.5)
+                                        if (v_c[5] <= 0.0756999999285) {
+                                            return 0;
+                                        } else { // if(v_c[5] > 0.0756999999285)
+                                            return 2;
+                                        }
+                                    }
+                                } else { // if(v_c[3] > 0.5)
+                                    if (v_c[9] <= 0.394185006618) {
+                                        return 3;
+                                    } else { // if(v_c[9] > 0.394185006618)
+                                        return 0;
+                                    }
+                                }
+                            }
+                        } else { // if(v_c[5] > 1.25900006294)
+                            if (v_c[13] <= 0.5) {
+                                return 2;
+                            } else { // if(v_c[13] > 0.5)
+                                return 0;
+                            }
+                        }
+                    } else { // if(v_c[9] > 0.5)
                         return 0;
                     }
                 }
-            } else { // if(v_r[2] > 1.8274999856948853)
-                return 0;
-            }
-        } else { // if(v_r[7] > 1.2769999504089355)
-            return 1;
-        }
-    } else { // if(v_r[8] > 1.0120500326156616)
-        if (v_c[2] <= 0.31985002756118774) {
-            return 3;
-        } else { // if(v_c[2] > 0.31985002756118774)
-            if (v_c[5] <= 3.242499828338623) {
-                return 4;
-            } else { // if(v_c[5] > 3.242499828338623)
-                return 3;
+            } else { // if(v_c[4] > 0.5)
+                if (v_c[9] <= 0.263199985027) {
+                    return 0;
+                } else { // if(v_c[9] > 0.263199985027)
+                    if (v_c[9] <= 0.337899982929) {
+                        return 2;
+                    } else { // if(v_c[9] > 0.337899982929)
+                        return 0;
+                    }
+                }
             }
         }
+    } else { // if(v_r[8] > 1.03194999695)
+        return 1;
     }
     return -1;
 }
 
-JNIEXPORT jint JNICALL
+
+extern "C" {
+JNIEXPORT jint
+
+JNICALL
 Java_il_ac_technion_gip_keymoji_KeyMojiIME_getEmotion(JNIEnv *env, jobject instance,
                                                       jlong matAddrGray) {
     return getAUs(matAddrGray);
 
 }
 
+}
+
 extern "C" {
-JNIEXPORT jint JNICALL
+JNIEXPORT jint
+JNICALL
+Java_il_ac_technion_gip_keymoji_KeyMojiIME_A(JNIEnv *env, jobject instance, jlong add) {
+
+    return getAUs(add);
+
+}
+}
+
+extern "C" {
+JNIEXPORT jint
+JNICALL
 Java_il_ac_technion_gip_keymoji_MainActivity_getEmotion(JNIEnv *env, jobject instance,
                                                         jlong matAddrGray) {
 
