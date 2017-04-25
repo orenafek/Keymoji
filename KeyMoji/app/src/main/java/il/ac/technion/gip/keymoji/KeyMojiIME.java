@@ -3,6 +3,7 @@ package il.ac.technion.gip.keymoji;
 import android.Manifest;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -147,6 +148,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
             public void onPictureTaken(CameraView cameraView, byte[] data) {
                 super.onPictureTaken(cameraView, data);
                 Bitmap b = BitmapFactory.decodeByteArray(data, 0, data.length);
+                keyboardView.setBackground(new BitmapDrawable(getResources(), b));
                 Mat m = new Mat();
                 Utils.bitmapToMat(b, m);
                 int suggestion = A(m.getNativeObjAddr());
@@ -166,7 +168,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                 new PermissionManager.PermissionRequestListener() {
             @Override
             public void onPermissionGranted() {
-
+                cameraView.start();
+                cameraView.setFacing(CameraView.FACING_FRONT);
             }
 
             @Override
@@ -182,7 +185,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                //cameraView.takePicture();
+                cameraView.takePicture();
             }
         }, 5, 3000);// First time start after 5 mili second and repead after 1 second
         return mainLayout;
