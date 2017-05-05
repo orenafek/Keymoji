@@ -42,6 +42,7 @@ import AndroidAuxilary.Wrapper;
 import static AndroidAuxilary.AssetCopier.copyAssetFolder;
 import static il.ac.technion.gip.keymoji.KeyMojiIME.ACTION.NOTHING;
 import static java.util.Collections.singleton;
+
 /**
  * @author Oren Afek
  * @since 27/02/17
@@ -66,7 +67,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private Keyboard keyboard;
     private boolean capsLock = false;
     private ViewAccessor viewAccessor;
-
+    private boolean cameraReady = false;
 
 
     @Override
@@ -137,11 +138,13 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
             @Override
             public void onCameraOpened(CameraView cameraView) {
                 super.onCameraOpened(cameraView);
+                cameraReady = true;
             }
 
             @Override
             public void onCameraClosed(CameraView cameraView) {
                 super.onCameraClosed(cameraView);
+                cameraReady = false;
             }
 
             @Override
@@ -166,16 +169,16 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         PermissionManager permissionManager = PermissionManager.getInstance(getApplicationContext());
         permissionManager.checkPermissions(singleton(Manifest.permission.CAMERA),
                 new PermissionManager.PermissionRequestListener() {
-            @Override
-            public void onPermissionGranted() {
-                cameraView.start();
-                cameraView.setFacing(CameraView.FACING_FRONT);
-            }
+                    @Override
+                    public void onPermissionGranted() {
+                        cameraView.start();
+                        cameraView.setFacing(CameraView.FACING_FRONT);
+                    }
 
-            @Override
-            public void onPermissionDenied() {
-                Toast.makeText(getApplicationContext(), "Permissions Denied", Toast.LENGTH_SHORT).show();
-            }
+                    @Override
+                    public void onPermissionDenied() {
+                        Toast.makeText(getApplicationContext(), "Permissions Denied", Toast.LENGTH_SHORT).show();
+                    }
                 });
 
         keyboardView.setKeyboard(keyboard);
@@ -185,7 +188,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                cameraView.takePicture();
+                if (cameraReady)
+                    cameraView.takePicture();
             }
         }, 5, 3000);// First time start after 5 mili second and repead after 1 second
         return mainLayout;
@@ -193,6 +197,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
 
     public native int A(long add);
+
     private SparseArray<String> initializeEmojisMap() {
         SparseArray<String> map = new SparseArray<>();
         int[] unicodes = getResources().getIntArray(R.array.emojis_unicode);
