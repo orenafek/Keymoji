@@ -5,23 +5,36 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <android.inputmethodservice.KeyboardView xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <il.ac.technion.gip.keymoji.CustomizedKeyboardView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/keyboard_keyboardView"
+        style="@android:style/Widget.KeyboardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/keyboard_keyboardView"
+        android:background="@drawable/rect" />
+
+    <!--<android.inputmethodservice.KeyboardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/keyboard_keyboardView"
         style="@android:style/Widget.KeyboardView"
         android:layout_width="match_parent"
         android:layout_alignParentBottom="true"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" />-->
+
 
     <com.google.android.cameraview.CameraView
         android:id="@+id/camera"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:keepScreenOn="true"
-        android:alpha="0"
         android:adjustViewBounds="false"
-        android:background="#67ffff00" />
-
-
+        android:alpha="0"
+        android:background="#67ffff00"
+        android:keepScreenOn="true" />
 </FrameLayout><!--
 
      android:layout_width="match_parent"

@@ -18,6 +18,8 @@ import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SuggestionsInfo;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.cameraview.CameraView;
@@ -63,11 +65,11 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private List<String> suggestions;
     private CandidateView candidateView;
     private FrameLayout mainLayout;
-    private KeyboardView keyboardView;
+    private CustomizedKeyboardView keyboardView;
     private Keyboard keyboard;
     private boolean capsLock = false;
     private ViewAccessor viewAccessor;
-    private boolean cameraReady = false;
+    private final Wrapper<Boolean> takePicture = new Wrapper<>(false);
 
 
     @Override
@@ -131,38 +133,45 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         this.inflater = new Inflater(this);
         mainLayout = inflater.inflate(R.layout.keyboard);
         viewAccessor = new ViewAccessor(mainLayout);
-        keyboardView = (KeyboardView) mainLayout.getChildAt(0);
+        keyboardView = (CustomizedKeyboardView)(mainLayout.getChildAt(0));
         keyboardView.setPreviewEnabled(false);
         cameraView = viewAccessor.getView(R.id.camera);
         cameraView.addCallback(new CameraView.Callback() {
             @Override
             public void onCameraOpened(CameraView cameraView) {
                 super.onCameraOpened(cameraView);
-                cameraReady = true;
             }
 
             @Override
             public void onCameraClosed(CameraView cameraView) {
                 super.onCameraClosed(cameraView);
-                cameraReady = false;
             }
 
             @Override
             public void onPictureTaken(CameraView cameraView, byte[] data) {
                 super.onPictureTaken(cameraView, data);
                 Bitmap b = BitmapFactory.decodeByteArray(data, 0, data.length);
-                keyboardView.setBackground(new BitmapDrawable(getResources(), b));
-                Mat m = new Mat();
+                //keyboardView.setBackground(new BitmapDrawable(getResources(), b));
+                final Mat m = new Mat();
                 Utils.bitmapToMat(b, m);
-                int suggestion = A(m.getNativeObjAddr());
-                if (suggestion != 0) {
-                    synchronized (result) {
-                        result.set(suggestion);
-                        updateCandidates();
-                    }
-                }
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        int suggestion = A(m.getNativeObjAddr());
+                        if (suggestion != 0) {
+                            synchronized (result) {
+                                result.set(suggestion);
+                                updateCandidates();
+                            }
+                        }
 
-                System.out.println("");
+                        System.out.println("");
+                        synchronized (takePicture){
+                            takePicture.set(true);
+                        }
+
+                    }
+                }).start();
 
             }
         });
@@ -171,8 +180,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                 new PermissionManager.PermissionRequestListener() {
                     @Override
                     public void onPermissionGranted() {
-                        cameraView.start();
-                        cameraView.setFacing(CameraView.FACING_FRONT);
+                        /*cameraView.start();
+                        cameraView.setFacing(CameraView.FACING_FRONT);*/
                     }
 
                     @Override
@@ -188,10 +197,15 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                if (cameraReady)
-                    cameraView.takePicture();
+                synchronized (KeyMojiIME.this.takePicture) {
+                    if (takePicture.get()) {
+                        takePicture.set(false);
+                        /*System.gc();
+                        cameraView.takePicture();*/
+                    }
+                }
             }
-        }, 5, 3000);// First time start after 5 mili second and repead after 1 second
+        }, 5, 10000);// First time start after 5 mili second and repead after 1 second*/
         return mainLayout;
     }
 
@@ -229,7 +243,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
 
     private void playClick(int primaryCode) {
-        AudioManager am = (AudioManager) getSystemService(AUDIO_SERVICE);
+        /*AudioManager am = (AudioManager) getSystemService(AUDIO_SERVICE);
         am.setRingerMode(AudioManager.RINGER_MODE_VIBRATE);
         switch (primaryCode) {
             case 32:
@@ -244,7 +258,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                 break;
             default:
                 am.playSoundEffect(AudioManager.FX_KEYPRESS_STANDARD);
-        }
+        }*/
     }
 
     @Override
@@ -277,7 +291,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         }
         this.suggestions = suggestions;
         if (this.candidateView != null) {
-            this.candidateView.setSuggestions(suggestions, completions, typedWordValid);
+
+            this.candidateView.setSuggestions(suggestions, completions, typedWordValid, keyboardView.canvas);
         }
     }
 
@@ -321,7 +336,9 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     @Override
     public void onPress(int primaryCode) {
-
+        synchronized (takePicture){
+            takePicture.set(true);
+        }
     }
 
     @Override
@@ -361,7 +378,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
                 composing.append((char) primaryCode);
                 updateCandidates();
-                setSuggestions(Collections.singletonList(emojis.get((-54))), true, true);
+                setSuggestions(Collections.singletonList(emojis.get(-54)), true, true);
             }
 
         }

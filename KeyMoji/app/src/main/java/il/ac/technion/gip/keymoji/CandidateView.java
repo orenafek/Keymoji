@@ -16,6 +16,7 @@
 
 package il.ac.technion.gip.keymoji;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Canvas;
@@ -147,7 +148,7 @@ public class CandidateView extends View {
 
         // Maximum possible width and desired height
         setMeasuredDimension(measuredWidth,
-                resolveSize(desiredHeight, heightMeasureSpec));
+                resolveSize(desiredHeight, heightMeasureSpec - 30 /*TODO: @orenafek heightMeasureSpec*/));
     }
 
     /**
@@ -172,6 +173,7 @@ public class CandidateView extends View {
         final int count = mSuggestions.size();
         final int height = getHeight();
         final Rect bgPadding = mBgPadding;
+        bgPadding.top += 300; //TODO: @orenafek
         final Paint paint = mPaint;
         final int touchX = mTouchX;
         final int scrollX = getScrollX();
@@ -237,11 +239,12 @@ public class CandidateView extends View {
         invalidate();
     }
 
+    @SuppressLint("WrongCall")
     public void setSuggestions(List<String> suggestions, boolean completions,
-                               boolean typedWordValid) {
+                               boolean typedWordValid, Canvas canvas) {
         clear();
         if (suggestions != null) {
-            mSuggestions = new ArrayList<String>(suggestions);
+            mSuggestions = new ArrayList<>(suggestions);
         }
         mTypedWordValid = typedWordValid;
         scrollTo(0, 0);
@@ -306,6 +309,7 @@ public class CandidateView extends View {
      *
      * @param x
      */
+    @SuppressLint("WrongCall")
     public void takeSuggestionAt(float x) {
         mTouchX = (int) x;
         // To detect candidate
