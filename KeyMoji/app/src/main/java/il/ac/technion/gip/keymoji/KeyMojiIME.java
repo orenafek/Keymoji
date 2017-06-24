@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
+import android.os.Environment;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
@@ -28,6 +29,8 @@ import com.permissioneverywhere.PermissionResultCallback;
 import org.opencv.android.Utils;
 import org.opencv.core.Mat;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -146,7 +149,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
             @Override
             public void onPictureTaken(CameraView cameraView, byte[] data) {
                 super.onPictureTaken(cameraView, data);
-                Bitmap b = BitmapFactory.decodeByteArray(data, 0, data.length);
+//                Bitmap b = BitmapFactory.decodeByteArray(data, 0, data.length);
+                Bitmap b = imageToBitmap();
                 //keyboardView.setBackground(new BitmapDrawable(getResources(), b));
                 final Mat m = new Mat();
                 Utils.bitmapToMat(b, m);
@@ -214,6 +218,24 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         return mainLayout;
     }
 
+    public Bitmap imageToBitmap() {
+//        android.os.Debug.waitForDebugger();
+        File root = Environment.getExternalStorageDirectory();
+        Bitmap bMap = BitmapFactory.decodeFile(root + "/Download/2_17.png");
+        String fname = "Image-" + ".jpg";
+        File file = new File(root + "/Download/", fname);
+        if (file.exists())
+            file.delete();
+        try {
+            FileOutputStream out = new FileOutputStream(file);
+            bMap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+            out.flush();
+            out.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return bMap;
+    }
 
     public native int A(long add);
 
@@ -344,7 +366,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 //        synchronized (takePicture){
 //            takePicture.set(true);
 //        }
-//        cameraView.takePicture();
+        cameraView.takePicture();
     }
 
     @Override
