@@ -1,8 +1,8 @@
-# Install script for directory: C:/Users/oren.afek/git/Keymoji/KeyMoji/app
+# Install script for directory: /Users/danielohayon/Documents/KeyMoji/githubProject/Keymoji/KeyMoji/app
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "C:/Program Files (x86)/Project")
+  set(CMAKE_INSTALL_PREFIX "/usr/local")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -34,9 +34,9 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/oren.afek/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/dlib/cmake_install.cmake")
-  include("C:/Users/oren.afek/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/openface/LandmarkDetector/cmake_install.cmake")
-  include("C:/Users/oren.afek/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/openface/FaceAnalyser/cmake_install.cmake")
+  include("/Users/danielohayon/Documents/KeyMoji/githubProject/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/dlib/cmake_install.cmake")
+  include("/Users/danielohayon/Documents/KeyMoji/githubProject/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/openface/LandmarkDetector/cmake_install.cmake")
+  include("/Users/danielohayon/Documents/KeyMoji/githubProject/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/release/x86_64/src/main/cpp/openface/FaceAnalyser/cmake_install.cmake")
 
 endif()
 
@@ -48,5 +48,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/oren.afek/git/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/danielohayon/Documents/KeyMoji/githubProject/Keymoji/KeyMoji/app/.externalNativeBuild/cmake/release/x86_64/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

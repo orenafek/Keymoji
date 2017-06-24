@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-feature android:name="android.hardware.camera.front" />
@@ -19,20 +21,21 @@
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:replace="android:icon">
 
-         <activity android:name=".MainActivity">
-         <intent-filter>
-         <action android:name="android.intent.action.MAIN" />
+        <!--<activity android:name=".MainActivity">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
 
 
-         <category android:name="android.intent.category.LAUNCHER" />
-         </intent-filter>
-         </activity>
-       <!-- <activity android:name=".Open">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>-->
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
+
+        <!-- <activity android:name=".Open">
+             <intent-filter>
+                 <action android:name="android.intent.action.MAIN" />
+                 <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
+         </activity>-->
 
         <service
             android:name=".KeyMojiIME"

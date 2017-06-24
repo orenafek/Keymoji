@@ -3,11 +3,10 @@ package il.ac.technion.gip.keymoji;
 import android.Manifest;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
-import android.media.AudioManager;
+import android.util.Log;
 import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.View;
@@ -18,8 +17,6 @@ import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SuggestionsInfo;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.google.android.cameraview.CameraView;
@@ -43,7 +40,6 @@ import AndroidAuxilary.Wrapper;
 
 import static AndroidAuxilary.AssetCopier.copyAssetFolder;
 import static il.ac.technion.gip.keymoji.KeyMojiIME.ACTION.NOTHING;
-import static java.util.Collections.singleton;
 
 /**
  * @author Oren Afek
@@ -154,39 +150,50 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                 //keyboardView.setBackground(new BitmapDrawable(getResources(), b));
                 final Mat m = new Mat();
                 Utils.bitmapToMat(b, m);
-                new Thread(new Runnable() {
-                    @Override
-                    public void run() {
-                        int suggestion = A(m.getNativeObjAddr());
-                        if (suggestion != 0) {
-                            synchronized (result) {
-                                result.set(suggestion);
-                                updateCandidates();
-                            }
-                        }
+                int suggestion = A(m.getNativeObjAddr());
+                sendText(String.valueOf(suggestion));
 
-                        System.out.println("");
-                        synchronized (takePicture){
-                            takePicture.set(true);
-                        }
-
-                    }
-                }).start();
+//                new Thread(new Runnable() {
+//                    @Override
+//                    public void run() {
+////                        int suggestion = A(m.getNativeObjAddr());
+//                        if (suggestion != 0) {
+////                            synchronized (result) {
+////                                result.set(suggestion);
+////                                updateCandidates();
+////                            }
+//                        }
+//
+//                        System.out.println("");
+////                        synchronized (takePicture){
+////                            takePicture.set(true);
+////                        }
+//
+//                    }
+//                }).start();
 
             }
         });
+//                android.os.Debug.waitForDebugger();
         PermissionManager permissionManager = PermissionManager.getInstance(getApplicationContext());
-        permissionManager.checkPermissions(singleton(Manifest.permission.CAMERA),
+        permissionManager.checkPermissions(Arrays.asList(Manifest.permission.CAMERA/*,Manifest.permission_group.CAMERA*/),
                 new PermissionManager.PermissionRequestListener() {
                     @Override
                     public void onPermissionGranted() {
-                        /*cameraView.start();
-                        cameraView.setFacing(CameraView.FACING_FRONT);*/
+                        cameraView.start();
+                        cameraView.setFacing(CameraView.FACING_FRONT);
+                        Toast.makeText(getApplicationContext(), "Permissions Granted", Toast.LENGTH_LONG).show();
+                        System.out.println("*********Permissions Granted");
+                        Log.i("Daniel:************", "Permissions Granted");
+
+
                     }
 
                     @Override
                     public void onPermissionDenied() {
-                        Toast.makeText(getApplicationContext(), "Permissions Denied", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), "Permissions Denied*", Toast.LENGTH_SHORT).show();
+                        System.out.println("*******Permissions Denied");
+                        Log.i("Daniel:************", "Permissions Denied");
                     }
                 });
 
@@ -197,15 +204,13 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         new Timer().scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                synchronized (KeyMojiIME.this.takePicture) {
-                    if (takePicture.get()) {
-                        takePicture.set(false);
-                        /*System.gc();
-                        cameraView.takePicture();*/
-                    }
-                }
+//                synchronized (KeyMojiIME.this.takePicture) {
+//                    if (takePicture.get()) {
+//                        takePicture.set(false);
+//                    }
+//                }
             }
-        }, 5, 10000);// First time start after 5 mili second and repead after 1 second*/
+        }, 3000, 1000);// First time start after 5 mili second and repead after 1 second*/
         return mainLayout;
     }
 
@@ -336,9 +341,10 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     @Override
     public void onPress(int primaryCode) {
-        synchronized (takePicture){
-            takePicture.set(true);
-        }
+//        synchronized (takePicture){
+//            takePicture.set(true);
+//        }
+//        cameraView.takePicture();
     }
 
     @Override
