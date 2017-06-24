@@ -180,8 +180,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                 new PermissionManager.PermissionRequestListener() {
                     @Override
                     public void onPermissionGranted() {
-                        cameraView.start();
                         cameraView.setFacing(CameraView.FACING_FRONT);
+                        cameraView.start();
                         Toast.makeText(getApplicationContext(), "Permissions Granted", Toast.LENGTH_LONG).show();
                         System.out.println("*********Permissions Granted");
                         Log.i("Daniel:************", "Permissions Granted");
