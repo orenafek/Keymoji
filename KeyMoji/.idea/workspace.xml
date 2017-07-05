@@ -6,30 +6,15 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="Daniel" />
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="daniel" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="Camera opened! :)">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_deps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_deps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_deps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_deps" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_deps" />
+    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="Correct predictions for happy and angry but still taking picture on Keypress">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" afterPath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java" afterPath="$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java" />
     </list>
     <ignored path="KeyMoji.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,10 +54,12 @@
       <file leaf-file-name="KeyMojiIME.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="81">
-              <caret line="114" column="11" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
+            <state relative-caret-position="205">
+              <caret line="544" column="38" selection-start-line="544" selection-start-column="38" selection-end-line="544" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#4145#4335#0" expanded="true" />
+                <element signature="e#4334#4335#0" expanded="true" />
                 <element signature="method#onText#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeLeft#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />
@@ -3687,7 +3674,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498301380580</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Correct predictions for happy and angry but still taking picture on Keypress">
+      <created>1499262731637</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1499262731638</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3758,7 +3752,8 @@
     <MESSAGE value="Added Permission 23 to manifest" />
     <MESSAGE value="Camera opened! :)" />
     <MESSAGE value="returns only 1 from classifier and possibly getting aus wrong" />
-    <option name="LAST_COMMIT_MESSAGE" value="returns only 1 from classifier and possibly getting aus wrong" />
+    <MESSAGE value="Correct predictions for happy and angry but still taking picture on Keypress" />
+    <option name="LAST_COMMIT_MESSAGE" value="Correct predictions for happy and angry but still taking picture on Keypress" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -3767,13 +3762,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java</url>
-          <line>92</line>
+          <line>80</line>
           <properties />
           <option name="timeStamp" value="311" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java</url>
-          <line>253</line>
+          <line>250</line>
           <properties />
           <option name="timeStamp" value="316" />
         </line-breakpoint>
@@ -3974,8 +3969,8 @@
         <state relative-caret-position="178">
           <caret line="135" column="31" selection-start-line="135" selection-start-column="31" selection-end-line="135" selection-end-column="31" />
           <folding>
-            <element signature="e#3967#3968#0" expanded="true" />
-            <element signature="e#4011#4012#0" expanded="true" />
+            <element signature="e#3967#3968#0" expanded="false" />
+            <element signature="e#4011#4012#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -4141,10 +4136,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="81">
-          <caret line="114" column="11" selection-start-line="114" selection-start-column="11" selection-end-line="114" selection-end-column="11" />
+        <state relative-caret-position="205">
+          <caret line="544" column="38" selection-start-line="544" selection-start-column="38" selection-end-line="544" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#4145#4335#0" expanded="true" />
+            <element signature="e#4334#4335#0" expanded="true" />
             <element signature="method#onText#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeLeft#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />

@@ -109,6 +109,15 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         // Load ndk built module, as specified
         // in moduleName in build.gradle
         System.loadLibrary("native-lib");
+
+
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if (cameraView.isCameraOpened())
+                    cameraView.takePicture();
+            }
+        }, 6000, 6000);
     }
 
     @Override
@@ -170,9 +179,10 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                 raw.put(0, 0, data);
                 Mat targ = Imgcodecs.imdecode(raw, 0);
 
+                Log.i("Daniel", "sending picture to get AU's and prediction");
                 int suggestion = A(targ.getNativeObjAddr());
                 sendText(String.valueOf(suggestion));
-
+                Log.i("Daniel", "got prediction");
 
                 // SAVE IMAGE
 //                Bitmap b = BitmapFactory.decodeByteArray(data, 0, data.length);
@@ -409,7 +419,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 //        synchronized (takePicture){
 //            takePicture.set(true);
 //        }
-        cameraView.takePicture();
+//        cameraView.takePicture();
     }
 
     @Override
