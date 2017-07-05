@@ -60,3 +60,11 @@
 14333	14513	0	src/main/cpp/openface/FaceAnalyser/libFaceAnalyser.a	f19ce9fc746c929b
 14513	15940	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	e5a8432092e7bb54
 15940	16946	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	f1b4837afd4b0f65
+4	1858	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	e5a8432092e7bb54
+1858	3133	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	f1b4837afd4b0f65
+7	1512	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	e5a8432092e7bb54
+1512	2794	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	f1b4837afd4b0f65
+7	2758	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	e5a8432092e7bb54
+2758	4601	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	f1b4837afd4b0f65
+6	2505	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	e5a8432092e7bb54
+2505	4099	0	../../../../build/intermediates/cmake/debug/obj/arm64-v8a/libnative-lib.so	f1b4837afd4b0f65

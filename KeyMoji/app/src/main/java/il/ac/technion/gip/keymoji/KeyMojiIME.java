@@ -3,6 +3,7 @@ package il.ac.technion.gip.keymoji;
 import android.Manifest;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.hardware.Camera;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -26,11 +27,11 @@ import com.permissioneverywhere.PermissionEverywhere;
 import com.permissioneverywhere.PermissionResponse;
 import com.permissioneverywhere.PermissionResultCallback;
 
-import org.opencv.android.Utils;
+import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
 
 import java.io.File;
-import java.io.FileOutputStream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -43,6 +44,7 @@ import AndroidAuxilary.Wrapper;
 
 import static AndroidAuxilary.AssetCopier.copyAssetFolder;
 import static il.ac.technion.gip.keymoji.KeyMojiIME.ACTION.NOTHING;
+import static il.ac.technion.gip.keymoji.R.id.camera;
 
 /**
  * @author Oren Afek
@@ -69,6 +71,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private boolean capsLock = false;
     private ViewAccessor viewAccessor;
     private final Wrapper<Boolean> takePicture = new Wrapper<>(false);
+    private Camera.Size sz;
 
 
     @Override
@@ -89,7 +92,19 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
         String toPath = "/data/data/" + getPackageName();  // Your application path
         copyAssetFolder(getAssets(), "", toPath);
-
+//
+//        if (Build.VERSION.SDK_INT < 21) {
+//            Camera c = Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT);
+//        } else if (Build.VERSION.SDK_INT < 23) {
+//            CameraManager cm = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
+//            cm.openCamera(cm.getCameraIdList()[0],);
+//        } else {
+//            //mImpl = new Camera2Api23(mCallbacks, preview, context);
+//        }
+        Camera mCamera = Camera.open();
+        Camera.Parameters params = mCamera.getParameters();
+        sz = params.getPictureSize();
+//        mCamera = Camera.
 
         // Load ndk built module, as specified
         // in moduleName in build.gradle
@@ -127,6 +142,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         return emojis.contains(String.valueOf(primaryCode));
     }
 
+
     @Override
     public View onCreateInputView() {
         this.inflater = new Inflater(this);
@@ -134,7 +150,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         viewAccessor = new ViewAccessor(mainLayout);
         keyboardView = (CustomizedKeyboardView)(mainLayout.getChildAt(0));
         keyboardView.setPreviewEnabled(false);
-        cameraView = viewAccessor.getView(R.id.camera);
+        cameraView = viewAccessor.getView(camera);
         cameraView.addCallback(new CameraView.Callback() {
             @Override
             public void onCameraOpened(CameraView cameraView) {
@@ -149,13 +165,39 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
             @Override
             public void onPictureTaken(CameraView cameraView, byte[] data) {
                 super.onPictureTaken(cameraView, data);
-//                Bitmap b = BitmapFactory.decodeByteArray(data, 0, data.length);
-                Bitmap b = imageToBitmap();
-                //keyboardView.setBackground(new BitmapDrawable(getResources(), b));
-                final Mat m = new Mat();
-                Utils.bitmapToMat(b, m);
-                int suggestion = A(m.getNativeObjAddr());
+
+                Mat raw = new Mat(sz.height, sz.width, CvType.CV_8UC1);
+                raw.put(0, 0, data);
+                Mat targ = Imgcodecs.imdecode(raw, 0);
+
+                int suggestion = A(targ.getNativeObjAddr());
                 sendText(String.valueOf(suggestion));
+
+
+                // SAVE IMAGE
+//                Bitmap b = BitmapFactory.decodeByteArray(data, 0, data.length);
+//                Utils.matToBitmap(targ,b);
+//
+////                sendText(String.valueOf(A(m3.getNativeObjAddr())));
+//
+//                File root = Environment.getExternalStorageDirectory();
+//                String fname = "newnewnew" + ".jpg";
+//                File file = new File(root + "/Download/", fname);
+//                if (file.exists())
+//                    file.delete();
+//                try {
+////                    android.os.Debug.waitForDebugger();
+//                    FileOutputStream out = new FileOutputStream(file);
+//                    b.compress(Bitmap.CompressFormat.JPEG, 90, out);
+//                    out.flush();
+//                    out.close();
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+
+
+                // NEW THREAD
+
 
 //                new Thread(new Runnable() {
 //                    @Override
@@ -175,6 +217,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 //
 //                    }
 //                }).start();
+
 
             }
         });
@@ -221,19 +264,19 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     public Bitmap imageToBitmap() {
 //        android.os.Debug.waitForDebugger();
         File root = Environment.getExternalStorageDirectory();
-        Bitmap bMap = BitmapFactory.decodeFile(root + "/Download/2_17.png");
-        String fname = "Image-" + ".jpg";
-        File file = new File(root + "/Download/", fname);
-        if (file.exists())
-            file.delete();
-        try {
-            FileOutputStream out = new FileOutputStream(file);
-            bMap.compress(Bitmap.CompressFormat.JPEG, 90, out);
-            out.flush();
-            out.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        Bitmap bMap = BitmapFactory.decodeFile(root + "/Download/fooImage1.jpg");
+//        String fname = "fooImage1" + ".jpg";
+//        File file = new File(root + "/Download/", fname);
+//        if (file.exists())
+//            file.delete();
+//        try {
+//            FileOutputStream out = new FileOutputStream(file);
+//            bMap.compress(Bitmap.CompressFormat.JPEG, 90, out);
+//            out.flush();
+//            out.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         return bMap;
     }
 
@@ -445,3 +488,53 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
 
 }
+//    final Mat m2 = new Mat();
+//
+//                Utils.bitmapToMat(b, m2);
+//                        int height = m2.height();
+//                        int width = m2.width();
+//
+//
+//
+//                        JavaCameraView tmp = new JavaCameraView(getApplicationContext(),CameraBridgeViewBase.CAMERA_ID_FRONT);
+//                        Camera mCamera = Camera.open();
+//                        Camera.Parameters params = mCamera.getParameters();
+//
+//                        List<android.hardware.Camera.Size> sizes = params.getSupportedPreviewSizes();
+//
+//        if (sizes != null) {
+//                    /* Select the size that fits surface considering maximum size allowed */
+//        Size frameSize = tmp.calculateCameraFrameSize(sizes, new JavaCameraView.JavaCameraSizeAccessor(), width, height);
+//
+//        params.setPreviewFormat(ImageFormat.NV21);
+//        Log.d(TAG, "Set preview size to " + Integer.valueOf((int) frameSize.width) + "x" + Integer.valueOf((int) frameSize.height));
+//        params.setPreviewSize((int) frameSize.width, (int) frameSize.height);
+//
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH && !android.os.Build.MODEL.equals("GT-I9100"))
+//        params.setRecordingHint(true);
+//
+//        List<String> FocusModes = params.getSupportedFocusModes();
+//        if (FocusModes != null && FocusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO)) {
+//        params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
+//        }
+//        }
+//
+//
+//
+//
+//        int mFrameWidth = params.getPreviewSize().width;
+//        int mFrameHeight = params.getPreviewSize().height;
+//        Mat m = new Mat(mFrameHeight+(mFrameHeight/2) ,mFrameWidth, CvType.CV_8UC1);
+//
+//
+////                android.os.Debug.waitForDebugger();
+////                Camera.Parameters.
+////                Camera.Parameters params = camera.getParameters();
+//
+////                mFrameWidth = params.getPreviewSize().width;
+////                mFrameHeight = params.getPreviewSize().height;
+////                int mFrameWidth = cameraView.getWidth();
+////                int mFrameHeight = cameraView.getHeight();
+//        m.put(0,0,data);
+//        Mat m3 = m.submat(0, mFrameHeight, 0, mFrameWidth);
+////                m.submat(0, height, 0, width);

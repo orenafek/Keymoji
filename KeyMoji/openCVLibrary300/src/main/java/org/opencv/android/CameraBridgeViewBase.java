@@ -476,7 +476,7 @@ public abstract class CameraBridgeViewBase extends SurfaceView implements Surfac
      * @param surfaceHeight
      * @return optimal frame size
      */
-    protected Size calculateCameraFrameSize(List<?> supportedSizes, ListItemAccessor accessor, int surfaceWidth, int surfaceHeight) {
+    public Size calculateCameraFrameSize(List<?> supportedSizes, ListItemAccessor accessor, int surfaceWidth, int surfaceHeight) {
         int calcWidth = 0;
         int calcHeight = 0;
 

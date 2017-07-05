@@ -60,3 +60,11 @@
 16325	16493	0	src/main/cpp/openface/FaceAnalyser/libFaceAnalyser.a	1b62ca84ff0d3360
 16493	18083	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d49604a81d3367
 18083	18612	0	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	c6451e6679ac1f14
+7	1630	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d49604a81d3367
+1631	2370	0	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	c6451e6679ac1f14
+6	1644	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d49604a81d3367
+1644	2375	0	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	c6451e6679ac1f14
+9	2648	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d49604a81d3367
+2648	3598	0	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	c6451e6679ac1f14
+9	3289	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	9d49604a81d3367
+3289	4343	0	../../../../build/intermediates/cmake/debug/obj/x86/libnative-lib.so	c6451e6679ac1f14

@@ -60,3 +60,11 @@
 15929	16208	0	src/main/cpp/openface/FaceAnalyser/libFaceAnalyser.a	79d0b4bbdabca343
 16208	17889	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	8c9f4437d9c882a8
 17889	18476	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	ac205d753d6a26ee
+4	1711	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	8c9f4437d9c882a8
+1711	2486	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	ac205d753d6a26ee
+4	1834	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	8c9f4437d9c882a8
+1834	2614	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	ac205d753d6a26ee
+7	3095	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	8c9f4437d9c882a8
+3095	4201	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	ac205d753d6a26ee
+10	3693	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	8c9f4437d9c882a8
+3693	5139	0	../../../../build/intermediates/cmake/debug/obj/armeabi-v7a/libnative-lib.so	ac205d753d6a26ee

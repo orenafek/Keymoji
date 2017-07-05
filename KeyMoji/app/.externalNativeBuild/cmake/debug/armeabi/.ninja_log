@@ -60,3 +60,11 @@
 15922	16193	0	src/main/cpp/openface/FaceAnalyser/libFaceAnalyser.a	79d0b4bbdabca343
 16193	17846	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	3dbcf59361df4715
 17846	18403	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libnative-lib.so	cf963ec83680b4f3
+5	1885	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	3dbcf59361df4715
+1885	2772	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libnative-lib.so	cf963ec83680b4f3
+6	1900	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	3dbcf59361df4715
+1900	2722	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libnative-lib.so	cf963ec83680b4f3
+6	3465	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	3dbcf59361df4715
+3466	4716	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libnative-lib.so	cf963ec83680b4f3
+11	5613	0	CMakeFiles/native-lib.dir/src/main/cpp/native-lib.cpp.o	3dbcf59361df4715
+5613	7276	0	../../../../build/intermediates/cmake/debug/obj/armeabi/libnative-lib.so	cf963ec83680b4f3
