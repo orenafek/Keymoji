@@ -9,7 +9,6 @@ import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.Environment;
 import android.util.Log;
-import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.CompletionInfo;
@@ -33,10 +32,10 @@ import org.opencv.core.Mat;
 import org.opencv.imgcodecs.Imgcodecs;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.Stack;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -62,7 +61,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private final Wrapper<Integer> result = new Wrapper<>(-1);
     private Inflater inflater;
     private CameraView cameraView;
-    private SparseArray<Emoji> emojis;
+    private List<Emoji> emojis;
     private int lastDisplayWidth;
     private boolean isCompletionOn = false;
     private StringBuilder composing = new StringBuilder();
@@ -75,10 +74,6 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private ViewAccessor viewAccessor;
     private final Wrapper<Boolean> takePicture = new Wrapper<>(false);
     private Camera.Size sz;
-    private boolean isLastkeyEmoji;
-    private Stack<Boolean> history;
-
-
 
     @Override
     public void onCreate() {
@@ -98,7 +93,6 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
         String toPath = "/data/data/" + getPackageName();  // Your application path
         copyAssetFolder(getAssets(), "", toPath);
-        history = new Stack<>();
 //
 //        if (Build.VERSION.SDK_INT < 21) {
 //            Camera c = Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT);
@@ -121,8 +115,12 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         new Timer().schedule(new TimerTask() {
             @Override
             public void run() {
-                if (cameraView.isCameraOpened())
-                    cameraView.takePicture();
+                try {
+                    if (cameraView.isCameraOpened())
+                        cameraView.takePicture();
+                } catch (RuntimeException re) {
+                    Log.i("Daniel", "take picture failed :(");
+                }
             }
         }, 6000, 6000);
     }
@@ -153,13 +151,22 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     }
 
-    private boolean isEmoji(int primaryCode) {
-        List<String> emojis = Arrays.asList(getResources().getStringArray(R.array.emoji_primary_codes));
-        return emojis.contains(String.valueOf(primaryCode));
+    private boolean isEmoji(CharSequence cs) {
+        if (cs.length() < 2) {
+            return false;
+        }
+
+        for (Emoji e : emojis) {
+            if (e.getEmojiString().equals(cs)) {
+                return true;
+            }
+        }
+
+
+        return false;
     }
 
     private void sendEmoji(Emoji e) {
-        history.push(true);
         sendText(e.getEmojiString());
     }
 
@@ -303,11 +310,11 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     public native int A(long add);
 
-    private SparseArray<Emoji> initializeEmojisMap() {
-        SparseArray<Emoji> map = new SparseArray<>();
+    private List<Emoji> initializeEmojisMap() {
+        List<Emoji> map = new ArrayList<>();
         int[] unicodes = getResources().getIntArray(R.array.emojis_unicode);
         for (int i = 0; i < unicodes.length; i++) {
-            map.put(i + 1, new Emoji(i + 1, new String(Character.toChars(unicodes[i]))));
+            map.add(new Emoji(i + 1, new String(Character.toChars(unicodes[i]))));
         }
 
         return map;
@@ -417,7 +424,13 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     enum ACTION {NOTHING}
 
     private Emoji indexToEmoji(int relativeIndex) {
-        return emojis.get(relativeIndex);
+        for (Emoji e : emojis) {
+            if (e.getIndex() == relativeIndex) {
+                return e;
+            }
+        }
+
+        return emojis.get(0); // assume our emoji map is not empty
     }
 
     @Override
@@ -433,14 +446,19 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     }
 
+
+    private int charsToRemove(InputConnection ic) {
+        CharSequence cs = ic.getTextBeforeCursor(2, 0);
+        return isEmoji(cs) ? 2 : 1;
+    }
+
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
         InputConnection ic = getCurrentInputConnection();
         playClick(primaryCode);
         switch (primaryCode) {
             case Keyboard.KEYCODE_DELETE:
-
-                ic.deleteSurroundingText((!history.empty() && history.pop()) ? 2 : 1, 0);
+                ic.deleteSurroundingText(charsToRemove(ic), 0);
                 break;
             case Keyboard.KEYCODE_SHIFT: {
                 capsLock = !capsLock;
@@ -471,7 +489,6 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     }
 
     private void sendAsciiChar(char c) {
-        history.push(false);
         sendText(String.valueOf(Character.isLetter(c) && !capsLock ?
                 c : Character.toUpperCase(c)));
     }
@@ -507,53 +524,3 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
 
 }
-//    final Mat m2 = new Mat();
-//
-//                Utils.bitmapToMat(b, m2);
-//                        int height = m2.height();
-//                        int width = m2.width();
-//
-//
-//
-//                        JavaCameraView tmp = new JavaCameraView(getApplicationContext(),CameraBridgeViewBase.CAMERA_ID_FRONT);
-//                        Camera mCamera = Camera.open();
-//                        Camera.Parameters params = mCamera.getParameters();
-//
-//                        List<android.hardware.Camera.Size> sizes = params.getSupportedPreviewSizes();
-//
-//        if (sizes != null) {
-//                    /* Select the size that fits surface considering maximum size allowed */
-//        Size frameSize = tmp.calculateCameraFrameSize(sizes, new JavaCameraView.JavaCameraSizeAccessor(), width, height);
-//
-//        params.setPreviewFormat(ImageFormat.NV21);
-//        Log.d(TAG, "Set preview size to " + Integer.valueOf((int) frameSize.width) + "x" + Integer.valueOf((int) frameSize.height));
-//        params.setPreviewSize((int) frameSize.width, (int) frameSize.height);
-//
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH && !android.os.Build.MODEL.equals("GT-I9100"))
-//        params.setRecordingHint(true);
-//
-//        List<String> FocusModes = params.getSupportedFocusModes();
-//        if (FocusModes != null && FocusModes.contains(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO)) {
-//        params.setFocusMode(Camera.Parameters.FOCUS_MODE_CONTINUOUS_VIDEO);
-//        }
-//        }
-//
-//
-//
-//
-//        int mFrameWidth = params.getPreviewSize().width;
-//        int mFrameHeight = params.getPreviewSize().height;
-//        Mat m = new Mat(mFrameHeight+(mFrameHeight/2) ,mFrameWidth, CvType.CV_8UC1);
-//
-//
-////                android.os.Debug.waitForDebugger();
-////                Camera.Parameters.
-////                Camera.Parameters params = camera.getParameters();
-//
-////                mFrameWidth = params.getPreviewSize().width;
-////                mFrameHeight = params.getPreviewSize().height;
-////                int mFrameWidth = cameraView.getWidth();
-////                int mFrameHeight = cameraView.getHeight();
-//        m.put(0,0,data);
-//        Mat m3 = m.submat(0, mFrameHeight, 0, mFrameWidth);
-////                m.submat(0, height, 0, width);

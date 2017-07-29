@@ -307,7 +307,6 @@ public class CandidateView extends View {
                     }
                 }
                 mSelectedIndex = -1;
-                suggestedEmoji = 1;
                 removeHighlight();
                 requestLayout();
                 break;
