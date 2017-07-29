@@ -11,9 +11,9 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="Working version despite sometimes predicting wrong emotion and crashes when you exit the keyboard.">
+    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="fixed deleting emoji issue">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java" afterPath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java" afterPath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" afterPath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" />
     </list>
     <ignored path="KeyMoji.iws" />
@@ -54,52 +54,77 @@
       <file leaf-file-name="KeyMojiIME.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
+            <state relative-caret-position="253">
+              <caret line="183" column="19" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
               <folding>
                 <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
-                <element signature="class#3197:3379" expanded="false" />
-                <element signature="method#onComplete#0;class#3197:3379" expanded="false" />
-                <element signature="e#3517#3519#0" expanded="false" />
-                <element signature="e#4079#4106#0" expanded="false" />
-                <element signature="e#4269#4616#0" expanded="true" />
-                <element signature="e#4615#4616#0" expanded="true" />
+                <element signature="class#3140:3322" expanded="false" />
+                <element signature="method#onComplete#0;class#3140:3322" expanded="false" />
+                <element signature="e#3460#3462#0" expanded="false" />
+                <element signature="e#4022#4049#0" expanded="false" />
                 <element signature="method#onDestroy#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="method#disableCamera#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onInitializeInterface#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#4921#4991#0" expanded="false" />
-                <element signature="e#5664#5665#0" expanded="true" />
-                <element signature="e#5708#5709#0" expanded="true" />
-                <element signature="e#7078#7091#0" expanded="false" />
-                <element signature="class#9055:9984" expanded="false" />
-                <element signature="method#onPermissionGranted#0;class#9055:9984" expanded="false" />
-                <element signature="method#onPermissionDenied#0;class#9055:9984" expanded="false" />
-                <element signature="e#10241#10303#0" expanded="false" />
+                <element signature="e#4855#4925#0" expanded="false" />
+                <element signature="method#isEmoji#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="e#7280#7293#0" expanded="false" />
+                <element signature="class#9257:10186" expanded="false" />
+                <element signature="method#onPermissionGranted#0;class#9257:10186" expanded="false" />
+                <element signature="method#onPermissionDenied#0;class#9257:10186" expanded="false" />
                 <element signature="method#imageToBitmap#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#10811#10857#0" expanded="false" />
+                <element signature="e#10592#10638#0" expanded="false" />
+                <element signature="method#initializeEmojisMap#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onDisplayCompletions#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onCreateCandidatesView#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#playClick#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onFinishInput#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#updateCandidates#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#setSuggestions#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onStartInput#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onStartInputView#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onGetSuggestions#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onGetSentenceSuggestions#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#DO#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#pickSuggestionManually#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="class#ACTION#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#indexToEmoji#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onPress#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#14966#15003#0" expanded="false" />
+                <element signature="e#14833#14870#0" expanded="false" />
                 <element signature="method#onRelease#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#charsToRemove#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#onKey#0;class#KeyMojiIME#0" expanded="false" />
+                <element signature="method#sendAsciiChar#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#sendText#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onText#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeLeft#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeDown#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeUp#0;class#KeyMojiIME#0" expanded="false" />
-                <marker date="1501342409000" expanded="false" signature="6148:8753" ph="{...}" />
-                <marker date="1501342409000" expanded="false" signature="6549:8743" ph="{...}" />
+                <marker date="1501343180000" expanded="false" signature="6350:8955" ph="{...}" />
+                <marker date="1501343180000" expanded="false" signature="6751:8945" ph="{...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InputMethodService.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/inputmethodservice/InputMethodService.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="109">
+              <caret line="215" column="19" selection-start-line="215" selection-start-column="19" selection-end-line="215" selection-end-column="19" />
+              <folding>
+                <element signature="e#6088#6089#0" expanded="true" />
+                <element signature="e#6139#6140#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CustomizedKeyboardView.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="292">
+              <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -2896,6 +2921,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Emoji.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" />
       </list>
     </option>
@@ -3675,12 +3701,19 @@
       <option name="project" value="LOCAL" />
       <updated>1501340332395</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="fixed deleting emoji issue">
+      <created>1501342533076</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1501342533076</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="801" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32064423" sideWeight="0.4914712" order="1" side_tool="false" content_ui="tabs" />
@@ -3688,7 +3721,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4568082" sideWeight="0.50858366" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36456808" sideWeight="0.4914163" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36456808" sideWeight="0.4914163" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29974812" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3967789" sideWeight="0.48687088" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3785,7 +3818,8 @@
     <MESSAGE value="Working version despite sometimes predicting wrong emotion and there is no corrolation between the emoji pressed and the emoji printed and crashes when you exit the keyboard and special characters not working yet." />
     <MESSAGE value="Working version despite sometimes predicting wrong emotion and crashes when you exit the keyboard and special characters not working yet." />
     <MESSAGE value="Working version despite sometimes predicting wrong emotion and crashes when you exit the keyboard." />
-    <option name="LAST_COMMIT_MESSAGE" value="Working version despite sometimes predicting wrong emotion and crashes when you exit the keyboard." />
+    <MESSAGE value="fixed deleting emoji issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed deleting emoji issue" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -3794,13 +3828,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java</url>
-          <line>83</line>
+          <line>81</line>
           <properties />
           <option name="timeStamp" value="311" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java</url>
-          <line>270</line>
+          <line>276</line>
           <properties />
           <option name="timeStamp" value="316" />
         </line-breakpoint>
@@ -3905,13 +3939,6 @@
         <state relative-caret-position="150">
           <caret line="10" column="53" selection-start-line="10" selection-start-column="53" selection-end-line="10" selection-end-column="53" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/inputmethodservice/InputMethodService.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117">
-          <caret line="219" column="47" selection-start-line="219" selection-start-column="47" selection-end-line="219" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -4142,14 +4169,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/keycodes.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -4198,53 +4217,74 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="292">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/inputmethodservice/InputMethodService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="109">
+          <caret line="215" column="19" selection-start-line="215" selection-start-column="19" selection-end-line="215" selection-end-column="19" />
+          <folding>
+            <element signature="e#6088#6089#0" expanded="true" />
+            <element signature="e#6139#6140#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="113" column="41" selection-start-line="113" selection-start-column="41" selection-end-line="113" selection-end-column="41" />
+        <state relative-caret-position="253">
+          <caret line="183" column="19" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
           <folding>
             <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
-            <element signature="class#3197:3379" expanded="false" />
-            <element signature="method#onComplete#0;class#3197:3379" expanded="false" />
-            <element signature="e#3517#3519#0" expanded="false" />
-            <element signature="e#4079#4106#0" expanded="false" />
-            <element signature="e#4269#4616#0" expanded="true" />
-            <element signature="e#4615#4616#0" expanded="true" />
+            <element signature="class#3140:3322" expanded="false" />
+            <element signature="method#onComplete#0;class#3140:3322" expanded="false" />
+            <element signature="e#3460#3462#0" expanded="false" />
+            <element signature="e#4022#4049#0" expanded="false" />
             <element signature="method#onDestroy#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="method#disableCamera#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onInitializeInterface#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#4921#4991#0" expanded="false" />
-            <element signature="e#5664#5665#0" expanded="true" />
-            <element signature="e#5708#5709#0" expanded="true" />
-            <element signature="e#7078#7091#0" expanded="false" />
-            <element signature="class#9055:9984" expanded="false" />
-            <element signature="method#onPermissionGranted#0;class#9055:9984" expanded="false" />
-            <element signature="method#onPermissionDenied#0;class#9055:9984" expanded="false" />
-            <element signature="e#10241#10303#0" expanded="false" />
+            <element signature="e#4855#4925#0" expanded="false" />
+            <element signature="method#isEmoji#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="e#7280#7293#0" expanded="false" />
+            <element signature="class#9257:10186" expanded="false" />
+            <element signature="method#onPermissionGranted#0;class#9257:10186" expanded="false" />
+            <element signature="method#onPermissionDenied#0;class#9257:10186" expanded="false" />
             <element signature="method#imageToBitmap#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#10811#10857#0" expanded="false" />
+            <element signature="e#10592#10638#0" expanded="false" />
+            <element signature="method#initializeEmojisMap#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onDisplayCompletions#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onCreateCandidatesView#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#playClick#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onFinishInput#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#updateCandidates#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#setSuggestions#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onStartInput#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onStartInputView#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onGetSuggestions#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onGetSentenceSuggestions#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#DO#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#pickSuggestionManually#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="class#ACTION#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#indexToEmoji#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onPress#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#14966#15003#0" expanded="false" />
+            <element signature="e#14833#14870#0" expanded="false" />
             <element signature="method#onRelease#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#charsToRemove#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#onKey#0;class#KeyMojiIME#0" expanded="false" />
+            <element signature="method#sendAsciiChar#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#sendText#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onText#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeLeft#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeDown#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeUp#0;class#KeyMojiIME#0" expanded="false" />
-            <marker date="1501342409000" expanded="false" signature="6148:8753" ph="{...}" />
-            <marker date="1501342409000" expanded="false" signature="6549:8743" ph="{...}" />
+            <marker date="1501343180000" expanded="false" signature="6350:8955" ph="{...}" />
+            <marker date="1501343180000" expanded="false" signature="6751:8945" ph="{...}" />
           </folding>
         </state>
       </provider>

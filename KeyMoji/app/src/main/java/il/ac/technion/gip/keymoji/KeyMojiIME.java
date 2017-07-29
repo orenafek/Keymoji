@@ -132,7 +132,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     }
 
     private void disableCamera() {
-        /*cameraView.disableView();*/
+        cameraView.stop();
     }
 
     @Override
@@ -171,11 +171,19 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     }
 
     @Override
+    public boolean onShowInputRequested(int flags, boolean configChange) {
+        if (cameraView != null && !cameraView.isCameraOpened()) {
+            cameraView.start();
+        }
+        return super.onShowInputRequested(flags, configChange);
+    }
+
+    @Override
     public View onCreateInputView() {
         this.inflater = new Inflater(this);
         mainLayout = inflater.inflate(R.layout.keyboard);
         viewAccessor = new ViewAccessor(mainLayout);
-        keyboardView = (CustomizedKeyboardView)(mainLayout.getChildAt(0));
+        keyboardView = (CustomizedKeyboardView) (mainLayout.getChildAt(0));
         keyboardView.setPreviewEnabled(false);
         cameraView = viewAccessor.getView(camera);
         cameraView.addCallback(new CameraView.Callback() {
@@ -276,16 +284,6 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         emojis = initializeEmojisMap();
         keyboardView.setOnKeyboardActionListener(this);
 
-        new Timer().scheduleAtFixedRate(new TimerTask() {
-            @Override
-            public void run() {
-//                synchronized (KeyMojiIME.this.takePicture) {
-//                    if (takePicture.get()) {
-//                        takePicture.set(false);
-//                    }
-//                }
-            }
-        }, 3000, 1000);// First time start after 5 mili second and repead after 1 second*/
         return mainLayout;
     }
 
@@ -361,6 +359,9 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         composing.setLength(0);
         updateCandidates();
         setCandidatesViewShown(false);
+        if (cameraView.isCameraOpened()) {
+            disableCamera();
+        }
 
     }
 
@@ -492,6 +493,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         sendText(String.valueOf(Character.isLetter(c) && !capsLock ?
                 c : Character.toUpperCase(c)));
     }
+
     private void sendText(CharSequence cs) {
         InputConnection ic = getCurrentInputConnection();
         ic.commitText(cs, 1);

@@ -27,4 +27,6 @@ public class CustomizedKeyboardView extends KeyboardView {
         super.onDraw(canvas);
         this.canvas = canvas;
     }
+
+
 }
