@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
+import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.SentenceSuggestionsInfo;
 import android.view.textservice.SpellCheckerSession;
 import android.view.textservice.SuggestionsInfo;
@@ -35,6 +36,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Stack;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -73,6 +75,9 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private ViewAccessor viewAccessor;
     private final Wrapper<Boolean> takePicture = new Wrapper<>(false);
     private Camera.Size sz;
+    private boolean isLastkeyEmoji;
+    private Stack<Boolean> history;
+
 
 
     @Override
@@ -93,6 +98,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
         String toPath = "/data/data/" + getPackageName();  // Your application path
         copyAssetFolder(getAssets(), "", toPath);
+        history = new Stack<>();
 //
 //        if (Build.VERSION.SDK_INT < 21) {
 //            Camera c = Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT);
@@ -152,6 +158,10 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         return emojis.contains(String.valueOf(primaryCode));
     }
 
+    private void sendEmoji(Emoji e) {
+        history.push(true);
+        sendText(e.getEmojiString());
+    }
 
     @Override
     public View onCreateInputView() {
@@ -182,7 +192,6 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
                 Log.i("Daniel", "sending picture to get AU's and prediction");
                 int suggestion = A(targ.getNativeObjAddr());
-                sendText(String.valueOf(suggestion));
                 setSuggestions(Collections.singletonList(indexToEmoji(suggestion)), true, true);
                 Log.i("Daniel", "got prediction");
 
@@ -402,7 +411,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     }
 
     public void pickSuggestionManually(int mSelectedIndex) {
-        sendText(indexToEmoji(mSelectedIndex).getEmojiString());
+        sendEmoji(indexToEmoji(mSelectedIndex));
     }
 
     enum ACTION {NOTHING}
@@ -430,7 +439,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         playClick(primaryCode);
         switch (primaryCode) {
             case Keyboard.KEYCODE_DELETE:
-                ic.deleteSurroundingText(1, 0);
+
+                ic.deleteSurroundingText((!history.empty() && history.pop()) ? 2 : 1, 0);
                 break;
             case Keyboard.KEYCODE_SHIFT: {
                 capsLock = !capsLock;
@@ -442,27 +452,29 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
 
+            case KeyMojiKeyboard.KEYCODE_MODE_CHANGE:
+                ((InputMethodManager) getApplicationContext().getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromInputMethod(
+                        keyboardView.getWindowToken(), 0);
+                break;
             case KeyMojiKeyboard.KEYCODE_LANGUAGE_SWITCH:
+                ((InputMethodManager) getApplicationContext().getSystemService(INPUT_METHOD_SERVICE))
+                        .showInputMethodPicker();
+                break;
 
 
             default: {
-                if (isEmoji(primaryCode)) {
-                    sendText(emojis.get(primaryCode).getEmojiString());
-                } else {
-                    char c = (char) primaryCode;
-                    sendText(String.valueOf(Character.isLetter(c) && !capsLock ?
-                            c : Character.toUpperCase(c)));
-                }
-
-                composing.append((char) primaryCode);
-                updateCandidates();
-                setSuggestions(Collections.singletonList(emojis.get(-54)), true, true);
+                sendAsciiChar((char) primaryCode);
             }
 
         }
 
     }
 
+    private void sendAsciiChar(char c) {
+        history.push(false);
+        sendText(String.valueOf(Character.isLetter(c) && !capsLock ?
+                c : Character.toUpperCase(c)));
+    }
     private void sendText(CharSequence cs) {
         InputConnection ic = getCurrentInputConnection();
         ic.commitText(cs, 1);
