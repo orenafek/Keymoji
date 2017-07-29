@@ -182,6 +182,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                 Log.i("Daniel", "sending picture to get AU's and prediction");
                 int suggestion = A(targ.getNativeObjAddr());
                 sendText(String.valueOf(suggestion));
+                setSuggestions(Collections.singletonList(indexToEmoji(suggestion)), true, true);
                 Log.i("Daniel", "got prediction");
 
                 // SAVE IMAGE
@@ -295,12 +296,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private SparseArray<String> initializeEmojisMap() {
         SparseArray<String> map = new SparseArray<>();
         int[] unicodes = getResources().getIntArray(R.array.emojis_unicode);
-        String[] primaryCodes = getResources().getStringArray(R.array.emoji_primary_codes);
-        if (BuildConfig.DEBUG && unicodes.length != primaryCodes.length) {
-            throw new RuntimeException();
-        }
         for (int i = 0; i < unicodes.length; i++) {
-            map.put(Integer.parseInt(primaryCodes[i]), new String(Character.toChars(unicodes[i])));
+            map.put(i + 1, new String(Character.toChars(unicodes[i])));
         }
 
         return map;
@@ -404,14 +401,13 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     }
 
     public void pickSuggestionManually(int mSelectedIndex) {
-        DO(NOTHING);
         sendText(indexToEmoji(mSelectedIndex));
     }
 
     enum ACTION {NOTHING}
 
-    private CharSequence indexToEmoji(int relativeIndex) {
-        return emojis.get(-54 + relativeIndex);
+    private String indexToEmoji(int relativeIndex) {
+        return emojis.get(relativeIndex);
     }
 
     @Override

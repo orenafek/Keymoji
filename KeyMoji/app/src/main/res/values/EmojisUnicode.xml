@@ -1,16 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <integer name="emoji_anger">0x1F621</integer>
-    <integer name="emoji_disgust">0x1F623</integer>
-    <integer name="emoji_fear">0x1F628</integer>
     <integer name="emoji_happy">0x1F642</integer>
     <integer name="emoji_sad">0x1F622</integer>
     <integer name="emoji_surprised">0x1F62E</integer>
 
     <integer-array name="emojis_unicode">
         <item>@integer/emoji_anger</item>
-        <item>@integer/emoji_disgust</item>
-        <item>@integer/emoji_fear</item>
         <item>@integer/emoji_happy</item>
         <item>@integer/emoji_sad</item>
         <item>@integer/emoji_surprised</item>
