@@ -11,10 +11,11 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="still problems with predicting but doing it every 6 seconds and not on key press">
+    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="Working version despite sometimes predicting wrong emotion and there is no corrolation between the emoji pressed and the emoji printed and crashes when you exit the keyboard and special characters not working yet.">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Emoji.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java" afterPath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" afterPath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/values/EmojisUnicode.xml" afterPath="$PROJECT_DIR$/app/src/main/res/values/EmojisUnicode.xml" />
     </list>
     <ignored path="KeyMoji.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,17 +55,46 @@
       <file leaf-file-name="KeyMojiIME.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="300" column="9" selection-start-line="300" selection-start-column="9" selection-end-line="300" selection-end-column="9" />
+            <state relative-caret-position="62">
+              <caret line="367" column="8" selection-start-line="367" selection-start-column="8" selection-end-line="367" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#14340#14341#0" expanded="true" />
-                <element signature="e#14388#14389#0" expanded="true" />
+                <element signature="e#14398#14399#0" expanded="true" />
+                <element signature="e#14446#14447#0" expanded="true" />
                 <element signature="method#onText#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeLeft#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeDown#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeUp#0;class#KeyMojiIME#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SparseArray.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/util/SparseArray.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Emoji.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Emoji.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+              <folding>
+                <element signature="e#304#305#0" expanded="true" />
+                <element signature="e#332#333#0" expanded="true" />
+                <element signature="e#371#372#0" expanded="true" />
+                <element signature="e#405#406#0" expanded="true" />
+                <element signature="e#443#444#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#531#532#0" expanded="true" />
+                <element signature="e#577#578#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,8 +123,18 @@
       <file leaf-file-name="CandidateView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="294" column="41" selection-start-line="294" selection-start-column="41" selection-end-line="294" selection-end-column="41" />
+            <state relative-caret-position="55">
+              <caret line="290" column="29" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MotionEvent.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/view/MotionEvent.class">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1395">
+              <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -134,64 +174,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CameraView.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.google/cameraview/-SNAPSHOT/jars/classes.jar!/com/google/android/cameraview/CameraView.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CameraBridgeViewBase.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6750">
-              <caret line="478" column="18" selection-start-line="478" selection-start-column="18" selection-end-line="478" selection-end-column="18" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#3005#3006#0" expanded="false" />
-                <element signature="e#3052#3053#0" expanded="false" />
-                <element signature="e#5597#5598#0" expanded="false" />
-                <element signature="e#5660#5661#0" expanded="false" />
-                <element signature="e#6292#6293#0" expanded="false" />
-                <element signature="e#6339#6340#0" expanded="false" />
-                <element signature="e#8984#8985#0" expanded="false" />
-                <element signature="e#9020#9021#0" expanded="false" />
-                <element signature="e#9142#9143#0" expanded="false" />
-                <element signature="e#9178#9179#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JavaCameraView.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/JavaCameraView.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#1935#1936#0" expanded="false" />
-                <element signature="e#1975#1976#0" expanded="false" />
-                <element signature="e#2041#2042#0" expanded="false" />
-                <element signature="e#2078#2079#0" expanded="false" />
-                <element signature="e#12263#12264#0" expanded="false" />
-                <element signature="e#12302#12303#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="ASClass" />
-        <option value="Class" />
         <option value="valueResourceFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -2905,7 +2895,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/values/keycodes.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiKeyboard.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/querty_hebrew.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/openCVLibrary300/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" />
@@ -2913,6 +2902,8 @@
         <option value="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
         <option value="$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/EmojisUnicode.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Emoji.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" />
       </list>
     </option>
@@ -3599,12 +3590,19 @@
       <option name="project" value="LOCAL" />
       <updated>1500468192005</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Working version despite sometimes predicting wrong emotion and there is no corrolation between the emoji pressed and the emoji printed and crashes when you exit the keyboard and special characters not working yet.">
+      <created>1501322961100</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1501322961101</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="801" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32064423" sideWeight="0.4914712" order="1" side_tool="false" content_ui="tabs" />
@@ -3612,7 +3610,7 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4568082" sideWeight="0.50858366" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5387994" sideWeight="0.4914163" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36456808" sideWeight="0.4914163" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3967789" sideWeight="0.48687088" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3672,7 +3670,8 @@
     <MESSAGE value="returns only 1 from classifier and possibly getting aus wrong" />
     <MESSAGE value="Correct predictions for happy and angry but still taking picture on Keypress" />
     <MESSAGE value="still problems with predicting but doing it every 6 seconds and not on key press" />
-    <option name="LAST_COMMIT_MESSAGE" value="still problems with predicting but doing it every 6 seconds and not on key press" />
+    <MESSAGE value="Working version despite sometimes predicting wrong emotion and there is no corrolation between the emoji pressed and the emoji printed and crashes when you exit the keyboard and special characters not working yet." />
+    <option name="LAST_COMMIT_MESSAGE" value="Working version despite sometimes predicting wrong emotion and there is no corrolation between the emoji pressed and the emoji printed and crashes when you exit the keyboard and special characters not working yet." />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -3681,13 +3680,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java</url>
-          <line>80</line>
+          <line>81</line>
           <properties />
           <option name="timeStamp" value="311" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java</url>
-          <line>251</line>
+          <line>252</line>
           <properties />
           <option name="timeStamp" value="316" />
         </line-breakpoint>
@@ -3716,15 +3715,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/content/ContextWrapper.java" />
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/os/Looper.java" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Inflater.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="53" selection-start-line="19" selection-start-column="53" selection-end-line="19" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/method.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -4021,14 +4011,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="294" column="41" selection-start-line="294" selection-start-column="41" selection-end-line="294" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/res/values/EmojisUnicode.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -4057,14 +4039,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/view/MotionEvent.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1395">
+          <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Emoji.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="e#304#305#0" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#371#372#0" expanded="true" />
+            <element signature="e#405#406#0" expanded="true" />
+            <element signature="e#443#444#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#531#532#0" expanded="true" />
+            <element signature="e#577#578#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/util/SparseArray.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="55">
+          <caret line="290" column="29" selection-start-line="290" selection-start-column="29" selection-end-line="290" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="300" column="9" selection-start-line="300" selection-start-column="9" selection-end-line="300" selection-end-column="9" />
+        <state relative-caret-position="62">
+          <caret line="367" column="8" selection-start-line="367" selection-start-column="8" selection-end-line="367" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#14340#14341#0" expanded="true" />
-            <element signature="e#14388#14389#0" expanded="true" />
+            <element signature="e#14398#14399#0" expanded="true" />
+            <element signature="e#14446#14447#0" expanded="true" />
             <element signature="method#onText#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeLeft#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />

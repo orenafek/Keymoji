@@ -30,12 +30,15 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
+import AndroidAuxilary.Emoji;
+
 public class CandidateView extends View {
 
     private static final int OUT_OF_BOUNDS = -1;
 
     private KeyMojiIME mService;
     private List<String> mSuggestions;
+    private List<Emoji> suggestedEmojis;
     private int mSelectedIndex;
     private int mTouchX = OUT_OF_BOUNDS;
     private Drawable mSelectionHighlight;
@@ -60,6 +63,7 @@ public class CandidateView extends View {
     private Paint mPaint;
     private boolean mScrolled;
     private int mTargetScrollX;
+    private int suggestedEmoji;
 
     private int mTotalWidth;
 
@@ -240,11 +244,17 @@ public class CandidateView extends View {
     }
 
     @SuppressLint("WrongCall")
-    public void setSuggestions(List<String> suggestions, boolean completions,
+    public void setSuggestions(List<Emoji> suggestions, boolean completions,
                                boolean typedWordValid, Canvas canvas) {
         clear();
         if (suggestions != null) {
-            mSuggestions = new ArrayList<>(suggestions);
+            suggestedEmojis = suggestions;
+            mSuggestions = new ArrayList<>();
+            for (Emoji e : suggestions) {
+                mSuggestions.add(e.getEmojiString());
+            }
+            suggestedEmoji = mSuggestions.size() > 0 ? suggestedEmojis.get(0).getIndex() : 1;
+
         }
         mTypedWordValid = typedWordValid;
         scrollTo(0, 0);
@@ -274,6 +284,7 @@ public class CandidateView extends View {
         int y = (int) me.getY();
         mTouchX = x;
 
+
         switch (action) {
             case MotionEvent.ACTION_DOWN:
                 mScrolled = false;
@@ -283,7 +294,7 @@ public class CandidateView extends View {
                 if (y <= 0) {
                     // Fling up!?
                     if (mSelectedIndex >= 0) {
-                        mService.pickSuggestionManually(mSelectedIndex);
+                        mService.pickSuggestionManually(suggestedEmoji);
                         mSelectedIndex = -1;
                     }
                 }
@@ -292,10 +303,11 @@ public class CandidateView extends View {
             case MotionEvent.ACTION_UP:
                 if (!mScrolled) {
                     if (mSelectedIndex >= 0) {
-                        mService.pickSuggestionManually(mSelectedIndex);
+                        mService.pickSuggestionManually(suggestedEmoji);
                     }
                 }
                 mSelectedIndex = -1;
+                suggestedEmoji = 1;
                 removeHighlight();
                 requestLayout();
                 break;
@@ -315,7 +327,7 @@ public class CandidateView extends View {
         // To detect candidate
         onDraw(null);
         if (mSelectedIndex >= 0) {
-            mService.pickSuggestionManually(mSelectedIndex);
+            mService.pickSuggestionManually(suggestedEmoji);
         }
         invalidate();
     }

@@ -38,6 +38,7 @@ import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import AndroidAuxilary.Emoji;
 import AndroidAuxilary.Inflater;
 import AndroidAuxilary.ViewAccessor;
 import AndroidAuxilary.Wrapper;
@@ -59,11 +60,11 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private final Wrapper<Integer> result = new Wrapper<>(-1);
     private Inflater inflater;
     private CameraView cameraView;
-    private SparseArray<String> emojis;
+    private SparseArray<Emoji> emojis;
     private int lastDisplayWidth;
     private boolean isCompletionOn = false;
     private StringBuilder composing = new StringBuilder();
-    private List<String> suggestions;
+    private List<Emoji> suggestions;
     private CandidateView candidateView;
     private FrameLayout mainLayout;
     private CustomizedKeyboardView keyboardView;
@@ -293,11 +294,11 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     public native int A(long add);
 
-    private SparseArray<String> initializeEmojisMap() {
-        SparseArray<String> map = new SparseArray<>();
+    private SparseArray<Emoji> initializeEmojisMap() {
+        SparseArray<Emoji> map = new SparseArray<>();
         int[] unicodes = getResources().getIntArray(R.array.emojis_unicode);
         for (int i = 0; i < unicodes.length; i++) {
-            map.put(i + 1, new String(Character.toChars(unicodes[i])));
+            map.put(i + 1, new Emoji(i + 1, new String(Character.toChars(unicodes[i]))));
         }
 
         return map;
@@ -362,7 +363,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     }
 
-    private void setSuggestions(List<String> suggestions, boolean completions, boolean typedWordValid) {
+    private void setSuggestions(List<Emoji> suggestions, boolean completions, boolean typedWordValid) {
         if ((suggestions != null && suggestions.size() > 0) || isExtractViewShown()) {
             setCandidatesViewShown(true);
         }
@@ -401,12 +402,12 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     }
 
     public void pickSuggestionManually(int mSelectedIndex) {
-        sendText(indexToEmoji(mSelectedIndex));
+        sendText(indexToEmoji(mSelectedIndex).getEmojiString());
     }
 
     enum ACTION {NOTHING}
 
-    private String indexToEmoji(int relativeIndex) {
+    private Emoji indexToEmoji(int relativeIndex) {
         return emojis.get(relativeIndex);
     }
 
@@ -446,7 +447,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
             default: {
                 if (isEmoji(primaryCode)) {
-                    sendText(emojis.get(primaryCode));
+                    sendText(emojis.get(primaryCode).getEmojiString());
                 } else {
                     char c = (char) primaryCode;
                     sendText(String.valueOf(Character.isLetter(c) && !capsLock ?
