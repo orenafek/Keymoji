@@ -107,8 +107,23 @@ int getAUs(jlong matAddrGray) {
     return prediction;
 }
 
+bool isDefualt(vector<double> v_r, vector<double> v_c) {
+
+    for (auto i : v_r) {
+        if (i != 0)
+            return false;
+    }
+    for (auto i : v_c) {
+        if (i != 0)
+            return false;
+    }
+    __android_log_print(ANDROID_LOG_INFO, "Defualt", "didnt recognize a face");
+
+    return true;
+}
 
 int tree(vector<double> v_r, vector<double> v_c) {
+    if (isDefualt(v_r, v_c)) return 2;
     if (v_r[8] <= 1.11750006676) {
         if (v_r[2] <= 1.25100004673) {
             if (v_r[3] <= 0.5) {

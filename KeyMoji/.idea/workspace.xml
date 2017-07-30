@@ -6,17 +6,29 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="defualt" />
     <option name="TOOL_WINDOW_LOG_LEVEL" value="info" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="fixed crashing after exiting the keyboard and resuming using the camera &#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/numbers.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/symbols.xml" />
+    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="first working version!!! wohoo! :)))">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_deps" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_deps" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_deps" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" afterPath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/arm64-v8a/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi-v7a/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/armeabi/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/mips64/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" afterPath="$PROJECT_DIR$/app/.externalNativeBuild/cmake/debug/x86_64/.ninja_log" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" afterPath="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
     </list>
     <ignored path="KeyMoji.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -57,7 +69,7 @@
         <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2092">
-              <caret line="555" column="39" selection-start-line="555" selection-start-column="39" selection-end-line="555" selection-end-column="39" />
+              <caret line="554" column="39" selection-start-line="554" selection-start-column="39" selection-end-line="554" selection-end-column="39" />
               <folding>
                 <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
                 <element signature="class#3178:3360" expanded="false" />
@@ -66,14 +78,14 @@
                 <element signature="e#4060#4087#0" expanded="false" />
                 <element signature="method#onDestroy#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#isEmoji#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="class#6397:9024" expanded="false" />
-                <element signature="method#onPictureTaken#0;class#6397:9024" expanded="false" />
-                <element signature="e#7349#7362#0" expanded="false" />
-                <element signature="class#9326:10255" expanded="false" />
-                <element signature="method#onPermissionGranted#0;class#9326:10255" expanded="false" />
-                <element signature="method#onPermissionDenied#0;class#9326:10255" expanded="false" />
+                <element signature="class#6395:9022" expanded="false" />
+                <element signature="method#onPictureTaken#0;class#6395:9022" expanded="false" />
+                <element signature="e#7347#7360#0" expanded="false" />
+                <element signature="class#9324:10253" expanded="false" />
+                <element signature="method#onPermissionGranted#0;class#9324:10253" expanded="false" />
+                <element signature="method#onPermissionDenied#0;class#9324:10253" expanded="false" />
                 <element signature="method#imageToBitmap#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#10672#10718#0" expanded="false" />
+                <element signature="e#10670#10716#0" expanded="false" />
                 <element signature="method#initializeEmojisMap#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onDisplayCompletions#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onCreateCandidatesView#0;class#KeyMojiIME#0" expanded="false" />
@@ -89,7 +101,7 @@
                 <element signature="class#ACTION#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#indexToEmoji#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onPress#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#14935#14972#0" expanded="false" />
+                <element signature="e#14933#14970#0" expanded="false" />
                 <element signature="method#onRelease#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#charsToRemove#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#sendAsciiChar#0;class#KeyMojiIME#0" expanded="false" />
@@ -99,23 +111,37 @@
                 <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeDown#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeUp#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#18420#18421#0" expanded="true" />
-                <element signature="e#18465#18466#0" expanded="true" />
+                <element signature="e#18427#18428#0" expanded="true" />
+                <element signature="e#18472#18473#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="symbols.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="symbols.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/symbols.xml">
           <provider editor-type-id="android-designer2">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="146">
-              <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+              <caret line="139" column="36" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="36" />
               <folding>
-                <element signature="e#848#867#0" expanded="true" />
+                <element signature="e#847#866#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="native-lib.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="46">
+              <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
+              <folding>
+                <element signature="e#0#16#0" expanded="true" />
+                <element signature="e#741#840#0" expanded="false" />
+                <element signature="e#893#1148#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -178,28 +204,9 @@
           </provider>
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="158">
-              <caret line="72" column="99" selection-start-line="72" selection-start-column="99" selection-end-line="72" selection-end-column="99" />
+              <caret line="141" column="32" selection-start-line="141" selection-start-column="32" selection-end-line="141" selection-end-column="32" />
               <folding>
-                <element signature="e#848#867#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Emoji.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Emoji.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-              <folding>
-                <element signature="e#306#307#0" expanded="true" />
-                <element signature="e#334#335#0" expanded="true" />
-                <element signature="e#373#374#0" expanded="true" />
-                <element signature="e#407#408#0" expanded="true" />
-                <element signature="e#445#446#0" expanded="true" />
-                <element signature="e#479#480#0" expanded="true" />
-                <element signature="e#533#534#0" expanded="true" />
-                <element signature="e#579#580#0" expanded="true" />
+                <element signature="e#847#866#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -210,7 +217,14 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="4140">
               <caret line="308" column="36" selection-start-line="308" selection-start-column="36" selection-end-line="308" selection-end-column="36" />
-              <folding />
+              <folding>
+                <element signature="e#0#10917#0" expanded="false" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#4382#4383#0" expanded="false" />
+                <element signature="e#4417#4418#0" expanded="false" />
+                <element signature="e#4480#4481#0" expanded="false" />
+                <element signature="e#4514#4515#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -2940,7 +2954,6 @@
         <option value="$PROJECT_DIR$/app/build.gradle" />
         <option value="$PROJECT_DIR$/openCVLibrary300/build.gradle" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
         <option value="$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/EmojisUnicode.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Emoji.java" />
@@ -2950,6 +2963,7 @@
         <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/numbers.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/xml/symbols.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp" />
       </list>
     </option>
   </component>
@@ -3004,6 +3018,16 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="Gradle Scripts" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidBuildScriptsGroupNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="openCVLibrary300" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -3118,6 +3142,38 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidSourceTypeNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cpp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidJniFolderNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="KeyMoji" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cpp" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidJniFolderNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.NativeAndroidLibraryNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -3742,7 +3798,14 @@
       <option name="project" value="LOCAL" />
       <updated>1501343446708</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="first working version!!! wohoo! :)))">
+      <created>1501404971667</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1501404971667</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -3854,7 +3917,8 @@
     <MESSAGE value="Working version despite sometimes predicting wrong emotion and crashes when you exit the keyboard." />
     <MESSAGE value="fixed deleting emoji issue" />
     <MESSAGE value="fixed crashing after exiting the keyboard and resuming using the camera &#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed crashing after exiting the keyboard and resuming using the camera &#10;" />
+    <MESSAGE value="first working version!!! wohoo! :)))" />
+    <option name="LAST_COMMIT_MESSAGE" value="first working version!!! wohoo! :)))" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -3869,7 +3933,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java</url>
-          <line>279</line>
+          <line>277</line>
           <properties />
           <option name="timeStamp" value="316" />
         </line-breakpoint>
@@ -4123,18 +4187,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2505">
-          <caret line="297" column="0" selection-start-line="297" selection-start-column="0" selection-end-line="297" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-            <element signature="e#741#840#0" expanded="false" />
-            <element signature="e#893#1148#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/view/MotionEvent.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1395">
@@ -4201,7 +4253,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4140">
           <caret line="308" column="36" selection-start-line="308" selection-start-column="36" selection-end-line="308" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="e#0#10917#0" expanded="false" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#4382#4383#0" expanded="false" />
+            <element signature="e#4417#4418#0" expanded="false" />
+            <element signature="e#4480#4481#0" expanded="false" />
+            <element signature="e#4514#4515#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -4240,7 +4299,7 @@
     <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2092">
-          <caret line="555" column="39" selection-start-line="555" selection-start-column="39" selection-end-line="555" selection-end-column="39" />
+          <caret line="554" column="39" selection-start-line="554" selection-start-column="39" selection-end-line="554" selection-end-column="39" />
           <folding>
             <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
             <element signature="class#3178:3360" expanded="false" />
@@ -4249,14 +4308,14 @@
             <element signature="e#4060#4087#0" expanded="false" />
             <element signature="method#onDestroy#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#isEmoji#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="class#6397:9024" expanded="false" />
-            <element signature="method#onPictureTaken#0;class#6397:9024" expanded="false" />
-            <element signature="e#7349#7362#0" expanded="false" />
-            <element signature="class#9326:10255" expanded="false" />
-            <element signature="method#onPermissionGranted#0;class#9326:10255" expanded="false" />
-            <element signature="method#onPermissionDenied#0;class#9326:10255" expanded="false" />
+            <element signature="class#6395:9022" expanded="false" />
+            <element signature="method#onPictureTaken#0;class#6395:9022" expanded="false" />
+            <element signature="e#7347#7360#0" expanded="false" />
+            <element signature="class#9324:10253" expanded="false" />
+            <element signature="method#onPermissionGranted#0;class#9324:10253" expanded="false" />
+            <element signature="method#onPermissionDenied#0;class#9324:10253" expanded="false" />
             <element signature="method#imageToBitmap#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#10672#10718#0" expanded="false" />
+            <element signature="e#10670#10716#0" expanded="false" />
             <element signature="method#initializeEmojisMap#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onDisplayCompletions#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onCreateCandidatesView#0;class#KeyMojiIME#0" expanded="false" />
@@ -4272,7 +4331,7 @@
             <element signature="class#ACTION#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#indexToEmoji#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onPress#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#14935#14972#0" expanded="false" />
+            <element signature="e#14933#14970#0" expanded="false" />
             <element signature="method#onRelease#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#charsToRemove#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#sendAsciiChar#0;class#KeyMojiIME#0" expanded="false" />
@@ -4282,8 +4341,8 @@
             <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeDown#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeUp#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#18420#18421#0" expanded="true" />
-            <element signature="e#18465#18466#0" expanded="true" />
+            <element signature="e#18427#18428#0" expanded="true" />
+            <element signature="e#18472#18473#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -4302,9 +4361,9 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
-          <caret line="72" column="99" selection-start-line="72" selection-start-column="99" selection-end-line="72" selection-end-column="99" />
+          <caret line="141" column="32" selection-start-line="141" selection-start-column="32" selection-end-line="141" selection-end-column="32" />
           <folding>
-            <element signature="e#848#867#0" expanded="true" />
+            <element signature="e#847#866#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -4315,9 +4374,21 @@
       </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="146">
-          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+          <caret line="139" column="36" selection-start-line="139" selection-start-column="36" selection-end-line="139" selection-end-column="36" />
           <folding>
-            <element signature="e#848#867#0" expanded="true" />
+            <element signature="e#847#866#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/cpp/native-lib.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="103" column="44" selection-start-line="103" selection-start-column="44" selection-end-line="103" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+            <element signature="e#741#840#0" expanded="false" />
+            <element signature="e#893#1148#0" expanded="false" />
           </folding>
         </state>
       </provider>
