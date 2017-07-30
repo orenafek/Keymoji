@@ -11,10 +11,12 @@
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="fixed deleting emoji issue">
+    <list default="true" id="7161c831-27dd-4637-9c87-f3f2413dc7f7" name="Default" comment="fixed crashing after exiting the keyboard and resuming using the camera &#10;">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/numbers.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/src/main/res/xml/symbols.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java" afterPath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" afterPath="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" afterPath="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" />
     </list>
     <ignored path="KeyMoji.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -51,32 +53,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="KeyMojiIME.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="KeyMojiIME.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="183" column="19" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
+            <state relative-caret-position="2092">
+              <caret line="555" column="39" selection-start-line="555" selection-start-column="39" selection-end-line="555" selection-end-column="39" />
               <folding>
                 <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
-                <element signature="class#3140:3322" expanded="false" />
-                <element signature="method#onComplete#0;class#3140:3322" expanded="false" />
-                <element signature="e#3460#3462#0" expanded="false" />
-                <element signature="e#4022#4049#0" expanded="false" />
+                <element signature="class#3178:3360" expanded="false" />
+                <element signature="method#onComplete#0;class#3178:3360" expanded="false" />
+                <element signature="e#3498#3500#0" expanded="false" />
+                <element signature="e#4060#4087#0" expanded="false" />
                 <element signature="method#onDestroy#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="method#onInitializeInterface#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#4855#4925#0" expanded="false" />
                 <element signature="method#isEmoji#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#7280#7293#0" expanded="false" />
-                <element signature="class#9257:10186" expanded="false" />
-                <element signature="method#onPermissionGranted#0;class#9257:10186" expanded="false" />
-                <element signature="method#onPermissionDenied#0;class#9257:10186" expanded="false" />
+                <element signature="class#6397:9024" expanded="false" />
+                <element signature="method#onPictureTaken#0;class#6397:9024" expanded="false" />
+                <element signature="e#7349#7362#0" expanded="false" />
+                <element signature="class#9326:10255" expanded="false" />
+                <element signature="method#onPermissionGranted#0;class#9326:10255" expanded="false" />
+                <element signature="method#onPermissionDenied#0;class#9326:10255" expanded="false" />
                 <element signature="method#imageToBitmap#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#10592#10638#0" expanded="false" />
+                <element signature="e#10672#10718#0" expanded="false" />
                 <element signature="method#initializeEmojisMap#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onDisplayCompletions#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onCreateCandidatesView#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#playClick#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="method#onFinishInput#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#updateCandidates#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#setSuggestions#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onStartInput#0;class#KeyMojiIME#0" expanded="false" />
@@ -88,10 +89,9 @@
                 <element signature="class#ACTION#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#indexToEmoji#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onPress#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="e#14833#14870#0" expanded="false" />
+                <element signature="e#14935#14972#0" expanded="false" />
                 <element signature="method#onRelease#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#charsToRemove#0;class#KeyMojiIME#0" expanded="false" />
-                <element signature="method#onKey#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#sendAsciiChar#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#sendText#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#onText#0;class#KeyMojiIME#0" expanded="false" />
@@ -99,9 +99,34 @@
                 <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeDown#0;class#KeyMojiIME#0" expanded="false" />
                 <element signature="method#swipeUp#0;class#KeyMojiIME#0" expanded="false" />
-                <marker date="1501343180000" expanded="false" signature="6350:8955" ph="{...}" />
-                <marker date="1501343180000" expanded="false" signature="6751:8945" ph="{...}" />
+                <element signature="e#18420#18421#0" expanded="true" />
+                <element signature="e#18465#18466#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="symbols.xml" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/symbols.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+              <folding>
+                <element signature="e#848#867#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Inflater.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Inflater.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="195">
+              <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -109,12 +134,9 @@
       <file leaf-file-name="InputMethodService.class" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/inputmethodservice/InputMethodService.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="109">
+            <state relative-caret-position="514">
               <caret line="215" column="19" selection-start-line="215" selection-start-column="19" selection-end-line="215" selection-end-column="19" />
-              <folding>
-                <element signature="e#6088#6089#0" expanded="true" />
-                <element signature="e#6139#6140#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -122,21 +144,8 @@
       <file leaf-file-name="CustomizedKeyboardView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
+            <state relative-caret-position="375">
               <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="keyboard.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml">
-          <provider editor-type-id="android-designer2">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="107">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -145,8 +154,8 @@
       <file leaf-file-name="Keyboard.class" pinned="false" current-in-tab="false">
         <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/inputmethodservice/Keyboard.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-675">
-              <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="192">
+              <caret line="22" column="52" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -155,9 +164,24 @@
       <file leaf-file-name="qwerty.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1365">
-              <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
+            <state relative-caret-position="-113">
+              <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="numbers.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/numbers.xml">
+          <provider editor-type-id="android-designer2">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="158">
+              <caret line="72" column="99" selection-start-line="72" selection-start-column="99" selection-end-line="72" selection-end-column="99" />
+              <folding>
+                <element signature="e#848#867#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -184,7 +208,7 @@
       <file leaf-file-name="CandidateView.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
+            <state relative-caret-position="4140">
               <caret line="308" column="36" selection-start-line="308" selection-start-column="36" selection-end-line="308" selection-end-column="36" />
               <folding />
             </state>
@@ -199,6 +223,7 @@
         <option value="ASClass" />
         <option value="valueResourceFile" />
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -2919,10 +2944,12 @@
         <option value="$PROJECT_DIR$/openCVLibrary300/src/main/java/org/opencv/android/CameraBridgeViewBase.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/values/EmojisUnicode.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Emoji.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/numbers.xml" />
+        <option value="$PROJECT_DIR$/app/src/main/res/xml/symbols.xml" />
       </list>
     </option>
   </component>
@@ -2957,6 +2984,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="ProjectPane">
+        <subPane />
+      </pane>
+      <pane id="Scope" />
       <pane id="AndroidView">
         <subPane>
           <PATH>
@@ -2992,10 +3023,6 @@
               <option name="myItemId" value="xml" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="qwerty.xml" />
-              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -3013,6 +3040,10 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="xml" />
               <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResFolderTypeNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="qwerty.xml" />
+              <option name="myItemType" value="com.android.tools.idea.navigator.nodes.AndroidResGroupNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -3123,12 +3154,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="Scratches" />
-      <pane id="ProjectPane">
-        <subPane />
-      </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3708,12 +3735,19 @@
       <option name="project" value="LOCAL" />
       <updated>1501342533076</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="fixed crashing after exiting the keyboard and resuming using the camera &#10;">
+      <created>1501343446708</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1501343446708</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="801" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32064423" sideWeight="0.4914712" order="1" side_tool="false" content_ui="tabs" />
@@ -3721,21 +3755,22 @@
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4568082" sideWeight="0.50858366" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Android Monitor" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36456808" sideWeight="0.4914163" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Monitor" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36456808" sideWeight="0.4914163" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29974812" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3967789" sideWeight="0.48687088" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3967789" sideWeight="0.48687088" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32796487" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20600858" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32210836" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Android Model" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44363105" sideWeight="0.4946695" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.44363105" sideWeight="0.4946695" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3746,7 +3781,6 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32357043" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -3819,7 +3853,8 @@
     <MESSAGE value="Working version despite sometimes predicting wrong emotion and crashes when you exit the keyboard and special characters not working yet." />
     <MESSAGE value="Working version despite sometimes predicting wrong emotion and crashes when you exit the keyboard." />
     <MESSAGE value="fixed deleting emoji issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed deleting emoji issue" />
+    <MESSAGE value="fixed crashing after exiting the keyboard and resuming using the camera &#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed crashing after exiting the keyboard and resuming using the camera &#10;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
@@ -3834,7 +3869,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java</url>
-          <line>276</line>
+          <line>279</line>
           <properties />
           <option name="timeStamp" value="316" />
         </line-breakpoint>
@@ -3863,15 +3898,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$USER_HOME$/.android/build-cache/2292ab8c662a8bb50d56bc0f73108011987ec829/output/jars/classes.jar!/com/permissioneverywhere/PermissionEverywhere.class" />
-    <entry file="file://$USER_HOME$/AppData/Local/Android/sdk/sources/android-25/android/hardware/Camera.java" />
-    <entry file="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.google/cameraview/-SNAPSHOT/jars/classes.jar!/com/google/android/cameraview/CameraViewImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.google/cameraview/-SNAPSHOT/jars/classes.jar!/com/google/android/cameraview/Camera2.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -3988,7 +4014,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1995">
           <caret line="145" column="104" selection-start-line="145" selection-start-column="104" selection-end-line="145" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3996,7 +4021,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="12360">
           <caret line="1185" column="21" selection-start-line="1185" selection-start-column="21" selection-end-line="1185" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4004,7 +4028,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4060,7 +4083,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4068,19 +4090,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6750">
           <caret line="478" column="18" selection-start-line="478" selection-start-column="18" selection-end-line="478" selection-end-column="18" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#3005#3006#0" expanded="false" />
-            <element signature="e#3052#3053#0" expanded="false" />
-            <element signature="e#5597#5598#0" expanded="false" />
-            <element signature="e#5660#5661#0" expanded="false" />
-            <element signature="e#6292#6293#0" expanded="false" />
-            <element signature="e#6339#6340#0" expanded="false" />
-            <element signature="e#8984#8985#0" expanded="false" />
-            <element signature="e#9020#9021#0" expanded="false" />
-            <element signature="e#9142#9143#0" expanded="false" />
-            <element signature="e#9178#9179#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -4088,7 +4097,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="37" column="25" selection-start-line="37" selection-start-column="25" selection-end-line="37" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4096,7 +4104,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4132,6 +4139,43 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1395">
           <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/util/SparseArray.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/keycodes.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/sym_keyboard_space.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/view/inputmethod/InputConnection.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -4153,114 +4197,70 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/util/SparseArray.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/inputmethodservice/Keyboard.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-675">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/values/keycodes.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi/sym_keyboard_space.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1365">
-          <caret line="91" column="12" selection-start-line="91" selection-start-column="12" selection-end-line="91" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/keyboard.xml">
-      <provider editor-type-id="android-designer2">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="107">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/view/inputmethod/InputConnection.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CandidateView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
+        <state relative-caret-position="4140">
           <caret line="308" column="36" selection-start-line="308" selection-start-column="36" selection-end-line="308" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/inputmethodservice/InputMethodService.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
+        <state relative-caret-position="514">
           <caret line="215" column="19" selection-start-line="215" selection-start-column="19" selection-end-line="215" selection-end-column="19" />
-          <folding>
-            <element signature="e#6088#6089#0" expanded="true" />
-            <element signature="e#6139#6140#0" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/CustomizedKeyboardView.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/Library/Android/sdk/platforms/android-25/android.jar!/android/inputmethodservice/Keyboard.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="22" column="52" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/AndroidAuxilary/Inflater.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="15" column="11" selection-start-line="15" selection-start-column="11" selection-end-line="15" selection-end-column="11" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/il/ac/technion/gip/keymoji/KeyMojiIME.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="183" column="19" selection-start-line="183" selection-start-column="19" selection-end-line="183" selection-end-column="19" />
+        <state relative-caret-position="2092">
+          <caret line="555" column="39" selection-start-line="555" selection-start-column="39" selection-end-line="555" selection-end-column="39" />
           <folding>
             <element signature="docComment;class#KeyMojiIME#0" expanded="false" />
-            <element signature="class#3140:3322" expanded="false" />
-            <element signature="method#onComplete#0;class#3140:3322" expanded="false" />
-            <element signature="e#3460#3462#0" expanded="false" />
-            <element signature="e#4022#4049#0" expanded="false" />
+            <element signature="class#3178:3360" expanded="false" />
+            <element signature="method#onComplete#0;class#3178:3360" expanded="false" />
+            <element signature="e#3498#3500#0" expanded="false" />
+            <element signature="e#4060#4087#0" expanded="false" />
             <element signature="method#onDestroy#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="method#onInitializeInterface#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#4855#4925#0" expanded="false" />
             <element signature="method#isEmoji#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#7280#7293#0" expanded="false" />
-            <element signature="class#9257:10186" expanded="false" />
-            <element signature="method#onPermissionGranted#0;class#9257:10186" expanded="false" />
-            <element signature="method#onPermissionDenied#0;class#9257:10186" expanded="false" />
+            <element signature="class#6397:9024" expanded="false" />
+            <element signature="method#onPictureTaken#0;class#6397:9024" expanded="false" />
+            <element signature="e#7349#7362#0" expanded="false" />
+            <element signature="class#9326:10255" expanded="false" />
+            <element signature="method#onPermissionGranted#0;class#9326:10255" expanded="false" />
+            <element signature="method#onPermissionDenied#0;class#9326:10255" expanded="false" />
             <element signature="method#imageToBitmap#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#10592#10638#0" expanded="false" />
+            <element signature="e#10672#10718#0" expanded="false" />
             <element signature="method#initializeEmojisMap#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onDisplayCompletions#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onCreateCandidatesView#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#playClick#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="method#onFinishInput#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#updateCandidates#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#setSuggestions#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onStartInput#0;class#KeyMojiIME#0" expanded="false" />
@@ -4272,10 +4272,9 @@
             <element signature="class#ACTION#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#indexToEmoji#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onPress#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="e#14833#14870#0" expanded="false" />
+            <element signature="e#14935#14972#0" expanded="false" />
             <element signature="method#onRelease#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#charsToRemove#0;class#KeyMojiIME#0" expanded="false" />
-            <element signature="method#onKey#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#sendAsciiChar#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#sendText#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#onText#0;class#KeyMojiIME#0" expanded="false" />
@@ -4283,8 +4282,42 @@
             <element signature="method#swipeRight#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeDown#0;class#KeyMojiIME#0" expanded="false" />
             <element signature="method#swipeUp#0;class#KeyMojiIME#0" expanded="false" />
-            <marker date="1501343180000" expanded="false" signature="6350:8955" ph="{...}" />
-            <marker date="1501343180000" expanded="false" signature="6751:8945" ph="{...}" />
+            <element signature="e#18420#18421#0" expanded="true" />
+            <element signature="e#18465#18466#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/qwerty.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-113">
+          <caret line="88" column="29" selection-start-line="88" selection-start-column="29" selection-end-line="88" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/numbers.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158">
+          <caret line="72" column="99" selection-start-line="72" selection-start-column="99" selection-end-line="72" selection-end-column="99" />
+          <folding>
+            <element signature="e#848#867#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/res/xml/symbols.xml">
+      <provider editor-type-id="android-designer2">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="71" column="56" selection-start-line="71" selection-start-column="56" selection-end-line="71" selection-end-column="56" />
+          <folding>
+            <element signature="e#848#867#0" expanded="true" />
           </folding>
         </state>
       </provider>

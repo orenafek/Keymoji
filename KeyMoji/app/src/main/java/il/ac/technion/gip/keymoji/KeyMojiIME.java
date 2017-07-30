@@ -69,7 +69,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private CandidateView candidateView;
     private FrameLayout mainLayout;
     private CustomizedKeyboardView keyboardView;
-    private Keyboard keyboard;
+    private KeyboardManager keyboardManager = new KeyboardManager();
     private boolean capsLock = false;
     private ViewAccessor viewAccessor;
     private final Wrapper<Boolean> takePicture = new Wrapper<>(false);
@@ -137,8 +137,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     @Override
     public void onInitializeInterface() {
-        if (keyboard != null) {
-            // Configuration changes can happen after the keyboard gets recreated,
+        if (keyboardManager != null && keyboardManager.active != null) {
+            // Configuration changes can happen after the qwerty gets recreated,
             // so we need to be able to re-build the keyboards if the available
             // space has changed.
             int displayWidth = getMaxWidth();
@@ -147,9 +147,10 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
             return;
         }
 
-        keyboard = new Keyboard(this, R.xml.qwerty);
+        keyboardManager.initKeyboards();
 
     }
+
 
     private boolean isEmoji(CharSequence cs) {
         if (cs.length() < 2) {
@@ -280,7 +281,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                     }
                 });
 
-        keyboardView.setKeyboard(keyboard);
+        keyboardManager.switchToDefault(keyboardView);
         emojis = initializeEmojisMap();
         keyboardView.setOnKeyboardActionListener(this);
 
@@ -359,7 +360,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         composing.setLength(0);
         updateCandidates();
         setCandidatesViewShown(false);
-        if (cameraView.isCameraOpened()) {
+        if (cameraView != null && cameraView.isCameraOpened()) {
             disableCamera();
         }
 
@@ -453,6 +454,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         return isEmoji(cs) ? 2 : 1;
     }
 
+    private static final int CHANGE_KEYBOARD = -9;
     @Override
     public void onKey(int primaryCode, int[] keyCodes) {
         InputConnection ic = getCurrentInputConnection();
@@ -462,14 +464,16 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                 ic.deleteSurroundingText(charsToRemove(ic), 0);
                 break;
             case Keyboard.KEYCODE_SHIFT: {
-                capsLock = !capsLock;
-                keyboard.setShifted(capsLock);
+                keyboardManager.switchKeyboardOnShift();
                 keyboardView.invalidateAllKeys();
             }
             break;
             case Keyboard.KEYCODE_DONE:
                 ic.sendKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_ENTER));
                 break;
+
+            case CHANGE_KEYBOARD:
+                keyboardManager.switchKeyboardOnChangeMode();
 
             case KeyMojiKeyboard.KEYCODE_MODE_CHANGE:
                 ((InputMethodManager) getApplicationContext().getSystemService(INPUT_METHOD_SERVICE)).hideSoftInputFromInputMethod(
@@ -524,5 +528,53 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     }
 
+    class KeyboardManager {
+        private Keyboard qwerty;
+        private Keyboard symbols;
+        private Keyboard numbers;
+        private Keyboard active;
+        private KeyboardView kv;
 
+        KeyboardManager() {
+        }
+
+        void initKeyboards() {
+            qwerty = new Keyboard(KeyMojiIME.this, R.xml.qwerty);
+            numbers = new Keyboard(KeyMojiIME.this, R.xml.numbers);
+            symbols = new Keyboard(KeyMojiIME.this, R.xml.symbols);
+            active = qwerty;
+        }
+
+        private void switchKeyboard(boolean numbersShift) {
+            if (numbersShift) {
+                active = (active == numbers) ? symbols : numbers;
+            } else {
+                active = (active == qwerty) ? numbers : qwerty;
+            }
+            if (kv != null)
+                kv.setKeyboard(active);
+
+        }
+
+        void switchKeyboardOnShift() {
+            capsLock = !capsLock;
+            if (active == numbers || active == symbols) {
+                switchKeyboard(true);
+            } else {
+                qwerty.setShifted(capsLock);
+            }
+
+        }
+
+        void switchKeyboardOnChangeMode() {
+            switchKeyboard(false);
+        }
+
+        void switchToDefault(KeyboardView kv) {
+            this.kv = kv;
+            active = qwerty;
+            if (kv != null)
+                kv.setKeyboard(active);
+        }
+    }
 }
