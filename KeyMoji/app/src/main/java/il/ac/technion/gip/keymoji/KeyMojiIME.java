@@ -45,6 +45,7 @@ import AndroidAuxilary.ViewAccessor;
 import AndroidAuxilary.Wrapper;
 
 import static AndroidAuxilary.AssetCopier.copyAssetFolder;
+import static android.hardware.Camera.CameraInfo.CAMERA_FACING_FRONT;
 import static il.ac.technion.gip.keymoji.KeyMojiIME.ACTION.NOTHING;
 import static il.ac.technion.gip.keymoji.R.id.camera;
 
@@ -74,65 +75,101 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private ViewAccessor viewAccessor;
     private final Wrapper<Boolean> takePicture = new Wrapper<>(false);
     private Camera.Size sz;
+    boolean accessGranted;
 
     @Override
     public void onCreate() {
         super.onCreate();
+        accessGranted = false;
+
+
         // Permissions for Android 6+
         PermissionEverywhere.getPermission(getApplicationContext(),
                 new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE},
                 REQ_CODE,
-                "Notification title",
-                "This app needs a write permission",
+                "KeyMoji",
+                "Allow camera and storage access",
                 R.mipmap.ic_launcher)
                 .enqueue(new PermissionResultCallback() {
+
+
                     @Override
                     public void onComplete(PermissionResponse permissionResponse) {
+                        accessGranted = true;
+                        Camera mCamera = null;
+                        try {
+                            mCamera = Camera.open(CAMERA_FACING_FRONT);
+                        } catch (Exception e) {
+                            Log.e("****************Error", e.toString());
+                            Log.e("****************Error", "Camera service problem :(");
+                        }
+
+                        Camera.Parameters params = mCamera.getParameters();
+                        sz = params.getPictureSize();
+
+                        new Timer().schedule(new TimerTask() {
+                            @Override
+                            public void run() {
+                                try {
+                                    if (cameraView.isCameraOpened())
+                                        cameraView.takePicture();
+                                } catch (RuntimeException re) {
+                                    Log.i("Daniel", "take picture failed :(");
+                                }
+                            }
+                        }, 6000, 5000);
+
+                        Log.e("***************Finished", "Camera service success");
+
+
                     }
                 });
 
         String toPath = "/data/data/" + getPackageName();  // Your application path
         copyAssetFolder(getAssets(), "", toPath);
-//
-//        if (Build.VERSION.SDK_INT < 21) {
-//            Camera c = Camera.open(Camera.CameraInfo.CAMERA_FACING_FRONT);
-//        } else if (Build.VERSION.SDK_INT < 23) {
-//            CameraManager cm = (CameraManager) getSystemService(Context.CAMERA_SERVICE);
-//            cm.openCamera(cm.getCameraIdList()[0],);
-//        } else {
-//            //mImpl = new Camera2Api23(mCallbacks, preview, context);
+
+//        Camera mCamera = null;
+//        try {
+//            mCamera = Camera.open(CAMERA_FACING_FRONT);
+//        } catch(Exception e){
+//            Log.e("****************Error",e.toString());
+//            Log.e("****************Error","Camera service problem :(");
 //        }
-        Camera mCamera = Camera.open();
-        Camera.Parameters params = mCamera.getParameters();
-        sz = params.getPictureSize();
-//        mCamera = Camera.
+//
+//        Camera.Parameters params = mCamera.getParameters();
+//        sz = params.getPictureSize();
+
+
 
         // Load ndk built module, as specified
         // in moduleName in build.gradle
         System.loadLibrary("native-lib");
 
-
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                try {
-                    if (cameraView.isCameraOpened())
-                        cameraView.takePicture();
-                } catch (RuntimeException re) {
-                    Log.i("Daniel", "take picture failed :(");
+        if (accessGranted) {
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    try {
+                        if (cameraView.isCameraOpened())
+                            cameraView.takePicture();
+                    } catch (RuntimeException re) {
+                        Log.i("Daniel", "take picture failed :(");
+                    }
                 }
-            }
-        }, 6000, 6000);
+            }, 6000, 5000);
+        }
     }
 
     @Override
     public void onDestroy() {
         super.onDestroy();
-        disableCamera();
+        if (accessGranted)
+            disableCamera();
     }
 
     private void disableCamera() {
-        cameraView.stop();
+        if (accessGranted)
+            cameraView.stop();
     }
 
     @Override
@@ -168,12 +205,13 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     }
 
     private void sendEmoji(Emoji e) {
-        sendText(e.getEmojiString());
+        if (accessGranted)
+            sendText(e.getEmojiString());
     }
 
     @Override
     public boolean onShowInputRequested(int flags, boolean configChange) {
-        if (cameraView != null && !cameraView.isCameraOpened()) {
+        if (accessGranted && cameraView != null && !cameraView.isCameraOpened()) {
             cameraView.start();
         }
         return super.onShowInputRequested(flags, configChange);
