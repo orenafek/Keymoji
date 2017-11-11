@@ -1,6 +1,7 @@
 package il.ac.technion.gip.keymoji;
 
 import android.Manifest;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.Camera;
@@ -8,6 +9,7 @@ import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
 import android.os.Environment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -76,11 +78,13 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private final Wrapper<Boolean> takePicture = new Wrapper<>(false);
     private Camera.Size sz;
     boolean accessGranted;
+    boolean timerInitialized;
 
     @Override
     public void onCreate() {
         super.onCreate();
         accessGranted = false;
+        timerInitialized = false;
 
 
         // Permissions for Android 6+
@@ -118,6 +122,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                                 }
                             }
                         }, 6000, 5000);
+                        timerInitialized = true;
 
                         Log.e("***************Finished", "Camera service success");
 
@@ -145,7 +150,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         // in moduleName in build.gradle
         System.loadLibrary("native-lib");
 
-        if (accessGranted) {
+        if (accessGranted && !timerInitialized) {
             new Timer().schedule(new TimerTask() {
                 @Override
                 public void run() {
@@ -157,7 +162,12 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
                     }
                 }
             }, 6000, 5000);
+            timerInitialized = true;
         }
+
+        if (this.candidateView != null && !accessGranted)
+            setSuggestions(Collections.singletonList(new Emoji(999, "authorize camera from notifications")), true, true);
+
     }
 
     @Override
@@ -207,6 +217,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private void sendEmoji(Emoji e) {
         if (accessGranted)
             sendText(e.getEmojiString());
+
     }
 
     @Override
@@ -214,6 +225,25 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         if (accessGranted && cameraView != null && !cameraView.isCameraOpened()) {
             cameraView.start();
         }
+
+        // notify the user to allow access to the camera
+        if (this.candidateView != null && !accessGranted)
+            setSuggestions(Collections.singletonList(new Emoji(999, "authorize camera from notifications")), true, true);
+        if (accessGranted && !timerInitialized) {
+            new Timer().schedule(new TimerTask() {
+                @Override
+                public void run() {
+                    try {
+                        if (cameraView.isCameraOpened())
+                            cameraView.takePicture();
+                    } catch (RuntimeException re) {
+                        Log.i("Daniel", "take picture failed :(");
+                    }
+                }
+            }, 6000, 5000);
+            timerInitialized = true;
+        }
+
         return super.onShowInputRequested(flags, configChange);
     }
 
@@ -297,16 +327,19 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
             }
         });
 //                android.os.Debug.waitForDebugger();
+
         PermissionManager permissionManager = PermissionManager.getInstance(getApplicationContext());
         permissionManager.checkPermissions(Arrays.asList(Manifest.permission.CAMERA/*,Manifest.permission_group.CAMERA*/),
                 new PermissionManager.PermissionRequestListener() {
                     @Override
                     public void onPermissionGranted() {
-                        cameraView.setFacing(CameraView.FACING_FRONT);
-                        cameraView.start();
-                        Toast.makeText(getApplicationContext(), "Permissions Granted", Toast.LENGTH_LONG).show();
-                        System.out.println("*********Permissions Granted");
-                        Log.i("Daniel:************", "Permissions Granted");
+                        if (ContextCompat.checkSelfPermission(KeyMojiIME.this, Manifest.permission.CAMERA) == PackageManager.PERMISSION_GRANTED) {
+                            cameraView.setFacing(CameraView.FACING_FRONT);
+                            cameraView.start();
+                            Toast.makeText(getApplicationContext(), "Starting KeyMoji", Toast.LENGTH_LONG).show();
+                            System.out.println("*********Permissions Granted");
+                            Log.i("Daniel:************", "Permissions Granted");
+                        }
 
 
                     }
@@ -322,6 +355,12 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         keyboardManager.switchToDefault(keyboardView);
         emojis = initializeEmojisMap();
         keyboardView.setOnKeyboardActionListener(this);
+
+
+        // notify the user to allow access to the camera
+        if (this.candidateView != null && !accessGranted)
+            setSuggestions(Collections.singletonList(new Emoji(999, "authorize camera from notifications")), true, true);
+
 
         return mainLayout;
     }
@@ -369,6 +408,11 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         super.onCreateCandidatesView();
         candidateView = new CandidateView(this);
         candidateView.setService(this);
+
+        if (!accessGranted)
+            setSuggestions(Collections.singletonList(new Emoji(999, "authorize camera from notifications")), true, true);
+//            this.candidateView.setPermissionMessage("Allow camera access in the notifications");
+
         return candidateView;
     }
 
@@ -397,6 +441,11 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         super.onFinishInput();
         composing.setLength(0);
         updateCandidates();
+
+//        // notify the user to allow access to the camera
+//        if (this.candidateView != null && !accessGranted)
+//            setSuggestions(Collections.singletonList(new Emoji(999,"authorize camera from notifications")), true, true);
+
         setCandidatesViewShown(false);
         if (cameraView != null && cameraView.isCameraOpened()) {
             disableCamera();
@@ -539,6 +588,7 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private void sendText(CharSequence cs) {
         InputConnection ic = getCurrentInputConnection();
         ic.commitText(cs, 1);
+
     }
 
     @Override

@@ -243,7 +243,16 @@ public class CandidateView extends View {
         invalidate();
     }
 
-    @SuppressLint("WrongCall")
+
+    public void setPermissionMessage(String msg) {
+        clear();
+        mSuggestions = new ArrayList<>();
+        mSuggestions.add(msg);
+
+        drawSuggestions(false); // randomly sending true.
+
+
+    }
     public void setSuggestions(List<Emoji> suggestions, boolean completions,
                                boolean typedWordValid, Canvas canvas) {
         clear();
@@ -256,6 +265,11 @@ public class CandidateView extends View {
             suggestedEmoji = mSuggestions.size() > 0 ? suggestedEmojis.get(0).getIndex() : 1;
 
         }
+        drawSuggestions(typedWordValid);
+    }
+
+    @SuppressLint("WrongCall")
+    private void drawSuggestions(boolean typedWordValid) {
         mTypedWordValid = typedWordValid;
         scrollTo(0, 0);
         mTargetScrollX = 0;
@@ -264,7 +278,6 @@ public class CandidateView extends View {
         invalidate();
         requestLayout();
     }
-
     public void clear() {
         mSuggestions = EMPTY_LIST;
         mTouchX = OUT_OF_BOUNDS;
