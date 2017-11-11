@@ -1,7 +1,9 @@
 package il.ac.technion.gip.keymoji;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.pm.PackageManager;
+import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.hardware.Camera;
@@ -205,8 +207,9 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         }
 
         for (Emoji e : emojis) {
-            if (e.getEmojiString().equals(cs)) {
-                return true;
+            for (String s : e.getEmojiStrings())
+                if (s.equals(cs)) {
+                    return true;
             }
         }
 
@@ -214,9 +217,9 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
         return false;
     }
 
-    private void sendEmoji(Emoji e) {
+    private void sendEmoji(Emoji e, int relativeIndex) {
         if (accessGranted)
-            sendText(e.getEmojiString());
+            sendText(e.getEmojiStrings().get(relativeIndex >= 0 ? relativeIndex : 0));
 
     }
 
@@ -388,10 +391,19 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
 
     private List<Emoji> initializeEmojisMap() {
         List<Emoji> map = new ArrayList<>();
-        int[] unicodes = getResources().getIntArray(R.array.emojis_unicode);
-        for (int i = 0; i < unicodes.length; i++) {
-            map.add(new Emoji(i + 1, new String(Character.toChars(unicodes[i]))));
+        @SuppressLint("Recycle")
+        TypedArray allUnicodes = getResources().obtainTypedArray(R.array.emojis_unicode);
+        for (int i = 0; i < allUnicodes.length(); i++) {
+            int[] unicodes = getResources().getIntArray(allUnicodes.getResourceId(i, 0));
+            List<String> emojis = new ArrayList<>();
+            for (int unicode : unicodes) {
+                emojis.add(new String(Character.toChars(unicode)));
+            }
+
+            map.add(new Emoji(i + 1, emojis));
+
         }
+        //int[] unicodes = getResources().getIntArray(R.array.emojis_unicode);
 
         return map;
     }
@@ -506,8 +518,8 @@ public class KeyMojiIME extends InputMethodService implements SpellCheckerSessio
     private void DO(ACTION __) {
     }
 
-    public void pickSuggestionManually(int mSelectedIndex) {
-        sendEmoji(indexToEmoji(mSelectedIndex));
+    public void pickSuggestionManually(int emotion, int relativeIndex) {
+        sendEmoji(indexToEmoji(emotion), relativeIndex);
     }
 
     enum ACTION {NOTHING}

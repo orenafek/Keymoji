@@ -1,14 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <integer name="emoji_anger">0x1F621</integer>
-    <integer name="emoji_happy">0x1F642</integer>
-    <integer name="emoji_sad">0x1F622</integer>
-    <integer name="emoji_surprised">0x1F62E</integer>
+    <integer name="emoji_anger0">0x1F621</integer>
+    <integer name="emoji_anger1">0x1F620</integer>
+    <integer name="emoji_anger2">0x1F62C</integer>
+    <integer name="emoji_anger3">0x1F47F</integer>
+    <integer name="emoji_anger4">0x1F63E</integer>
 
-    <integer-array name="emojis_unicode">
-        <item>@integer/emoji_anger</item>
-        <item>@integer/emoji_happy</item>
-        <item>@integer/emoji_sad</item>
-        <item>@integer/emoji_surprised</item>
+    <integer name="emoji_happy0">0x1F642</integer>
+    <integer name="emoji_happy1">0x1F603</integer>
+    <integer name="emoji_happy2">0x1F917</integer>
+    <integer name="emoji_happy3">0x1F60A</integer>
+    <integer name="emoji_happy4">0x1F601</integer>
+
+    <integer name="emoji_sad0">0x1F622</integer>
+    <integer name="emoji_sad1">0x1F62A</integer>
+    <integer name="emoji_sad2">0x1F62D</integer>
+    <integer name="emoji_sad3">0x1F615</integer>
+    <integer name="emoji_sad4">0x1F614</integer>
+
+    <integer name="emoji_surprised0">0x1F62E</integer>
+    <integer name="emoji_surprised1">0x1F631</integer>
+    <integer name="emoji_surprised2">0x1F633</integer>
+    <integer name="emoji_surprised3">0x1F635</integer>
+    <integer name="emoji_surprised4">0x1F640</integer>
+
+    <integer-array name="emojis_anger">
+        <item>@integer/emoji_anger0</item>
+        <item>@integer/emoji_anger1</item>
+        <item>@integer/emoji_anger2</item>
+        <item>@integer/emoji_anger3</item>
+        <item>@integer/emoji_anger4</item>
     </integer-array>
+    <integer-array name="emojis_happy">
+        <item>@integer/emoji_happy0</item>
+        <item>@integer/emoji_happy1</item>
+        <item>@integer/emoji_happy2</item>
+        <item>@integer/emoji_happy3</item>
+        <item>@integer/emoji_happy4</item>
+    </integer-array>
+    <integer-array name="emojis_sad">
+        <item>@integer/emoji_sad0</item>
+        <item>@integer/emoji_sad1</item>
+        <item>@integer/emoji_sad2</item>
+        <item>@integer/emoji_sad3</item>
+        <item>@integer/emoji_sad4</item>
+    </integer-array>
+    <integer-array name="emojis_surprised">
+        <item>@integer/emoji_surprised0</item>
+        <item>@integer/emoji_surprised1</item>
+        <item>@integer/emoji_surprised2</item>
+        <item>@integer/emoji_surprised3</item>
+        <item>@integer/emoji_surprised4</item>
+    </integer-array>
+
+    <array name="emojis_unicode">
+        <item>@array/emojis_anger</item>
+        <item>@array/emojis_happy</item>
+        <item>@array/emojis_sad</item>
+        <item>@array/emojis_surprised</item>
+    </array>
+
 </resources>

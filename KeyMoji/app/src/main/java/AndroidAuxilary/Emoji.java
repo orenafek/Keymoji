@@ -1,5 +1,8 @@
 package AndroidAuxilary;
 
+import java.util.Collections;
+import java.util.List;
+
 /**
  * Created by danielohayon on 29/07/2017.
  */
@@ -7,11 +10,16 @@ package AndroidAuxilary;
 public class Emoji {
 
     private int index;
-    private String emojiString;
+    private List<String> emojiString;
+
+    public Emoji(int index, List<String> emojiString) {
+        this.index = index;
+        this.emojiString = emojiString;
+    }
 
     public Emoji(int index, String emojiString) {
         this.index = index;
-        this.emojiString = emojiString;
+        this.emojiString = Collections.singletonList(emojiString);
     }
 
     public int getIndex() {
@@ -22,11 +30,8 @@ public class Emoji {
         this.index = index;
     }
 
-    public String getEmojiString() {
+    public List<String> getEmojiStrings() {
         return emojiString;
     }
 
-    public void setEmojiString(String emojiString) {
-        this.emojiString = emojiString;
-    }
 }

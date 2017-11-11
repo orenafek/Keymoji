@@ -260,7 +260,7 @@ public class CandidateView extends View {
             suggestedEmojis = suggestions;
             mSuggestions = new ArrayList<>();
             for (Emoji e : suggestions) {
-                mSuggestions.add(e.getEmojiString());
+                mSuggestions.addAll(e.getEmojiStrings());
             }
             suggestedEmoji = mSuggestions.size() > 0 ? suggestedEmojis.get(0).getIndex() : 1;
 
@@ -307,7 +307,7 @@ public class CandidateView extends View {
                 if (y <= 0) {
                     // Fling up!?
                     if (mSelectedIndex >= 0) {
-                        mService.pickSuggestionManually(suggestedEmoji);
+                        mService.pickSuggestionManually(suggestedEmoji, mSelectedIndex);
                         mSelectedIndex = -1;
                     }
                 }
@@ -316,7 +316,7 @@ public class CandidateView extends View {
             case MotionEvent.ACTION_UP:
                 if (!mScrolled) {
                     if (mSelectedIndex >= 0) {
-                        mService.pickSuggestionManually(suggestedEmoji);
+                        mService.pickSuggestionManually(suggestedEmoji, mSelectedIndex);
                     }
                 }
                 mSelectedIndex = -1;
@@ -339,7 +339,7 @@ public class CandidateView extends View {
         // To detect candidate
         onDraw(null);
         if (mSelectedIndex >= 0) {
-            mService.pickSuggestionManually(suggestedEmoji);
+            mService.pickSuggestionManually(suggestedEmoji, mSelectedIndex);
         }
         invalidate();
     }
